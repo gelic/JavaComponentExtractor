@@ -19,10 +19,27 @@
       <Extensions>moc;h;cpp</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Tree Nodes Files">
+      <UniqueIdentifier>{a0378fcf-e897-4046-8d7f-b69d737fbd3e}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree Nodes Files\Header Files">
+      <UniqueIdentifier>{fcf2db04-a5e1-4743-8872-c813a2358aba}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree Nodes Files\Source Files">
+      <UniqueIdentifier>{363e3db7-f100-49b5-bfd6-2e60fb70ead7}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="textlocation.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="textlocation.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>
