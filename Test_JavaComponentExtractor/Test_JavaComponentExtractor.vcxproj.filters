@@ -29,10 +29,56 @@
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
+    <Filter Include="Tree Nodes Files">
+      <UniqueIdentifier>{49a07ec3-95ac-406d-9f8c-9c71d7e59673}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree Nodes Files\Header Files">
+      <UniqueIdentifier>{e2f91d18-8300-4d12-8b96-39c5b90fd095}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree Nodes Files\Source Files">
+      <UniqueIdentifier>{de118b85-98e0-4e1d-976d-689d96135024}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests">
+      <UniqueIdentifier>{611aaf0d-d453-4ae8-8c9a-3a562b89ad4c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests\Header Files">
+      <UniqueIdentifier>{08891a3f-f661-49c8-9168-0a6b49ee3f6d}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tests\Source Files">
+      <UniqueIdentifier>{f58488ea-7bfd-4a19-9951-ef2841164c7e}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\textlocation.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\component.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_component.cpp">
+      <Filter>Tests\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_test_component.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_test_component.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\JavaComponentExtractor\textlocation.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\JavaComponentExtractor\component.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="test_component.h">
+      <Filter>Tests\Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>

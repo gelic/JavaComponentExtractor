@@ -36,9 +36,15 @@
     <ClCompile Include="textlocation.cpp">
       <Filter>Tree Nodes Files\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="component.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="textlocation.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="component.h">
       <Filter>Tree Nodes Files\Header Files</Filter>
     </ClInclude>
   </ItemGroup>
