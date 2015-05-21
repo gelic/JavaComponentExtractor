@@ -23,6 +23,15 @@
     <Filter Include="Tree Nodes Files\Source Files">
       <UniqueIdentifier>{363e3db7-f100-49b5-bfd6-2e60fb70ead7}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Bison&amp;Flex Files">
+      <UniqueIdentifier>{3b3fbaf2-0f92-4a09-81c3-d70dc63f5707}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bison&amp;Flex Files\Header Files">
+      <UniqueIdentifier>{4963cb38-a739-43bf-b083-9f585963366c}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Bison&amp;Flex Files\Source Files">
+      <UniqueIdentifier>{0345d4eb-61d3-42a3-9b27-87972ee61597}</UniqueIdentifier>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
@@ -34,6 +43,12 @@
     <ClCompile Include="component.cpp">
       <Filter>Tree Nodes Files\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="lexer.cpp">
+      <Filter>Bison&amp;Flex Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="parser.cpp">
+      <Filter>Bison&amp;Flex Files\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="textlocation.h">
@@ -42,5 +57,22 @@
     <ClInclude Include="component.h">
       <Filter>Tree Nodes Files\Header Files</Filter>
     </ClInclude>
+    <ClInclude Include="lexer.hpp">
+      <Filter>Bison&amp;Flex Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="parser.hpp">
+      <Filter>Bison&amp;Flex Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="unistd.h">
+      <Filter>Bison&amp;Flex Files\Header Files</Filter>
+    </ClInclude>
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="lexer.l">
+      <Filter>Bison&amp;Flex Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="parser.y">
+      <Filter>Bison&amp;Flex Files</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>

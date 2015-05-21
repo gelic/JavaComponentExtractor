@@ -140,12 +140,39 @@
   </ItemDefinitionGroup>
   <ItemGroup>
     <ClCompile Include="component.cpp" />
+    <ClCompile Include="lexer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="parser.cpp" />
     <ClCompile Include="textlocation.cpp" />
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="component.h" />
+    <ClInclude Include="lexer.hpp" />
+    <ClInclude Include="parser.hpp" />
     <ClInclude Include="textlocation.h" />
+    <ClInclude Include="unistd.h" />
+  </ItemGroup>
+  <ItemGroup>
+    <CustomBuild Include="lexer.l">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">flex %(Identity)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating %(Filename).cpp...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).cpp; %(Filename).hpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">parser.hpp</AdditionalInputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">flex %(Identity)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating %(Filename).cpp...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).cpp; %(Filename).hpp</Outputs>
+      <AdditionalInputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">parser.hpp</AdditionalInputs>
+    </CustomBuild>
+    <CustomBuild Include="parser.y">
+      <FileType>Document</FileType>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">bison -o %(Filename).cpp %(Identity)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">Generating %(Filename).cpp...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Debug|x64'">%(Filename).cpp; %(Filename).hpp</Outputs>
+      <Command Condition="'$(Configuration)|$(Platform)'=='Release|x64'">bison -o %(Filename).cpp %(Identity)</Command>
+      <Message Condition="'$(Configuration)|$(Platform)'=='Release|x64'">Generating %(Filename).cpp...</Message>
+      <Outputs Condition="'$(Configuration)|$(Platform)'=='Release|x64'">%(Filename).cpp; %(Filename).hpp</Outputs>
+    </CustomBuild>
   </ItemGroup>
   <Import Project="$(VCTargetsPath)\Microsoft.Cpp.targets" />
   <ImportGroup Label="ExtensionTargets">
