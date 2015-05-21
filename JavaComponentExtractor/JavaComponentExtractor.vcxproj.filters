@@ -37,9 +37,6 @@
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
-    <ClCompile Include="textlocation.cpp">
-      <Filter>Tree Nodes Files\Source Files</Filter>
-    </ClCompile>
     <ClCompile Include="component.cpp">
       <Filter>Tree Nodes Files\Source Files</Filter>
     </ClCompile>
@@ -49,11 +46,32 @@
     <ClCompile Include="parser.cpp">
       <Filter>Bison&amp;Flex Files\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="class.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="enum.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="field.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="import.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="interface.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="method.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="package.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="textlocation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="textlocation.h">
-      <Filter>Tree Nodes Files\Header Files</Filter>
-    </ClInclude>
     <ClInclude Include="component.h">
       <Filter>Tree Nodes Files\Header Files</Filter>
     </ClInclude>
@@ -65,6 +83,33 @@
     </ClInclude>
     <ClInclude Include="unistd.h">
       <Filter>Bison&amp;Flex Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="class.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="enum.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="field.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="import.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="interface.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="method.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="package.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="program.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="textlocation.h">
+      <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
   <ItemGroup>

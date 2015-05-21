@@ -139,16 +139,31 @@
     </Link>
   </ItemDefinitionGroup>
   <ItemGroup>
+    <ClCompile Include="class.cpp" />
     <ClCompile Include="component.cpp" />
+    <ClCompile Include="enum.cpp" />
+    <ClCompile Include="field.cpp" />
+    <ClCompile Include="import.cpp" />
+    <ClCompile Include="interface.cpp" />
     <ClCompile Include="lexer.cpp" />
     <ClCompile Include="main.cpp" />
+    <ClCompile Include="method.cpp" />
+    <ClCompile Include="package.cpp" />
     <ClCompile Include="parser.cpp" />
     <ClCompile Include="textlocation.cpp" />
   </ItemGroup>
   <ItemGroup>
+    <ClInclude Include="class.h" />
     <ClInclude Include="component.h" />
+    <ClInclude Include="enum.h" />
+    <ClInclude Include="field.h" />
+    <ClInclude Include="import.h" />
+    <ClInclude Include="interface.h" />
     <ClInclude Include="lexer.hpp" />
+    <ClInclude Include="method.h" />
+    <ClInclude Include="package.h" />
     <ClInclude Include="parser.hpp" />
+    <ClInclude Include="program.h" />
     <ClInclude Include="textlocation.h" />
     <ClInclude Include="unistd.h" />
   </ItemGroup>
