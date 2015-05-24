@@ -11,6 +11,7 @@
 // Класс, описывающий компонент класса
 class Class : public Component
 {
+public:
     QStringList modificators;
     QString name;
     QStringList baseClasses;
@@ -20,6 +21,12 @@ class Class : public Component
     QList<Method> methods;
     QList<Class> nestedClasses;
     QList<Interface> nestedInterfaces;
+
+    Class();
+    Class(const QStringList &modificators, const QString &name, const QStringList &baseClasses, const QStringList &implementedInterfaces);
+    Class(const QStringList &modificators, const QString &name, const QStringList &baseClasses, const QStringList &implementedInterfaces, const TextLocation &location);
+
+    bool operator==(const Class &classToCompare);
 };
 
 #endif // CLASS_H

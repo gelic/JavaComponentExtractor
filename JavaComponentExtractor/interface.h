@@ -15,6 +15,12 @@ public:
     QStringList baseInterfaces;
     QList<Field> fields;
     QList<Method> methods;
+
+    Interface();
+    Interface(const QStringList &modificators, const QString &name, const QStringList &baseInterfaces);
+    Interface(const QStringList &modificators, const QString &name, const QStringList &baseInterfaces, const TextLocation &location);
+
+    bool operator==(const Interface &interface);
 };
 
 #endif // INTERFACE_H

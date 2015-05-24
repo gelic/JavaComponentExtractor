@@ -1,12 +1,16 @@
 #include "component.h"
 
-Component::Component(const TextLocation &location) {
+Component::Component()
+{
+}
+
+Component::Component(const TextLocation &location)
+{
     this->location = location;
 }
 
-Component::Component() {}
-
-bool Component::isNested(const Component &component) {
+bool Component::isNested(const Component &component)
+{
     return
         location.firstLine > component.location.firstLine &&
         location.lastLine < component.location.lastLine

@@ -149,7 +149,7 @@ void Test_Yylex::test_yyflex_data()
     QTest::newRow(">=")
         << QString(">=")
         << (int) OP_GE;
-    
+
     QTest::newRow("!=")
         << QString("!=")
         << (int) OP_NE;
@@ -478,4 +478,10 @@ void Test_Yylex::test_yyflex()
 
     yy_scan_string(buffer.toStdString().c_str());
     QVERIFY2(yylex() == expectation, "Test failed");
+
+    if (yylval.str != nullptr)
+    {
+        delete yylval.str;
+        yylval.str = nullptr;
+    }
 }

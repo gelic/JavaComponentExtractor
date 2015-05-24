@@ -15,76 +15,46 @@
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Debug">
-      <UniqueIdentifier>{8a656eac-dd9a-422a-8528-a3dd1bf12443}</UniqueIdentifier>
+      <UniqueIdentifier>{583989c3-438c-4c78-a253-4b6226a36a96}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
     <Filter Include="Generated Files\Release">
-      <UniqueIdentifier>{b2792ebf-2b9d-4ce4-be23-f5b72eeb337a}</UniqueIdentifier>
+      <UniqueIdentifier>{2eccddea-be1f-44f6-81fa-10e1a62cb1a9}</UniqueIdentifier>
       <Extensions>cpp;moc</Extensions>
       <SourceControlFiles>False</SourceControlFiles>
     </Filter>
-    <Filter Include="Tree Nodes Files">
-      <UniqueIdentifier>{49a07ec3-95ac-406d-9f8c-9c71d7e59673}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Tree Nodes Files\Header Files">
-      <UniqueIdentifier>{e2f91d18-8300-4d12-8b96-39c5b90fd095}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Tree Nodes Files\Source Files">
-      <UniqueIdentifier>{de118b85-98e0-4e1d-976d-689d96135024}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Tests">
-      <UniqueIdentifier>{611aaf0d-d453-4ae8-8c9a-3a562b89ad4c}</UniqueIdentifier>
+      <UniqueIdentifier>{65973581-b56c-41cf-aa2e-08b54f23b23a}</UniqueIdentifier>
     </Filter>
     <Filter Include="Tests\Header Files">
-      <UniqueIdentifier>{08891a3f-f661-49c8-9168-0a6b49ee3f6d}</UniqueIdentifier>
+      <UniqueIdentifier>{0143ca85-64a1-474e-af51-9679004d66da}</UniqueIdentifier>
     </Filter>
     <Filter Include="Tests\Source Files">
-      <UniqueIdentifier>{f58488ea-7bfd-4a19-9951-ef2841164c7e}</UniqueIdentifier>
+      <UniqueIdentifier>{bc0ca98b-031e-4a0b-bb74-e723a9bd7389}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree Nodes Files">
+      <UniqueIdentifier>{4a979c42-0f09-4ea3-85a9-287452f89e43}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree Nodes Files\Header Files">
+      <UniqueIdentifier>{9d023a29-9a71-4a3b-bb49-16c59dcfc9df}</UniqueIdentifier>
+    </Filter>
+    <Filter Include="Tree Nodes Files\Source Files">
+      <UniqueIdentifier>{59cdaea3-abf8-4f14-90b4-c54b90cce7ee}</UniqueIdentifier>
     </Filter>
     <Filter Include="Bison&amp;Flex Files">
-      <UniqueIdentifier>{1a703a9e-503e-4b06-aa44-ff9b4ded647e}</UniqueIdentifier>
+      <UniqueIdentifier>{35b8666a-4843-429f-bffd-dfaec8ab9f82}</UniqueIdentifier>
     </Filter>
     <Filter Include="Bison&amp;Flex Files\Header Files">
-      <UniqueIdentifier>{117d09ca-662c-4aa7-8b3c-e9ed4567247f}</UniqueIdentifier>
+      <UniqueIdentifier>{731aae71-fc92-4a63-9c59-20bc7bb96637}</UniqueIdentifier>
     </Filter>
     <Filter Include="Bison&amp;Flex Files\Source Files">
-      <UniqueIdentifier>{6fe9a4e7-67c8-4aff-8dce-0ce89073c1fa}</UniqueIdentifier>
+      <UniqueIdentifier>{b32fe35f-a384-467f-895b-4b417f62a7b4}</UniqueIdentifier>
     </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">
       <Filter>Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\JavaComponentExtractor\textlocation.cpp">
-      <Filter>Tree Nodes Files\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\JavaComponentExtractor\component.cpp">
-      <Filter>Tree Nodes Files\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="test_component.cpp">
-      <Filter>Tests\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_test_component.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_test_component.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="..\JavaComponentExtractor\lexer.cpp">
-      <Filter>Bison&amp;Flex Files\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="..\JavaComponentExtractor\parser.cpp">
-      <Filter>Bison&amp;Flex Files\Source Files</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Debug\moc_test_yylex.cpp">
-      <Filter>Generated Files\Debug</Filter>
-    </ClCompile>
-    <ClCompile Include="GeneratedFiles\Release\moc_test_yylex.cpp">
-      <Filter>Generated Files\Release</Filter>
-    </ClCompile>
-    <ClCompile Include="test_yylex.cpp">
-      <Filter>Tests\Source Files</Filter>
     </ClCompile>
     <ClCompile Include="GeneratedFiles\Debug\moc_test_yyparse.cpp">
       <Filter>Generated Files\Debug</Filter>
@@ -92,15 +62,98 @@
     <ClCompile Include="GeneratedFiles\Release\moc_test_yyparse.cpp">
       <Filter>Generated Files\Release</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_test_component.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_test_component.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_test_yylex.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_test_yylex.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="test_component.cpp">
+      <Filter>Tests\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="test_yylex.cpp">
+      <Filter>Tests\Source Files</Filter>
+    </ClCompile>
     <ClCompile Include="test_yyparse.cpp">
       <Filter>Tests\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\class.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\component.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\enum.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\field.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\import.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\interface.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\method.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\package.cpp">
+      <Filter>Tree Nodes Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\lexer.cpp">
+      <Filter>Bison&amp;Flex Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\parser.cpp">
+      <Filter>Bison&amp;Flex Files\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\textlocation.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
-    <ClInclude Include="..\JavaComponentExtractor\textlocation.h">
+    <CustomBuild Include="test_yyparse.h">
+      <Filter>Tests\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="test_component.h">
+      <Filter>Tests\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="test_yylex.h">
+      <Filter>Tests\Header Files</Filter>
+    </CustomBuild>
+  </ItemGroup>
+  <ItemGroup>
+    <ClInclude Include="..\JavaComponentExtractor\component.h">
       <Filter>Tree Nodes Files\Header Files</Filter>
     </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\component.h">
+    <ClInclude Include="..\JavaComponentExtractor\class.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\JavaComponentExtractor\enum.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\JavaComponentExtractor\field.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\JavaComponentExtractor\import.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\JavaComponentExtractor\interface.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\JavaComponentExtractor\method.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\JavaComponentExtractor\package.h">
+      <Filter>Tree Nodes Files\Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="..\JavaComponentExtractor\program.h">
       <Filter>Tree Nodes Files\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="..\JavaComponentExtractor\lexer.hpp">
@@ -112,16 +165,8 @@
     <ClInclude Include="..\JavaComponentExtractor\unistd.h">
       <Filter>Bison&amp;Flex Files\Header Files</Filter>
     </ClInclude>
-  </ItemGroup>
-  <ItemGroup>
-    <CustomBuild Include="test_component.h">
-      <Filter>Tests\Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="test_yylex.h">
-      <Filter>Tests\Header Files</Filter>
-    </CustomBuild>
-    <CustomBuild Include="test_yyparse.h">
-      <Filter>Tests\Header Files</Filter>
-    </CustomBuild>
+    <ClInclude Include="..\JavaComponentExtractor\textlocation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
   </ItemGroup>
 </Project>

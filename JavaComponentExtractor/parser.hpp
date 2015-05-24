@@ -42,6 +42,8 @@ extern int yydebug;
 /* "%code requires" blocks.  */
 #line 6 "parser.y" /* yacc.c:1909  */
 
+    #include "program.h"
+
     #define COPY_POSITIONS(a, b, c) \
         { \
             a.firstLine = b.first_line; \
@@ -96,7 +98,16 @@ extern int yydebug;
             }                                                            \
         while (0)
 
-#line 100 "parser.hpp" /* yacc.c:1909  */
+    void addEndPositionsToClassComponent(const YYLTYPE &yylocation);
+    void addEndPositionsToInterfaceComponent(const YYLTYPE &yylocation);
+
+    struct MethodNameAndParams
+    {
+        QList<Method::Param> params;
+        QString name;
+    };
+
+#line 111 "parser.hpp" /* yacc.c:1909  */
 
 /* Token type.  */
 #ifndef YYTOKENTYPE
@@ -182,7 +193,21 @@ extern int yydebug;
 
 /* Value type.  */
 #if ! defined YYSTYPE && ! defined YYSTYPE_IS_DECLARED
-typedef int YYSTYPE;
+
+union YYSTYPE
+{
+#line 90 "parser.y" /* yacc.c:1909  */
+
+    QString *str = nullptr;
+    QStringList *strList;
+    Method::Param *param;
+    QList<Method::Param> *params;
+    MethodNameAndParams *methodNameAndParams;
+
+#line 208 "parser.hpp" /* yacc.c:1909  */
+};
+
+typedef union YYSTYPE YYSTYPE;
 # define YYSTYPE_IS_TRIVIAL 1
 # define YYSTYPE_IS_DECLARED 1
 #endif

@@ -1146,7 +1146,7 @@ case 5:
 /* rule 5 can match eol */
 YY_RULE_SETUP
 #line 96 "lexer.l"
-{return OP_DIM;}
+{yylval.str = new QString(yytext); return OP_DIM;}
 	YY_BREAK
 case 6:
 YY_RULE_SETUP
@@ -1261,102 +1261,102 @@ YY_RULE_SETUP
 case 28:
 YY_RULE_SETUP
 #line 121 "lexer.l"
-{return ABSTRACT;}
+{yylval.str = new QString(yytext); return ABSTRACT;}
 	YY_BREAK
 case 29:
 YY_RULE_SETUP
 #line 122 "lexer.l"
-{return PUBLIC;}
+{yylval.str = new QString(yytext); return PUBLIC;}
 	YY_BREAK
 case 30:
 YY_RULE_SETUP
 #line 123 "lexer.l"
-{return PRIVATE;}
+{yylval.str = new QString(yytext); return PRIVATE;}
 	YY_BREAK
 case 31:
 YY_RULE_SETUP
 #line 124 "lexer.l"
-{return PROTECTED;}
+{yylval.str = new QString(yytext); return PROTECTED;}
 	YY_BREAK
 case 32:
 YY_RULE_SETUP
 #line 125 "lexer.l"
-{return TRANSIENT;}
+{yylval.str = new QString(yytext); return TRANSIENT;}
 	YY_BREAK
 case 33:
 YY_RULE_SETUP
 #line 126 "lexer.l"
-{return FINAL;}
+{yylval.str = new QString(yytext); return FINAL;}
 	YY_BREAK
 case 34:
 YY_RULE_SETUP
 #line 127 "lexer.l"
-{return VOLATILE;}
+{yylval.str = new QString(yytext); return VOLATILE;}
 	YY_BREAK
 case 35:
 YY_RULE_SETUP
 #line 128 "lexer.l"
-{return NATIVE;}
+{yylval.str = new QString(yytext); return NATIVE;}
 	YY_BREAK
 case 36:
 YY_RULE_SETUP
 #line 129 "lexer.l"
-{return STATIC;}
+{yylval.str = new QString(yytext); return STATIC;}
 	YY_BREAK
 case 37:
 YY_RULE_SETUP
 #line 130 "lexer.l"
-{return SYNCHRONIZED;}
+{yylval.str = new QString(yytext); return SYNCHRONIZED;}
 	YY_BREAK
 case 38:
 YY_RULE_SETUP
 #line 132 "lexer.l"
-{return YYBOOLEAN;}
+{yylval.str = new QString(yytext); return YYBOOLEAN;}
 	YY_BREAK
 case 39:
 YY_RULE_SETUP
 #line 133 "lexer.l"
-{return YYDOUBLE;}
+{yylval.str = new QString(yytext); return YYDOUBLE;}
 	YY_BREAK
 case 40:
 YY_RULE_SETUP
 #line 134 "lexer.l"
-{return YYBYTE;}
+{yylval.str = new QString(yytext); return YYBYTE;}
 	YY_BREAK
 case 41:
 YY_RULE_SETUP
 #line 135 "lexer.l"
-{return YYINT;}
+{yylval.str = new QString(yytext); return YYINT;}
 	YY_BREAK
 case 42:
 YY_RULE_SETUP
 #line 136 "lexer.l"
-{return YYVOID;}
+{yylval.str = new QString(yytext); return YYVOID;}
 	YY_BREAK
 case 43:
 YY_RULE_SETUP
 #line 137 "lexer.l"
-{return YYFLOAT;}
+{yylval.str = new QString(yytext); return YYFLOAT;}
 	YY_BREAK
 case 44:
 YY_RULE_SETUP
 #line 138 "lexer.l"
-{return YYLONG;}
+{yylval.str = new QString(yytext); return YYLONG;}
 	YY_BREAK
 case 45:
 YY_RULE_SETUP
 #line 139 "lexer.l"
-{return YYSHORT;}
+{yylval.str = new QString(yytext); return YYSHORT;}
 	YY_BREAK
 case 46:
 YY_RULE_SETUP
 #line 140 "lexer.l"
-{return YYCHAR;}
+{yylval.str = new QString(yytext); return YYCHAR;}
 	YY_BREAK
 case 47:
 YY_RULE_SETUP
 #line 141 "lexer.l"
-{return YYSTRING;}
+{yylval.str = new QString(yytext); return YYSTRING;}
 	YY_BREAK
 case 48:
 YY_RULE_SETUP
@@ -1501,7 +1501,7 @@ YY_RULE_SETUP
 case 76:
 YY_RULE_SETUP
 #line 173 "lexer.l"
-{return IDENTIFIER;}
+{yylval.str = new QString(yytext); return IDENTIFIER;}
 	YY_BREAK
 case 77:
 YY_RULE_SETUP

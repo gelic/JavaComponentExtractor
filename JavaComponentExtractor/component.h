@@ -5,7 +5,8 @@
 #include "textlocation.h"
 
 // Класс, описывающий компонент программы
-class Component {
+class Component
+{
 public:
     TextLocation location;
     QString text;

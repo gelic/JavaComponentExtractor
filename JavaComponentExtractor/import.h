@@ -8,8 +8,14 @@
 class Import : public Component
 {
 public:
-    bool isStatic = false; // Можно импортировать статические члены класса
+    bool isStatic = false; // Для импорта статических методов класса
     QString importedClass;
+
+    Import();
+    Import(const QString &importedClass, bool isStatic);
+    Import(const QString &importedClass, bool isStatic, const TextLocation &location);
+
+    bool operator==(const Import &import);
 };
 
 #endif // IMPORT_H

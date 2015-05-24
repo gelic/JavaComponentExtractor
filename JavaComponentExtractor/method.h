@@ -15,6 +15,10 @@ public:
         bool isFinal = false;
         QString type;
         QString name;
+
+        Param(bool isFinal, const QString &type, const QString &name);
+
+        bool operator==(const Param &param);
     };
 
     QStringList modificators;
@@ -22,6 +26,12 @@ public:
     QString name;
     QList<Param> params;
     QStringList threwExceptions;
+
+    Method();
+    Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions);
+    Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions, const TextLocation &location);
+
+    bool operator==(const Method &method);
 };
 
 #endif // METHOD_H

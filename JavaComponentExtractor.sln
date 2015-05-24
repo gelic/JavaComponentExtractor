@@ -5,7 +5,7 @@ VisualStudioVersion = 12.0.31101.0
 MinimumVisualStudioVersion = 10.0.40219.1
 Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "JavaComponentExtractor", "JavaComponentExtractor\JavaComponentExtractor.vcxproj", "{B12702AD-ABFB-343A-A199-8E24837244A3}"
 EndProject
-Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test_JavaComponentExtractor", "Test_JavaComponentExtractor\Test_JavaComponentExtractor.vcxproj", "{CB3183A6-2548-4527-9EC2-C018D25C157B}"
+Project("{8BC9CEB8-8B4A-11D0-8D11-00A0C91BC942}") = "Test_JavaComponentExtractor", "Test_JavaComponentExtractor\Test_JavaComponentExtractor.vcxproj", "{E6A97D4F-3EB0-48ED-979D-02BCCE698745}"
 	ProjectSection(ProjectDependencies) = postProject
 		{B12702AD-ABFB-343A-A199-8E24837244A3} = {B12702AD-ABFB-343A-A199-8E24837244A3}
 	EndProjectSection
@@ -26,14 +26,14 @@ Global
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|Win32.Build.0 = Release|Win32
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.ActiveCfg = Release|x64
 		{B12702AD-ABFB-343A-A199-8E24837244A3}.Release|x64.Build.0 = Release|x64
-		{CB3183A6-2548-4527-9EC2-C018D25C157B}.Debug|Win32.ActiveCfg = Debug|Win32
-		{CB3183A6-2548-4527-9EC2-C018D25C157B}.Debug|Win32.Build.0 = Debug|Win32
-		{CB3183A6-2548-4527-9EC2-C018D25C157B}.Debug|x64.ActiveCfg = Debug|x64
-		{CB3183A6-2548-4527-9EC2-C018D25C157B}.Debug|x64.Build.0 = Debug|x64
-		{CB3183A6-2548-4527-9EC2-C018D25C157B}.Release|Win32.ActiveCfg = Release|Win32
-		{CB3183A6-2548-4527-9EC2-C018D25C157B}.Release|Win32.Build.0 = Release|Win32
-		{CB3183A6-2548-4527-9EC2-C018D25C157B}.Release|x64.ActiveCfg = Release|x64
-		{CB3183A6-2548-4527-9EC2-C018D25C157B}.Release|x64.Build.0 = Release|x64
+		{E6A97D4F-3EB0-48ED-979D-02BCCE698745}.Debug|Win32.ActiveCfg = Debug|Win32
+		{E6A97D4F-3EB0-48ED-979D-02BCCE698745}.Debug|Win32.Build.0 = Debug|Win32
+		{E6A97D4F-3EB0-48ED-979D-02BCCE698745}.Debug|x64.ActiveCfg = Debug|x64
+		{E6A97D4F-3EB0-48ED-979D-02BCCE698745}.Debug|x64.Build.0 = Debug|x64
+		{E6A97D4F-3EB0-48ED-979D-02BCCE698745}.Release|Win32.ActiveCfg = Release|Win32
+		{E6A97D4F-3EB0-48ED-979D-02BCCE698745}.Release|Win32.Build.0 = Release|Win32
+		{E6A97D4F-3EB0-48ED-979D-02BCCE698745}.Release|x64.ActiveCfg = Release|x64
+		{E6A97D4F-3EB0-48ED-979D-02BCCE698745}.Release|x64.Build.0 = Release|x64
 	EndGlobalSection
 	GlobalSection(SolutionProperties) = preSolution
 		HideSolutionNode = FALSE

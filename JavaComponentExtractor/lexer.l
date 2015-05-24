@@ -93,7 +93,7 @@ Literal         ({Numeric}|{Character}|{String})
 
 {Separator}     {return yytext[0];}
 {Delimiter1}    {return yytext[0];}
-{Dimension}     {return OP_DIM;}
+{Dimension}     {yylval.str = new QString(yytext); return OP_DIM;}
 
 "=="            {return OP_EQ;}
 "<="            {return OP_LE;}
@@ -118,27 +118,27 @@ Literal         ({Numeric}|{Character}|{String})
 ">>="           {return ASS_SHR;}
 ">>>="          {return ASS_SHRR;}
 
-"abstract"      {return ABSTRACT;}
-"public"        {return PUBLIC;}
-"private"       {return PRIVATE;}
-"protected"     {return PROTECTED;}
-"transient"     {return TRANSIENT;}
-"final"         {return FINAL;}
-"volatile"      {return VOLATILE;}
-"native"        {return NATIVE;}
-"static"        {return STATIC;}
-"synchronized"  {return SYNCHRONIZED;}
+"abstract"      {yylval.str = new QString(yytext); return ABSTRACT;}
+"public"        {yylval.str = new QString(yytext); return PUBLIC;}
+"private"       {yylval.str = new QString(yytext); return PRIVATE;}
+"protected"     {yylval.str = new QString(yytext); return PROTECTED;}
+"transient"     {yylval.str = new QString(yytext); return TRANSIENT;}
+"final"         {yylval.str = new QString(yytext); return FINAL;}
+"volatile"      {yylval.str = new QString(yytext); return VOLATILE;}
+"native"        {yylval.str = new QString(yytext); return NATIVE;}
+"static"        {yylval.str = new QString(yytext); return STATIC;}
+"synchronized"  {yylval.str = new QString(yytext); return SYNCHRONIZED;}
 
-"boolean"       {return YYBOOLEAN;}
-"double"        {return YYDOUBLE;}
-"byte"          {return YYBYTE;}
-"int"           {return YYINT;}
-"void"          {return YYVOID;}
-"float"         {return YYFLOAT;}
-"long"          {return YYLONG;}
-"short"         {return YYSHORT;}
-"char"          {return YYCHAR;}
-"String"        {return YYSTRING;}
+"boolean"       {yylval.str = new QString(yytext); return YYBOOLEAN;}
+"double"        {yylval.str = new QString(yytext); return YYDOUBLE;}
+"byte"          {yylval.str = new QString(yytext); return YYBYTE;}
+"int"           {yylval.str = new QString(yytext); return YYINT;}
+"void"          {yylval.str = new QString(yytext); return YYVOID;}
+"float"         {yylval.str = new QString(yytext); return YYFLOAT;}
+"long"          {yylval.str = new QString(yytext); return YYLONG;}
+"short"         {yylval.str = new QString(yytext); return YYSHORT;}
+"char"          {yylval.str = new QString(yytext); return YYCHAR;}
+"String"        {yylval.str = new QString(yytext); return YYSTRING;}
 
 "enum"          {return ENUM;}
 "implements"    {return IMPLEMENTS;}
@@ -170,7 +170,7 @@ Literal         ({Numeric}|{Character}|{String})
 "if"            {return IF;}
 "this"          {return THIS;}
 
-{Identifier}    {return IDENTIFIER;}
+{Identifier}    {yylval.str = new QString(yytext); return IDENTIFIER;}
 
 {DecimalNum}    {return LITERAL;}
 {OctalNum}      {return LITERAL;}

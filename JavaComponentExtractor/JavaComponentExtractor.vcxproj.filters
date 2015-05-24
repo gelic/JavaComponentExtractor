@@ -32,6 +32,16 @@
     <Filter Include="Bison&amp;Flex Files\Source Files">
       <UniqueIdentifier>{0345d4eb-61d3-42a3-9b27-87972ee61597}</UniqueIdentifier>
     </Filter>
+    <Filter Include="Generated Files\Debug">
+      <UniqueIdentifier>{583989c3-438c-4c78-a253-4b6226a36a96}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
+    <Filter Include="Generated Files\Release">
+      <UniqueIdentifier>{2eccddea-be1f-44f6-81fa-10e1a62cb1a9}</UniqueIdentifier>
+      <Extensions>cpp;moc</Extensions>
+      <SourceControlFiles>False</SourceControlFiles>
+    </Filter>
   </ItemGroup>
   <ItemGroup>
     <ClCompile Include="main.cpp">

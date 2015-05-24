@@ -1,2 +1,29 @@
 #include "interface.h"
 
+Interface::Interface()
+{
+}
+
+Interface::Interface(const QStringList &modificators, const QString &name, const QStringList &baseInterfaces)
+{
+    this->modificators = modificators;
+    this->name = name;
+    this->baseInterfaces = baseInterfaces;
+}
+
+Interface::Interface(const QStringList &modificators, const QString &name, const QStringList &baseInterfaces, const TextLocation &location)
+{
+    this->modificators = modificators;
+    this->name = name;
+    this->baseInterfaces = baseInterfaces;
+    this->location = location;
+}
+
+bool Interface::operator==(const Interface &interface)
+{
+    return
+        this->modificators == interface.modificators &&
+        this->name == interface.name &&
+        this->baseInterfaces == interface.baseInterfaces &&
+        this->location == interface.location;
+}

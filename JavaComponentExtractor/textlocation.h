@@ -11,11 +11,13 @@ public:
     int lastLine = 0;
     int firstColumn = 0;
     int lastColumn = 0;
-    QString fileName = "";
+    QString fileName;
 
     TextLocation();
     TextLocation(int firstLine, int lastLine, int firstColumn, int lastColumn, const QString &fileName) throw (const QString &);
     TextLocation(int firstLine, int lastLine, int firstColumn, int lastColumn) throw (const QString &);
+
+    bool operator==(const TextLocation &location);
 };
 
 #endif // LOCATION_H

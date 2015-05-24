@@ -1,10 +1,12 @@
-#ifndef TEST_YYPARSE_H
-#define TEST_YYPARSE_H
+#ifndef TEST_YYLEX_H
+#define TEST_YYLEX_H
 
 #include <QObject>
 #include <QtTest>
 #include "../JavaComponentExtractor/lexer.hpp"
 #include "../JavaComponentExtractor/parser.hpp"
+
+extern YYSTYPE yylval;
 
 class Test_Yylex : public QObject
 {
@@ -16,4 +18,4 @@ private slots:
     void test_yyflex();
 };
 
-#endif // TEST_YYPARSE_H
+#endif // TEST_YYLEX_H

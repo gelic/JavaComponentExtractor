@@ -27,3 +27,13 @@ TextLocation::TextLocation(int firstLine, int lastLine, int firstColumn, int las
     this->firstColumn = firstColumn;
     this->lastColumn = lastColumn;
 }
+
+bool TextLocation::operator==(const TextLocation &location)
+{
+    return
+        this->firstLine == location.firstLine &&
+        this->lastLine == location.lastLine &&
+        this->firstColumn == location.firstColumn &&
+        this->lastColumn == location.lastColumn &&
+        this->fileName == location.fileName;
+}
