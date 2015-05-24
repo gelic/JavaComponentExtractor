@@ -150,6 +150,7 @@
     <ClCompile Include="method.cpp" />
     <ClCompile Include="package.cpp" />
     <ClCompile Include="parser.cpp" />
+    <ClCompile Include="stringfuncs.cpp" />
     <ClCompile Include="textlocation.cpp" />
   </ItemGroup>
   <ItemGroup>
@@ -164,6 +165,7 @@
     <ClInclude Include="package.h" />
     <ClInclude Include="parser.hpp" />
     <ClInclude Include="program.h" />
+    <ClInclude Include="stringfuncs.h" />
     <ClInclude Include="textlocation.h" />
     <ClInclude Include="unistd.h" />
   </ItemGroup>

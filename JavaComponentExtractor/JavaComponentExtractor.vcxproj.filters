@@ -80,6 +80,9 @@
     <ClCompile Include="textlocation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="stringfuncs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="component.h">
@@ -119,6 +122,9 @@
       <Filter>Tree Nodes Files\Header Files</Filter>
     </ClInclude>
     <ClInclude Include="textlocation.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="stringfuncs.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>

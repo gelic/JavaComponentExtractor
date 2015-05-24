@@ -36,17 +36,11 @@
     <Filter Include="Tree Nodes Files">
       <UniqueIdentifier>{4a979c42-0f09-4ea3-85a9-287452f89e43}</UniqueIdentifier>
     </Filter>
-    <Filter Include="Tree Nodes Files\Header Files">
-      <UniqueIdentifier>{9d023a29-9a71-4a3b-bb49-16c59dcfc9df}</UniqueIdentifier>
-    </Filter>
     <Filter Include="Tree Nodes Files\Source Files">
       <UniqueIdentifier>{59cdaea3-abf8-4f14-90b4-c54b90cce7ee}</UniqueIdentifier>
     </Filter>
     <Filter Include="Bison&amp;Flex Files">
       <UniqueIdentifier>{35b8666a-4843-429f-bffd-dfaec8ab9f82}</UniqueIdentifier>
-    </Filter>
-    <Filter Include="Bison&amp;Flex Files\Header Files">
-      <UniqueIdentifier>{731aae71-fc92-4a63-9c59-20bc7bb96637}</UniqueIdentifier>
     </Filter>
     <Filter Include="Bison&amp;Flex Files\Source Files">
       <UniqueIdentifier>{b32fe35f-a384-467f-895b-4b417f62a7b4}</UniqueIdentifier>
@@ -116,6 +110,18 @@
     <ClCompile Include="..\JavaComponentExtractor\textlocation.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_test_stringfuncs.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_test_stringfuncs.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="test_stringfuncs.cpp">
+      <Filter>Tests\Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\stringfuncs.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="test_yyparse.h">
@@ -127,46 +133,8 @@
     <CustomBuild Include="test_yylex.h">
       <Filter>Tests\Header Files</Filter>
     </CustomBuild>
-  </ItemGroup>
-  <ItemGroup>
-    <ClInclude Include="..\JavaComponentExtractor\component.h">
-      <Filter>Tree Nodes Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\class.h">
-      <Filter>Tree Nodes Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\enum.h">
-      <Filter>Tree Nodes Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\field.h">
-      <Filter>Tree Nodes Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\import.h">
-      <Filter>Tree Nodes Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\interface.h">
-      <Filter>Tree Nodes Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\method.h">
-      <Filter>Tree Nodes Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\package.h">
-      <Filter>Tree Nodes Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\program.h">
-      <Filter>Tree Nodes Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\lexer.hpp">
-      <Filter>Bison&amp;Flex Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\parser.hpp">
-      <Filter>Bison&amp;Flex Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\unistd.h">
-      <Filter>Bison&amp;Flex Files\Header Files</Filter>
-    </ClInclude>
-    <ClInclude Include="..\JavaComponentExtractor\textlocation.h">
-      <Filter>Header Files</Filter>
-    </ClInclude>
+    <CustomBuild Include="test_stringfuncs.h">
+      <Filter>Tests\Header Files</Filter>
+    </CustomBuild>
   </ItemGroup>
 </Project>
