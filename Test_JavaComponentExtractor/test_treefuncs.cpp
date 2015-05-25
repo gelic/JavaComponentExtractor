@@ -183,3 +183,42 @@ void Test_TreeFuncs::test_findParentsToInterfaces()
     QVERIFY2(classes == expectedClasses, "Classes are not equal");
     QVERIFY2(interfaces == expectedInterfaces, "Interfaces are not equal");
 }
+
+void Test_TreeFuncs::test_findParentsToClasses_data()
+{
+    QTest::addColumn<QList<Class>>("classes");
+    QTest::addColumn<QList<Class>>("expectedClasses");
+
+    QTest::newRow("Class hasn`t nested class")
+        << QList<Class>{Class(TextLocation(1, 5, 1, 1)), Class(TextLocation(6, 8, 1, 1))}
+        << QList<Class>{Class(TextLocation(1, 5, 1, 1)), Class(TextLocation(6, 8, 1, 1))};
+
+    QTest::newRow("Class hasn`t nested class, they are both on the same line")
+        << QList<Class>{Class(TextLocation(1, 1, 1, 2)), Class(TextLocation(1, 1, 3, 4))}
+        << QList<Class>{Class(TextLocation(1, 1, 1, 2)), Class(TextLocation(1, 1, 3, 4))};
+
+    QTest::newRow("The first class has nested class")
+        << QList<Class>{Class(TextLocation(1, 10, 1, 1)), Class(TextLocation(2, 3, 1, 1))}
+        << QList<Class>{Class(QList<Class>{Class(TextLocation(2, 3, 1, 1))}, TextLocation(1, 10, 1, 1))};
+
+    QTest::newRow("The first class has nested class, they are both on the same line")
+        << QList<Class>{Class(TextLocation(1, 1, 1, 100)), Class(TextLocation(1, 1, 2, 3))}
+        << QList<Class>{Class(QList<Class>{Class(TextLocation(1, 1, 2, 3))}, TextLocation(1, 1, 1, 100))};
+
+    QTest::newRow("The second class has nested class")
+        << QList<Class>{Class(TextLocation(2, 3, 1, 1)), Class(TextLocation(1, 10, 1, 1))}
+        << QList<Class>{Class(QList<Class>{Class(TextLocation(2, 3, 1, 1))}, TextLocation(1, 10, 1, 1))};
+
+    QTest::newRow("The second class has nested class, they are both on the same line")
+        << QList<Class>{Class(TextLocation(1, 1, 2, 3)), Class(TextLocation(1, 1, 1, 100))}
+        << QList<Class>{Class(QList<Class>{Class(TextLocation(1, 1, 2, 3))}, TextLocation(1, 1, 1, 100))};
+}
+
+void Test_TreeFuncs::test_findParentsToClasses()
+{
+    QFETCH(QList<Class>, classes);
+    QFETCH(QList<Class>, expectedClasses);
+
+    findParentsToClasses(classes);
+    QVERIFY2(classes == expectedClasses, "Classes are not equal");
+}

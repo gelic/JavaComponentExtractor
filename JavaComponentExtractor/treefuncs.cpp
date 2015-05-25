@@ -151,3 +151,92 @@ void findParentsToInterfaces(QList<Class> &classes, QList<Interface> &interfaces
         delete[] parents;
     }
 }
+
+void findParentsToClasses(QList<Class> &classes)
+{
+    int classesSize = classes.size();
+
+    // classes` size is more than one
+    if (classesSize > 1)
+    {
+        Class **parents = new Class *[classesSize]{};
+
+        // find classes` parents
+        for (int i = 0; i < classesSize; ++i)
+        {
+            int minDiffFirstLines = 0;
+            int minDiffLastLines = 0;
+            int minDiffFirstColumns = 0;
+            int minDiffLastColumns = 0;
+            bool isMinimumSet = false;
+
+            if (i != 0)
+            {
+                minDiffFirstLines = abs(classes[i].location.firstLine - classes[0].location.firstLine);
+                minDiffLastLines = abs(classes[i].location.lastLine - classes[0].location.lastLine);
+                minDiffFirstColumns = abs(classes[i].location.firstColumn - classes[0].location.firstColumn);
+                minDiffLastColumns = abs(classes[i].location.lastColumn - classes[0].location.lastColumn);
+            }
+            else
+            {
+                minDiffFirstLines = abs(classes[i].location.firstLine - classes[1].location.firstLine);
+                minDiffLastLines = abs(classes[i].location.lastLine - classes[1].location.lastLine);
+                minDiffFirstColumns = abs(classes[i].location.firstColumn - classes[1].location.firstColumn);
+                minDiffLastColumns = abs(classes[i].location.lastColumn - classes[1].location.lastColumn);
+            }
+
+            for (int j = 0; j < classesSize; ++j)
+            {
+                // class is nested into class
+                if (classes[i].isNested(classes[j]))
+                {
+                    int diffFirstLines = abs(classes[i].location.firstLine - classes[j].location.firstLine);
+                    int diffLastLines = abs(classes[i].location.lastLine - classes[j].location.lastLine);
+                    int diffFirstColumns = abs(classes[i].location.firstColumn - classes[j].location.firstColumn);
+                    int diffLastColumns = abs(classes[i].location.lastColumn - classes[j].location.lastColumn);
+
+                    // difference less than minimum
+                    if (!isMinimumSet ||
+                        diffFirstLines < minDiffFirstLines && diffLastLines < minDiffLastLines ||
+                        diffFirstLines <= minDiffFirstLines && diffLastLines <= minDiffLastLines && diffFirstColumns < minDiffFirstColumns && diffLastColumns < minDiffLastColumns)
+                    {
+                        isMinimumSet = true;
+                        parents[i] = &classes[j];
+
+                        // set minimum to current differences
+                        minDiffFirstLines = diffFirstLines;
+                        minDiffLastLines = diffLastLines;
+                        minDiffFirstColumns = diffFirstColumns;
+                        minDiffLastColumns = diffLastColumns;
+                    }
+                }
+            }
+        }
+
+        // insert nested classes to their parents
+        for (int i = 0; i < classesSize; ++i)
+        {
+            if (parents[i] != nullptr)
+            {
+                for (int j = 0; j < classesSize; ++j)
+                {
+                    if (&classes[j] == parents[i])
+                    {
+                        classes[j].nestedClasses << classes[i];
+                    }
+                }
+            }
+        }
+
+        // delete classes, which have parents
+        for (int i = 0; i < classesSize; ++i)
+        {
+            if (parents[i] != nullptr)
+            {
+                classes.removeAt(i);
+            }
+        }
+
+        delete[] parents;
+    }
+}

@@ -9,6 +9,12 @@ Class::Class(const TextLocation &location)
     this->location = location;
 }
 
+Class::Class(const QList<Class> &nestedClasses, const TextLocation &location)
+{
+    *this = Class::Class(location);
+    this->nestedClasses = nestedClasses;
+}
+
 Class::Class(const QList<Enum> &enums, const TextLocation &location)
 {
     *this = Class::Class(location);

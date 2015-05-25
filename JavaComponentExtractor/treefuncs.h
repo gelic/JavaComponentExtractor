@@ -20,4 +20,10 @@ void findParentsToEnums( QList<Class> &classes, QList<Enum> &enums );
 */
 void findParentsToInterfaces(QList<Class> &classes, QList<Interface> &interfaces);
 
+/*!
+* Найти родителей классов среди классов и переместить их в них
+*\param[in,out] classes - список классов
+*/
+void findParentsToClasses(QList<Class> &classes);
+
 #endif // TREENODES_H

@@ -16,6 +16,9 @@ private slots:
 
     void test_findParentsToInterfaces_data();
     void test_findParentsToInterfaces();
+
+    void test_findParentsToClasses_data();
+    void test_findParentsToClasses();
 };
 
 #endif // TESTTREEFUNCS_H
