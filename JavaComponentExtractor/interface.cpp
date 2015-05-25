@@ -4,6 +4,11 @@ Interface::Interface()
 {
 }
 
+Interface::Interface(const TextLocation &location)
+{
+    this->location = location;
+}
+
 Interface::Interface(const QStringList &modificators, const QString &name, const QStringList &baseInterfaces)
 {
     this->modificators = modificators;

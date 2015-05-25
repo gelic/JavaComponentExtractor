@@ -15,6 +15,12 @@ Class::Class(const QList<Enum> &enums, const TextLocation &location)
     this->location = location;
 }
 
+Class::Class(const QList<Interface> &interfaces, const TextLocation &location)
+{
+    this->nestedInterfaces = interfaces;
+    this->location = location;
+}
+
 Class::Class(const QStringList &modificators, const QString &name, const QStringList &baseClasses, const QStringList &implementedInterfaces)
 {
     this->modificators = modificators;

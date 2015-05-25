@@ -13,6 +13,9 @@ class Test_TreeFuncs : public QObject
 private slots:
     void test_findParentsToEnums_data();
     void test_findParentsToEnums();
+
+    void test_findParentsToInterfaces_data();
+    void test_findParentsToInterfaces();
 };
 
 #endif // TESTTREEFUNCS_H
