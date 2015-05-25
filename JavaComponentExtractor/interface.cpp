@@ -18,9 +18,7 @@ Interface::Interface(const QStringList &modificators, const QString &name, const
 
 Interface::Interface(const QStringList &modificators, const QString &name, const QStringList &baseInterfaces, const TextLocation &location)
 {
-    this->modificators = modificators;
-    this->name = name;
-    this->baseInterfaces = baseInterfaces;
+    *this = Interface::Interface(modificators, name, baseInterfaces);
     this->location = location;
 }
 

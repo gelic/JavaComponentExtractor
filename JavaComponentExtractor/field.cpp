@@ -13,9 +13,7 @@ Field::Field(const QStringList &modificators, const QString &type, const QString
 
 Field::Field(const QStringList &modificators, const QString &type, const QString &name, const TextLocation &location)
 {
-    this->modificators = modificators;
-    this->type = type;
-    this->name = name;
+    *this = Field::Field(modificators, type, name);
     this->location = location;
 }
 

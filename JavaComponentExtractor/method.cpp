@@ -15,11 +15,7 @@ Method::Method(const QStringList &modificators, const QString &returnValue, cons
 
 Method::Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions, const TextLocation &location)
 {
-    this->modificators = modificators;
-    this->returnValue = returnValue;
-    this->name = name;
-    this->params = params;
-    this->threwExceptions = threwExceptions;
+    *this = Method::Method(modificators, returnValue, name, params, threwExceptions);
     this->location = location;
 }
 

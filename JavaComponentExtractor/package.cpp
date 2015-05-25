@@ -11,7 +11,7 @@ Package::Package(const QString &packageName)
 
 Package::Package(const QString &packageName, const TextLocation &location)
 {
-    this->packageName = packageName;
+    *this = Package::Package(packageName);
     this->location = location;
 }
 

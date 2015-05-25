@@ -17,16 +17,13 @@ Enum::Enum(const QStringList &modificators, const QString &name)
 
 Enum::Enum(const QStringList &modificators, const QString &name, const QStringList &enumList)
 {
-    this->modificators = modificators;
-    this->name = name;
+    *this = Enum::Enum(modificators, name);
     this->enumList = enumList;
 }
 
 Enum::Enum(const QStringList &modificators, const QString &name, const QStringList &enumList, const TextLocation &location)
 {
-    this->modificators = modificators;
-    this->name = name;
-    this->enumList = enumList;
+    *this = Enum::Enum(modificators, name, enumList);
     this->location = location;
 }
 

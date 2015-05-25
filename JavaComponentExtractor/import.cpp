@@ -12,8 +12,7 @@ Import::Import(const QString &importedClass, bool isStatic)
 
 Import::Import(const QString &importedClass, bool isStatic, const TextLocation &location)
 {
-    this->importedClass = importedClass;
-    this->isStatic = isStatic;
+    *this = Import::Import(importedClass, isStatic);
     this->location = location;
 }
 
