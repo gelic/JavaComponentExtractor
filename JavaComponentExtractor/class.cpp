@@ -33,6 +33,12 @@ Class::Class(const QList<Field> &fields, const TextLocation &location)
     this->location = location;
 }
 
+Class::Class(const QList<Method> &methods, const TextLocation &location)
+{
+    this->methods = methods;
+    this->location = location;
+}
+
 Class::Class(const QStringList &modificators, const QString &name, const QStringList &baseClasses, const QStringList &implementedInterfaces)
 {
     this->modificators = modificators;

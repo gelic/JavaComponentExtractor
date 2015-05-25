@@ -9,10 +9,16 @@ Interface::Interface(const TextLocation &location)
     this->location = location;
 }
 
-Interface::Interface(const QList<Field> fields, const TextLocation &location)
+Interface::Interface(const QList<Field> &fields, const TextLocation &location)
 {
     *this = Interface::Interface(location);
     this->fields = fields;
+}
+
+Interface::Interface(const QList<Method> &methods, const TextLocation &location)
+{
+    *this = Interface::Interface(location);
+    this->methods = methods;
 }
 
 Interface::Interface(const QStringList &modificators, const QString &name, const QStringList &baseInterfaces)

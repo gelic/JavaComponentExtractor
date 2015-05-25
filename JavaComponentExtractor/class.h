@@ -28,6 +28,7 @@ public:
     Class(const QList<Enum> &enums, const TextLocation &location);
     Class(const QList<Interface> &interfaces, const TextLocation &location);
     Class(const QList<Field> &fields, const TextLocation &location);
+    Class(const QList<Method> &methods, const TextLocation &location);
     Class(const QStringList &modificators, const QString &name, const QStringList &baseClasses, const QStringList &implementedInterfaces);
     Class(const QStringList &modificators, const QString &name, const QStringList &baseClasses, const QStringList &implementedInterfaces, const TextLocation &location);
 

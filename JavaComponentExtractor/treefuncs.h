@@ -34,4 +34,12 @@ void findParentsToClasses(QList<Class> &classes);
 */
 void findParentsToFields(QList<Class> &classes, QList<Interface> &interfaces, QList<Field> &fields);
 
+/*!
+* Ќайти родителей методов среди классов и интерфейсов и переместить их в них
+*\param[in,out] classes - список классов
+*\param[in,out] interfaces - список интерфейсов
+*\param[in,out] methods - список методов
+*/
+void findParentsToMethods(QList<Class> &classes, QList<Interface> &interfaces, QList<Method> &methods);
+
 #endif // TREENODES_H

@@ -4,6 +4,11 @@ Method::Method()
 {
 }
 
+Method::Method(const TextLocation &location)
+{
+    this->location = location;
+}
+
 Method::Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions)
 {
     this->modificators = modificators;

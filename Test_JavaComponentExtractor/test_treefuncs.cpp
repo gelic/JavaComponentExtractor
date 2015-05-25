@@ -279,3 +279,60 @@ void Test_TreeFuncs::test_findParentsToFields()
     QVERIFY2(interfaces == expectedInterfaces, "Interfaces are not equal");
     QVERIFY2(fields == expectedFields, "Fields are not equal");
 }
+
+void Test_TreeFuncs::test_findParentsToMethods_data()
+{
+    QTest::addColumn<QList<Class>>("classes");
+    QTest::addColumn<QList<Class>>("expectedClasses");
+    QTest::addColumn<QList<Interface>>("interfaces");
+    QTest::addColumn<QList<Interface>>("expectedInterfaces");
+    QTest::addColumn<QList<Method>>("methods");
+    QTest::addColumn<QList<Method>>("expectedMethods");
+
+    QTest::newRow("Class and interface haven`t nested field")
+        << QList<Class>{Class(TextLocation(1, 2, 3, 4))}
+        << QList<Class>{Class(TextLocation(1, 2, 3, 4))}
+        << QList<Interface>{Interface(TextLocation(3, 4, 5, 6))}
+        << QList<Interface>{Interface(TextLocation(3, 4, 5, 6))}
+        << QList<Method>{Method(TextLocation(5, 6, 7, 8))}
+        << QList<Method>{Method(TextLocation(5, 6, 7, 8))};
+
+    QTest::newRow("Class has nested method and interface hasn`t")
+        << QList<Class>{Class(TextLocation(1, 20, 3, 4))}
+        << QList<Class>{Class(QList<Method>{Method(TextLocation(5, 6, 7, 8))}, TextLocation(1, 20, 3, 4))}
+        << QList<Interface>{Interface(TextLocation(3, 4, 5, 6))}
+        << QList<Interface>{Interface(TextLocation(3, 4, 5, 6))}
+        << QList<Method>{Method(TextLocation(5, 6, 7, 8))}
+        << QList<Method>{};
+
+    QTest::newRow("Class has nested method and interface has nested Method")
+        << QList<Class>{Class(TextLocation(1, 20, 3, 4))}
+        << QList<Class>{Class(QList<Method>{Method(TextLocation(5, 6, 7, 8))}, TextLocation(1, 20, 3, 4))}
+        << QList<Interface>{Interface(TextLocation(30, 40, 5, 6))}
+        << QList<Interface>{Interface(QList<Method>{Method(TextLocation(31, 32, 7, 8))}, TextLocation(30, 40, 5, 6))}
+        << QList<Method>{Method(TextLocation(5, 6, 7, 8)), Method(TextLocation(31, 32, 7, 8))}
+        << QList<Method>{};
+
+    QTest::newRow("Class has nested method and interface has nested Method, they are all on the same line")
+        << QList<Class>{Class(TextLocation(1, 1, 1, 20))}
+        << QList<Class>{Class(QList<Method>{Method(TextLocation(1, 1, 7, 8))}, TextLocation(1, 1, 1, 20))}
+        << QList<Interface>{Interface(TextLocation(1, 1, 21, 30))}
+        << QList<Interface>{Interface(QList<Method>{Method(TextLocation(1, 1, 25, 26))}, TextLocation(1, 1, 21, 30))}
+        << QList<Method>{Method(TextLocation(1, 1, 7, 8)), Method(TextLocation(1, 1, 25, 26))}
+        << QList<Method>{};
+}
+
+void Test_TreeFuncs::test_findParentsToMethods()
+{
+    QFETCH(QList<Class>, classes);
+    QFETCH(QList<Class>, expectedClasses);
+    QFETCH(QList<Interface>, interfaces);
+    QFETCH(QList<Interface>, expectedInterfaces);
+    QFETCH(QList<Method>, methods);
+    QFETCH(QList<Method>, expectedMethods);
+
+    findParentsToMethods(classes, interfaces, methods);
+    QVERIFY2(classes == expectedClasses, "Classes are not equal");
+    QVERIFY2(interfaces == expectedInterfaces, "Interfaces are not equal");
+    QVERIFY2(methods == expectedMethods, "Methods are not equal");
+}

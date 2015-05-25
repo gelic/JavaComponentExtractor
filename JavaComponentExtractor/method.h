@@ -28,6 +28,7 @@ public:
     QStringList threwExceptions;
 
     Method();
+    Method(const TextLocation &location);
     Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions);
     Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions, const TextLocation &location);
 
