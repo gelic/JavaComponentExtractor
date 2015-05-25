@@ -222,3 +222,60 @@ void Test_TreeFuncs::test_findParentsToClasses()
     findParentsToClasses(classes);
     QVERIFY2(classes == expectedClasses, "Classes are not equal");
 }
+
+void Test_TreeFuncs::test_findParentsToFields_data()
+{
+    QTest::addColumn<QList<Class>>("classes");
+    QTest::addColumn<QList<Class>>("expectedClasses");
+    QTest::addColumn<QList<Interface>>("interfaces");
+    QTest::addColumn<QList<Interface>>("expectedInterfaces");
+    QTest::addColumn<QList<Field>>("fields");
+    QTest::addColumn<QList<Field>>("expectedFields");
+
+    QTest::newRow("Class and interface haven`t nested field")
+        << QList<Class>{Class(TextLocation(1, 2, 3, 4))}
+        << QList<Class>{Class(TextLocation(1, 2, 3, 4))}
+        << QList<Interface>{Interface(TextLocation(3, 4, 5, 6))}
+        << QList<Interface>{Interface(TextLocation(3, 4, 5, 6))}
+        << QList<Field>{Field(TextLocation(5, 6, 7, 8))}
+        << QList<Field>{Field(TextLocation(5, 6, 7, 8))};
+
+    QTest::newRow("Class has nested field and interface hasn`t")
+        << QList<Class>{Class(TextLocation(1, 20, 3, 4))}
+        << QList<Class>{Class(QList<Field>{Field(TextLocation(5, 6, 7, 8))}, TextLocation(1, 20, 3, 4))}
+        << QList<Interface>{Interface(TextLocation(3, 4, 5, 6))}
+        << QList<Interface>{Interface(TextLocation(3, 4, 5, 6))}
+        << QList<Field>{Field(TextLocation(5, 6, 7, 8))}
+        << QList<Field>{};
+
+    QTest::newRow("Class has nested field and interface has nested field")
+        << QList<Class>{Class(TextLocation(1, 20, 3, 4))}
+        << QList<Class>{Class(QList<Field>{Field(TextLocation(5, 6, 7, 8))}, TextLocation(1, 20, 3, 4))}
+        << QList<Interface>{Interface(TextLocation(30, 40, 5, 6))}
+        << QList<Interface>{Interface(QList<Field>{Field(TextLocation(31, 32, 7, 8))}, TextLocation(30, 40, 5, 6))}
+        << QList<Field>{Field(TextLocation(5, 6, 7, 8)), Field(TextLocation(31, 32, 7, 8))}
+        << QList<Field>{};
+
+    QTest::newRow("Class has nested field and interface has nested field, they are all on the same line")
+        << QList<Class>{Class(TextLocation(1, 1, 1, 20))}
+        << QList<Class>{Class(QList<Field>{Field(TextLocation(1, 1, 7, 8))}, TextLocation(1, 1, 1, 20))}
+        << QList<Interface>{Interface(TextLocation(1, 1, 21, 30))}
+        << QList<Interface>{Interface(QList<Field>{Field(TextLocation(1, 1, 25, 26))}, TextLocation(1, 1, 21, 30))}
+        << QList<Field>{Field(TextLocation(1, 1, 7, 8)), Field(TextLocation(1, 1, 25, 26))}
+        << QList<Field>{};
+}
+
+void Test_TreeFuncs::test_findParentsToFields()
+{
+    QFETCH(QList<Class>, classes);
+    QFETCH(QList<Class>, expectedClasses);
+    QFETCH(QList<Interface>, interfaces);
+    QFETCH(QList<Interface>, expectedInterfaces);
+    QFETCH(QList<Field>, fields);
+    QFETCH(QList<Field>, expectedFields);
+
+    findParentsToFields(classes, interfaces, fields);
+    QVERIFY2(classes == expectedClasses, "Classes are not equal");
+    QVERIFY2(interfaces == expectedInterfaces, "Interfaces are not equal");
+    QVERIFY2(fields == expectedFields, "Fields are not equal");
+}

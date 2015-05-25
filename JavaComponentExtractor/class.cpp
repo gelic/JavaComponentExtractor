@@ -27,6 +27,12 @@ Class::Class(const QList<Interface> &interfaces, const TextLocation &location)
     this->nestedInterfaces = interfaces;
 }
 
+Class::Class(const QList<Field> &fields, const TextLocation &location)
+{
+    this->fields = fields;
+    this->location = location;
+}
+
 Class::Class(const QStringList &modificators, const QString &name, const QStringList &baseClasses, const QStringList &implementedInterfaces)
 {
     this->modificators = modificators;
@@ -40,6 +46,7 @@ Class::Class(const QStringList &modificators, const QString &name, const QString
     *this = Class::Class(modificators, name, baseClasses, implementedInterfaces);
     this->location = location;
 }
+
 
 bool Class::operator==(const Class &classToCompare)
 {

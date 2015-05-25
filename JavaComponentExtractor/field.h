@@ -13,6 +13,7 @@ public:
     QString name;
 
     Field();
+    Field(const TextLocation &location);
     Field(const QStringList &modificators, const QString &type, const QString &name);
     Field(const QStringList &modificators, const QString &type, const QString &name, const TextLocation &location);
 

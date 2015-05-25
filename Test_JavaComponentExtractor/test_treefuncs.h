@@ -19,6 +19,9 @@ private slots:
 
     void test_findParentsToClasses_data();
     void test_findParentsToClasses();
+
+    void test_findParentsToFields_data();
+    void test_findParentsToFields();
 };
 
 #endif // TESTTREEFUNCS_H

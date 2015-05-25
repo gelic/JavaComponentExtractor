@@ -18,6 +18,7 @@ public:
 
     Interface();
     Interface(const TextLocation &location);
+    Interface(const QList<Field> fields, const TextLocation &location);
     Interface(const QStringList &modificators, const QString &name, const QStringList &baseInterfaces);
     Interface(const QStringList &modificators, const QString &name, const QStringList &baseInterfaces, const TextLocation &location);
 

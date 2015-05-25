@@ -240,3 +240,111 @@ void findParentsToClasses(QList<Class> &classes)
         delete[] parents;
     }
 }
+
+void findParentsToFields(QList<Class> &classes, QList<Interface> &interfaces, QList<Field> &fields)
+{
+    int classesSize = classes.size();
+    int interfacesSize = interfaces.size();
+    int fieldsSize = fields.size();
+
+    // fields and classes or interfaces aren`t empty
+    if (fieldsSize > 0 && (classesSize > 0 || interfacesSize > 0))
+    {
+        Component **parents = new Component *[fieldsSize]{};
+        int minDiffFirstLines = 0;
+        int minDiffLastLines = 0;
+        int minDiffFirstColumns = 0;
+        int minDiffLastColumns = 0;
+        bool isMinimumSet = false;
+
+        // find fields` parents among classes and interfaces
+        for (int i = 0; i < fieldsSize; ++i)
+        {
+            // find field`s parents among classes
+            for (int j = 0; j < classesSize; ++j)
+            {
+                // field is nested into class
+                if (fields[i].isNested(classes[j]))
+                {
+                    int diffFirstLines = abs(fields[i].location.firstLine - classes[j].location.firstLine);
+                    int diffLastLines = abs(fields[i].location.lastLine - classes[j].location.lastLine);
+                    int diffFirstColumns = abs(fields[i].location.firstColumn - classes[j].location.firstColumn);
+                    int diffLastColumns = abs(fields[i].location.lastColumn - classes[j].location.lastColumn);
+
+                    // difference less than minimum
+                    if (!isMinimumSet ||
+                        diffFirstLines < minDiffFirstLines && diffLastLines < minDiffLastLines ||
+                        diffFirstLines <= minDiffFirstLines && diffLastLines <= minDiffLastLines && diffFirstColumns < minDiffFirstColumns && diffLastColumns < minDiffLastColumns)
+                    {
+                        isMinimumSet = true;
+                        parents[i] = &classes[j];
+
+                        // set minimum to current differences
+                        minDiffFirstLines = diffFirstLines;
+                        minDiffLastLines = diffLastLines;
+                        minDiffFirstColumns = diffFirstColumns;
+                        minDiffLastColumns = diffLastColumns;
+                    }
+                }
+            }
+
+            // find field`s parent among interfaces
+            for (int j = 0; j < interfacesSize; ++j)
+            {
+                // field is nested into interface
+                if (fields[i].isNested(interfaces[j]))
+                {
+                    int diffFirstLines = abs(fields[i].location.firstLine - interfaces[j].location.firstLine);
+                    int diffLastLines = abs(fields[i].location.lastLine - interfaces[j].location.lastLine);
+                    int diffFirstColumns = abs(fields[i].location.firstColumn - interfaces[j].location.firstColumn);
+                    int diffLastColumns = abs(fields[i].location.lastColumn - interfaces[j].location.lastColumn);
+
+                    // difference less than minimum
+                    if (!isMinimumSet ||
+                        diffFirstLines < minDiffFirstLines && diffLastLines < minDiffLastLines ||
+                        diffFirstLines <= minDiffFirstLines && diffLastLines <= minDiffLastLines && diffFirstColumns < minDiffFirstColumns && diffLastColumns < minDiffLastColumns)
+                    {
+                        isMinimumSet = true;
+                        parents[i] = &interfaces[j];
+
+                        // set minimum to current differences
+                        minDiffFirstLines = diffFirstLines;
+                        minDiffLastLines = diffLastLines;
+                        minDiffFirstColumns = diffFirstColumns;
+                        minDiffLastColumns = diffLastColumns;
+                    }
+                }
+            }
+        }
+
+        // insert fields into their parents
+        for (int i = 0; i < fieldsSize; ++i)
+        {
+            if (parents[i] != nullptr)
+            {
+                for (int j = 0; j < classesSize; ++j)
+                {
+                    if (&classes[j] == parents[i])
+                    {
+                        classes[j].fields << fields[i];
+                    }
+                    else if (&interfaces[j] == parents[i])
+                    {
+                        interfaces[j].fields << fields[i];
+                    }
+                }
+            }
+        }
+
+        // delete fields, which have parents
+        for (int i = fieldsSize - 1; i >= 0; --i)
+        {
+            if (parents[i] != nullptr)
+            {
+                fields.removeAt(i);
+            }
+        }
+
+        delete[] parents;
+    }
+}

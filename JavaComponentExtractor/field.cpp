@@ -4,6 +4,11 @@ Field::Field()
 {
 }
 
+Field::Field(const TextLocation &location)
+{
+    this->location = location;
+}
+
 Field::Field(const QStringList &modificators, const QString &type, const QString &name)
 {
     this->modificators = modificators;
