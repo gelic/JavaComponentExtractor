@@ -456,3 +456,45 @@ void findParentsToMethods(QList<Class> &classes, QList<Interface> &interfaces, Q
         delete[] parents;
     }
 }
+
+void getComponentsText(const QString &buffer, Package &package, QList<Import> &imports, QList<Enum> &enums, QList<Interface> &interfaces, QList<Class> &classes, QList<Field> &fields, QList<Method> &methods)
+{
+    int importsSize = imports.size();
+    int enumsSize = enums.size();
+    int interfacesSize = interfaces.size();
+    int classesSize = classes.size();
+    int methodsSize = methods.size();
+    int fieldsSize = fields.size();
+
+    package.text = contentBetweenPositions(buffer, package.location);
+
+    for (int i = 0; i < importsSize; ++i)
+    {
+        imports[i].text = contentBetweenPositions(buffer, imports[i].location);
+    }
+
+    for (int i = 0; i < enumsSize; ++i)
+    {
+        enums[i].text = contentBetweenPositions(buffer, enums[i].location);
+    }
+
+    for (int i = 0; i < interfacesSize; ++i)
+    {
+        interfaces[i].text = contentBetweenPositions(buffer, interfaces[i].location);
+    }
+
+    for (int i = 0; i < classesSize; ++i)
+    {
+        classes[i].text = contentBetweenPositions(buffer, classes[i].location);
+    }
+
+    for (int i = 0; i < methodsSize; ++i)
+    {
+        methods[i].text = contentBetweenPositions(buffer, methods[i].location);
+    }
+
+    for (int i = 0; i < fieldsSize; ++i)
+    {
+        fields[i].text = contentBetweenPositions(buffer, fields[i].location);
+    }
+}

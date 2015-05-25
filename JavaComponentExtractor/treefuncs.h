@@ -42,4 +42,17 @@ void findParentsToFields(QList<Class> &classes, QList<Interface> &interfaces, QL
 */
 void findParentsToMethods(QList<Class> &classes, QList<Interface> &interfaces, QList<Method> &methods);
 
+/*!
+* Записать в компоненты их текст
+*\param[in] buffer - текст программы
+*\param[in,out] package - пакет
+*\param[in,out] imports - импорты
+*\param[in,out] enums - перечисления
+*\param[in,out] interfaces - интерфейсы
+*\param[in,out] classes - классы
+*\param[in,out] fields - поля
+*\param[in,out] methods - методы
+*/
+void getComponentsText(const QString &buffer, Package &package, QList<Import> &imports, QList<Enum> &enums, QList<Interface> &interfaces, QList<Class> &classes, QList<Field> &fields, QList<Method> &methods);
+
 #endif // TREENODES_H
