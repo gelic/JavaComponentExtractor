@@ -25,5 +25,7 @@ bool Interface::operator==(const Interface &interface)
         this->modificators == interface.modificators &&
         this->name == interface.name &&
         this->baseInterfaces == interface.baseInterfaces &&
+        this->fields == interface.fields &&
+        this->methods == interface.methods &&
         this->location == interface.location;
 }

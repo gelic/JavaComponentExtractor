@@ -4,6 +4,11 @@ Enum::Enum()
 {
 }
 
+Enum::Enum(const TextLocation &location)
+{
+    this->location = location;
+}
+
 Enum::Enum(const QStringList &modificators, const QString &name)
 {
     this->modificators = modificators;

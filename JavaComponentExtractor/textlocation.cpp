@@ -4,12 +4,6 @@ TextLocation::TextLocation()
 {
 }
 
-TextLocation::TextLocation(int firstLine, int lastLine, int firstColumn, int lastColumn, const QString &fileName) throw (const QString &)
-{
-    TextLocation(firstLine, lastLine, firstColumn, lastColumn);
-    this->fileName = fileName;
-}
-
 TextLocation::TextLocation(int firstLine, int lastLine, int firstColumn, int lastColumn) throw (const QString &)
 {
     if (firstLine > lastLine || firstLine < 0 || lastLine < 0)
@@ -27,6 +21,13 @@ TextLocation::TextLocation(int firstLine, int lastLine, int firstColumn, int las
     this->firstColumn = firstColumn;
     this->lastColumn = lastColumn;
 }
+
+TextLocation::TextLocation(int firstLine, int lastLine, int firstColumn, int lastColumn, const QString &fileName) throw (const QString &)
+{
+    *this = TextLocation(firstLine, lastLine, firstColumn, lastColumn);
+    this->fileName = fileName;
+}
+
 
 bool TextLocation::operator==(const TextLocation &location)
 {

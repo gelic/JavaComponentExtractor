@@ -5,8 +5,7 @@
 #include <QtTest>
 #include "../JavaComponentExtractor/textlocation.h"
 #include "../JavaComponentExtractor/stringfuncs.h"
-
-Q_DECLARE_METATYPE(TextLocation)
+#include "declarations.h"
 
 class Test_StringFuncs : public QObject
 {

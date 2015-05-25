@@ -4,8 +4,7 @@
 #include <QObject>
 #include <QtTest>
 #include "../JavaComponentExtractor/component.h"
-
-Q_DECLARE_METATYPE(Component)
+#include "declarations.h"
 
 class Test_Component : public QObject
 {

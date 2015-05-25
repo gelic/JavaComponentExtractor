@@ -5,6 +5,7 @@
 #include "test_yylex.h"
 #include "test_yyparse.h"
 #include "test_stringfuncs.h"
+#include "test_treefuncs.h"
 
 int main(int argc, char *argv[])
 {
@@ -14,6 +15,7 @@ int main(int argc, char *argv[])
         QTest::qExec(&Test_Yylex(), argc, argv);
         QTest::qExec(&Test_Yyparse(), argc, argv);
         QTest::qExec(&Test_StringFuncs(), argc, argv);
+        QTest::qExec(&Test_TreeFuncs(), argc, argv);
     }
     catch (const QString &e)
     {

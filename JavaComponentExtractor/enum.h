@@ -13,6 +13,7 @@ public:
     QStringList enumList;
 
     Enum();
+    Enum(const TextLocation &location);
     Enum(const QStringList &modificators, const QString &name);
     Enum(const QStringList &modificators, const QString &name, const QStringList &enumList);
     Enum(const QStringList &modificators, const QString &name, const QStringList &enumList, const TextLocation &location);
