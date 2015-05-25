@@ -14,8 +14,8 @@ public:
     QString fileName;
 
     TextLocation();
-    TextLocation(int firstLine, int lastLine, int firstColumn, int lastColumn) throw (const QString &);
-    TextLocation(int firstLine, int lastLine, int firstColumn, int lastColumn, const QString &fileName) throw (const QString &);
+    TextLocation(int firstLine, int lastLine, int firstColumn, int lastColumn);
+    TextLocation(int firstLine, int lastLine, int firstColumn, int lastColumn, const QString &fileName);
 
     bool operator==(const TextLocation &location);
 };
