@@ -498,3 +498,22 @@ void getComponentsText(const QString &buffer, Package &package, QList<Import> &i
         fields[i].text = contentBetweenPositions(buffer, fields[i].location);
     }
 }
+
+void addComponentsToTree(Program &program, const Package &package, const QList<Import> &imports, QList<Enum> &enums, QList<Interface> &interfaces, QList<Class> &classes, QList<Field> &fields, QList<Method> &methods)
+{
+    findParentsToFields(classes, interfaces, fields);
+    findParentsToMethods(classes, interfaces, methods);
+    findParentsToEnums(classes, enums);
+    findParentsToInterfaces(classes, interfaces);
+    findParentsToClasses(classes);
+
+    program.package = package;
+    program.imports = imports;
+    program.enums = enums;
+    program.interfaces = interfaces;
+    program.classes = classes;
+
+    enums.clear();
+    interfaces.clear();
+    classes.clear();
+}
