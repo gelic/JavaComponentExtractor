@@ -8,7 +8,7 @@ SemanticError::SemanticError(const QString &message, const TextLocation &another
 
 QString SemanticError::toString() const
 {
-    return QString("%1:%2.%3: ").arg(location.fileName).arg(location.firstLine).arg(location.firstColumn) + message;
+    return QString("%2.%3: ").arg(location.firstLine).arg(location.firstColumn) + message;
 }
 
 bool SemanticError::operator==(const SemanticError &error)
