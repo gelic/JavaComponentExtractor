@@ -235,3 +235,40 @@ void writeClasses(QDir outputDir, const QList<Class> &classes, const QString &fo
 
     outputDir.cd("..");
 }
+
+void writeTreeToFiles(const QString &folderName, const Program &program) throw(const QString &)
+{
+    QDir outputDir;
+
+    if (folderName.isEmpty())
+    {
+        throw "Имя директории не может быть пустьм";
+    }
+
+    if (!outputDir.exists(folderName) && !outputDir.mkdir(folderName))
+    {
+        throw "Невозможно создать директорию для выходных файлов";
+    }
+
+    if (!program.package.packageName.isEmpty() || !program.imports.isEmpty())
+    {
+        writePackageNameAndImports("./" + folderName + "/packageNameAndImports.xml", program.package.packageName, program.imports);
+    }
+
+    if (!program.enums.isEmpty())
+    {
+        writeEnums("./" + folderName + "/enums.txt", program.enums);
+    }
+
+    outputDir.cd(folderName);
+
+    if (!program.interfaces.isEmpty())
+    {
+        writeInterfaces(outputDir, program.interfaces, folderName);
+    }
+
+    if (!program.classes.isEmpty())
+    {
+        writeClasses(outputDir, program.classes, folderName);
+    }
+}

@@ -66,4 +66,11 @@ void writeClass(const QString &filePath, const Class &classToWrite) throw(const 
 */
 void writeClasses(QDir outputDir, const QList<Class> &classes, const QString &folderName) throw(const QString &);
 
+/*!
+* Вывести компоненты программы в иерархию папок и файлов
+*\param[in] folderName - название выходной папки
+*\param[in] program - структура, описывающая компоненты программы
+*/
+void writeTreeToFiles(const QString &folderName, const Program &program) throw(const QString &);
+
 #endif // OUTPUT_H
