@@ -134,3 +134,25 @@ void Test_SemanticErrors::test_checkFields()
 
     QVERIFY2(expectedErrors == checkFields(fields), "Test failed");
 }
+
+void Test_SemanticErrors::test_checkMethods_data()
+{
+    QTest::addColumn<QList<Method>>("methods");
+    QTest::addColumn<QList<SemanticError>>("expectedErrors");
+
+    QTest::newRow("Method has no errors")
+        << QList<Method>{Method(QStringList{"public", "static"}, "void", "method", QList<Method::Param>{Method::Param(false, "int", "param")}, QStringList{"Exception"})}
+        << QList<SemanticError>{};
+
+    QTest::newRow("Method has repeating modificator")
+        << QList<Method>{Method(QStringList{"public", "public"}, "void", "method", QList<Method::Param>{Method::Param(false, "int", "param")}, QStringList{"Exception"}, TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{SemanticError("Method has repeating modificator", TextLocation(1, 2, 3, 4))};
+}
+
+void Test_SemanticErrors::test_checkMethods()
+{
+    QFETCH(QList<Method>, methods);
+    QFETCH(QList<SemanticError>, expectedErrors);
+
+    QVERIFY2(expectedErrors == checkMethods(methods), "Test failed");
+}

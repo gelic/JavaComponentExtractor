@@ -42,4 +42,10 @@ QList<SemanticError> checkClasses(const QList<Class> &classes);
 */
 QList<SemanticError> checkFields(const QList<Field> &fields);
 
+/*!
+* Проверить в методах наличие таких семантических ошибок, как дублирующие модификаторы
+*\param[in] methods - список перечислений
+*/
+QList<SemanticError> checkMethods(const QList<Method> &methods);
+
 #endif // SEMANTICERRORS_H
