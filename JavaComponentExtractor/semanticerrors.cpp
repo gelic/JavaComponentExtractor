@@ -44,7 +44,7 @@ void printSemanticErrors(const QList<SemanticError> semanticErrors)
     }
 }
 
-QList<SemanticError> checkEnums(const QList<Enum> &enums)
+QList<SemanticError> checkEnums(const QList<Enum> &enums, QSet<QString> &ids)
 {
     QSet<QString> names;
     QList<SemanticError> errors;
@@ -61,20 +61,20 @@ QList<SemanticError> checkEnums(const QList<Enum> &enums)
             errors << SemanticError("Enum has repeating field", enumToCheck.location);
         }
 
-        if (!names.contains(enumToCheck.name))
+        if (!ids.contains(enumToCheck.name))
         {
-            names.insert(enumToCheck.name);
+            ids.insert(enumToCheck.name);
         }
         else
         {
-            errors << SemanticError("There is enum with non-unique name", enumToCheck.location);
+            errors << SemanticError("Enum with non-unique name", enumToCheck.location);
         }
     }
 
     return errors;
 }
 
-QList<SemanticError> checkClasses(const QList<Class> &classes)
+QList<SemanticError> checkClasses(const QList<Class> &classes, QSet<QString> &ids)
 {
     QList<SemanticError> errors;
 
@@ -94,12 +94,32 @@ QList<SemanticError> checkClasses(const QList<Class> &classes)
         {
             errors << SemanticError("Class has repeating implemented interface", classToCheck.location);
         }
+
+        if (!ids.contains(classToCheck.name))
+        {
+            ids.insert(classToCheck.name);
+        }
+        else
+        {
+            errors << SemanticError("Class with non-unique name", classToCheck.location);
+        }
+
+        QSet<QString> localIds;
+        localIds.insert(classToCheck.name);
+        errors << checkFields(classToCheck.fields, localIds);
+        errors << checkMethods(classToCheck.methods, localIds);
+        errors << checkInterfaces(classToCheck.nestedInterfaces, localIds);
+        if (classToCheck.nestedClasses.size() != 0)
+        {
+            errors << checkClasses(classToCheck.nestedClasses, localIds);
+        }
+        localIds.clear();
     }
 
     return errors;
 }
 
-QList<SemanticError> checkInterfaces(const QList<Interface> &interfaces)
+QList<SemanticError> checkInterfaces(const QList<Interface> &interfaces, QSet<QString> &ids)
 {
     QList<SemanticError> errors;
 
@@ -109,12 +129,27 @@ QList<SemanticError> checkInterfaces(const QList<Interface> &interfaces)
         {
             errors << SemanticError("Interface has repeating modificator", interface.location);
         }
+
+        if (!ids.contains(interface.name))
+        {
+            ids.insert(interface.name);
+        }
+        else
+        {
+            errors << SemanticError("Interface with non-unique name", interface.location);
+        }
+
+        QSet<QString> localIds;
+        localIds.insert(interface.name);
+        errors << checkFields(interface.fields, localIds);
+        errors << checkMethods(interface.methods, localIds);
+        localIds.clear();
     }
 
     return errors;
 }
 
-QList<SemanticError> checkFields(const QList<Field> &fields)
+QList<SemanticError> checkFields(const QList<Field> &fields, QSet<QString> &ids)
 {
     QList<SemanticError> errors;
 
@@ -124,12 +159,21 @@ QList<SemanticError> checkFields(const QList<Field> &fields)
         {
             errors << SemanticError("Field has repeating modificator", field.location);
         }
+
+        if (!ids.contains(field.name))
+        {
+            ids.insert(field.name);
+        }
+        else
+        {
+            errors << SemanticError("Field with non-unique name", field.location);
+        }
     }
 
     return errors;
 }
 
-QList<SemanticError> checkMethods(const QList<Method> &methods)
+QList<SemanticError> checkMethods(const QList<Method> &methods, QSet<QString> &ids)
 {
     QList<SemanticError> errors;
 
@@ -138,6 +182,15 @@ QList<SemanticError> checkMethods(const QList<Method> &methods)
         if (checkDuplicates(method.modificators))
         {
             errors << SemanticError("Method has repeating modificator", method.location);
+        }
+
+        if (!ids.contains(method.name))
+        {
+            ids.insert(method.name);
+        }
+        else
+        {
+            errors << SemanticError("Method with non-unique name", method.location);
         }
     }
 

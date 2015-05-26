@@ -27,31 +27,36 @@ void printSemanticErrors(const QList<SemanticError> semanticErrors);
 /*!
 * ѕроверить в перечислени€х наличие таких семантических ошибок, как дублирующие модификаторы и пол€, а также одинаковые названи€ перечислений
 *\param[in] enums - список перечислений
+*\param[in|out] ids - множество идентификаторов
 */
-QList<SemanticError> checkEnums(const QList<Enum> &enums);
+QList<SemanticError> checkEnums(const QList<Enum> &enums, QSet<QString> &ids);
 
 /*!
 * ѕроверить в классах наличие таких семантических ошибок, как дублирующие модификаторы, базовые классы, реализуемые интерфейсы, наличие компонентов с одинаковым именем в одной области видимости
 *\param[in] classes - список перечислений
+*\param[in|out] ids - множество идентификаторов
 */
-QList<SemanticError> checkClasses(const QList<Class> &classes);
+QList<SemanticError> checkClasses(const QList<Class> &classes, QSet<QString> &ids);
 
 /*!
 * ѕроверить в интерфейсах наличие таких семантических ошибок, как дублирующие модификаторы, наличие компонентов с одинаковым именем в одной области видимости
 *\param[in] interfaces - список перечислений
+*\param[in|out] ids - множество идентификаторов
 */
-QList<SemanticError> checkInterfaces(const QList<Interface> &interfaces);
+QList<SemanticError> checkInterfaces(const QList<Interface> &interfaces, QSet<QString> &ids);
 
 /*!
 * ѕроверить в пол€х наличие таких семантических ошибок, как дублирующие модификаторы
 *\param[in] fields - список перечислений
+*\param[in|out] ids - множество идентификаторов
 */
-QList<SemanticError> checkFields(const QList<Field> &fields);
+QList<SemanticError> checkFields(const QList<Field> &fields, QSet<QString> &ids);
 
 /*!
 * ѕроверить в методах наличие таких семантических ошибок, как дублирующие модификаторы
 *\param[in] methods - список перечислений
+*\param[in|out] ids - множество идентификаторов
 */
-QList<SemanticError> checkMethods(const QList<Method> &methods);
+QList<SemanticError> checkMethods(const QList<Method> &methods, QSet<QString> &ids);
 
 #endif // SEMANTICERRORS_H
