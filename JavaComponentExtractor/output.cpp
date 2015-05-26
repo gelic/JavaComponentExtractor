@@ -130,3 +130,25 @@ void writeInterface(const QString &filePath, const Interface &interfaceToWrite) 
         writeMethods(filePath + "methods.txt", interfaceToWrite.methods);
     }
 }
+
+void writeInterfaces(QDir &outputDir, const QList<Interface> &interfaces, const QString &folderName) throw(const QString &)
+{
+    if (!outputDir.mkdir("Interfaces"))
+    {
+        throw "Невозможно создать папку Classes";
+    }
+
+    outputDir.cd("Interfaces");
+
+    for (auto interface : interfaces)
+    {
+        if (!outputDir.mkdir(interface.name))
+        {
+            throw "Невозможно создать папку для интерфейса: " + interface.name;
+        }
+
+        writeInterface(folderName + "/Interfaces/" + interface.name + "/", interface);
+    }
+
+    outputDir.cd("..");
+}
