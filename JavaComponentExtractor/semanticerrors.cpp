@@ -73,3 +73,28 @@ QList<SemanticError> checkEnums(const QList<Enum> &enums)
 
     return errors;
 }
+
+QList<SemanticError> checkClasses(const QList<Class> &classes)
+{
+    QList<SemanticError> errors;
+
+    for (auto classToCheck : classes)
+    {
+        if (checkDuplicates(classToCheck.modificators))
+        {
+            errors << SemanticError("Class has repeating modificator", classToCheck.location);
+        }
+
+        if (checkDuplicates(classToCheck.baseClasses))
+        {
+            errors << SemanticError("Class has repeating base class", classToCheck.location);
+        }
+
+        if (checkDuplicates(classToCheck.implementedInterfaces))
+        {
+            errors << SemanticError("Class has repeating implemented interface", classToCheck.location);
+        }
+    }
+
+    return errors;
+}

@@ -82,3 +82,33 @@ void Test_SemanticErrors::test_checkEnums()
 
     QVERIFY2(expectedErrors == checkEnums(enums), "Test failed");
 }
+
+void Test_SemanticErrors::test_checkClasses_data()
+{
+    QTest::addColumn<QList<Class>>("classes");
+    QTest::addColumn<QList<SemanticError>>("expectedErrors");
+
+    QTest::newRow("Class has no errors")
+        << QList<Class>{Class(QStringList{"public", "static"}, "MyClass", QStringList{"MyBaseClass1", "MyBaseClass2"}, QStringList{"MyInterface1", "MyInterface2"}, TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{};
+
+    QTest::newRow("Class has repeating modificator")
+        << QList<Class>{Class(QStringList{"public", "public"}, "MyClass", QStringList{"MyBaseClass1", "MyBaseClass2"}, QStringList{"MyInterface1", "MyInterface2"}, TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{SemanticError("Class has repeating modificator", TextLocation(1, 2, 3, 4))};
+
+    QTest::newRow("Class has repeating base class")
+        << QList<Class>{Class(QStringList{"public", "static"}, "MyClass", QStringList{"MyBaseClass1", "MyBaseClass1"}, QStringList{"MyInterface1", "MyInterface2"}, TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{SemanticError("Class has repeating base class", TextLocation(1, 2, 3, 4))};
+
+    QTest::newRow("Class has repeating implemented interface")
+        << QList<Class>{Class(QStringList{"public", "static"}, "MyClass", QStringList{"MyBaseClass1", "MyBaseClass2"}, QStringList{"MyInterface1", "MyInterface1"}, TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{SemanticError("Class has repeating implemented interface", TextLocation(1, 2, 3, 4))};
+}
+
+void Test_SemanticErrors::test_checkClasses()
+{
+    QFETCH(QList<Class>, classes);
+    QFETCH(QList<SemanticError>, expectedErrors);
+
+    QVERIFY2(expectedErrors == checkClasses(classes), "Test failed");
+}

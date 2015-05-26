@@ -30,4 +30,10 @@ void printSemanticErrors(const QList<SemanticError> semanticErrors);
 */
 QList<SemanticError> checkEnums(const QList<Enum> &enums);
 
+/*!
+* ѕроверить в классах наличие таких семантических ошибок, как дублирующие модификаторы, базовые классы, реализуемые интерфейсы, одинаковые названи€ интерфейсов, классов, перечислений, полей и методов
+*\param[in] enums - список перечислений
+*/
+QList<SemanticError> checkClasses(const QList<Class> &classes);
+
 #endif // SEMANTICERRORS_H
