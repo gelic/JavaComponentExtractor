@@ -25,3 +25,12 @@ QList<SemanticError> checkNestedClassesAndInterfacesInEachInterface(const QList<
 
     return errors;
 }
+
+bool checkDuplicates(const QStringList &strList)
+{
+    if (strList.size() != strList.toSet().size())
+    {
+        return true;
+    }
+    return false;
+}

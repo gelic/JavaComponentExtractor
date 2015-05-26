@@ -11,4 +11,11 @@
 */
 QList<SemanticError> checkNestedClassesAndInterfacesInEachInterface(const QList<Interface> &interfaces, const QList<Class> &classes);
 
+/*!
+* Проверить наличие дубликатов
+*\param[in] strList - список строк
+*\return признак наличия дубликата
+*/
+bool checkDuplicates(const QStringList &strList);
+
 #endif // SEMANTICERRORS_H

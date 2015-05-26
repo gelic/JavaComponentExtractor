@@ -30,3 +30,25 @@ void Test_SemanticErrors::test_checkNestedClassesAndInterfacesInEachInterface()
 
     QVERIFY2(expectedErrors == checkNestedClassesAndInterfacesInEachInterface(interfaces, classes), "Test failed");
 }
+
+void Test_SemanticErrors::test_checkDuplicates_data()
+{
+    QTest::addColumn<QStringList>("strings");
+    QTest::addColumn<bool>("expectation");
+
+    QTest::newRow("There are no duplicates")
+        << QStringList{"abc", "def"}
+        << false;
+
+    QTest::newRow("There are duplicates")
+        << QStringList{"abc", "abc"}
+        << true;
+}
+
+void Test_SemanticErrors::test_checkDuplicates()
+{
+    QFETCH(QStringList, strings);
+    QFETCH(bool, expectation);
+
+    QVERIFY2(expectation == checkDuplicates(strings), "Test failed");
+}

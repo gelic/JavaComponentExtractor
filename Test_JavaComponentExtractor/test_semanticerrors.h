@@ -13,6 +13,9 @@ class Test_SemanticErrors : public QObject
 private slots:
     void test_checkNestedClassesAndInterfacesInEachInterface_data();
     void test_checkNestedClassesAndInterfacesInEachInterface();
+
+    void test_checkDuplicates_data();
+    void test_checkDuplicates();
 };
 
 #endif // TEST_SEMANTICERRORS_H
