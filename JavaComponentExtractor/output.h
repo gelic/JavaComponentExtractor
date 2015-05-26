@@ -29,4 +29,11 @@ void writeEnums(const QString &filePath, const QList<Enum> &enums) throw(const Q
 */
 void writeMethods(const QString &filePath, const QList<Method> &methods) throw(const QString &);
 
+/*!
+* Вывести информацию о полях в текстовом формате
+*\param[in] filePath - путь до файла
+*\param[in] fields - список структур, описывающих компонент-поле
+*/
+void writeFields(const QString &filePath, const QList<Field> &fields) throw(const QString &);
+
 #endif // OUTPUT_H

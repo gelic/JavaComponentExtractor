@@ -72,3 +72,20 @@ void writeMethods(const QString &filePath, const QList<Method> &methods) throw (
         out << method.text << endl << endl;
     }
 }
+
+void writeFields(const QString &filePath, const QList<Field> &fields) throw(const QString &)
+{
+    QFile file(filePath);
+
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        throw "Невозможно создать файл для вывода полей";
+    }
+
+    QTextStream out(&file);
+
+    for (auto field : fields)
+    {
+        out << field.text << endl;
+    }
+}
