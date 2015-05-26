@@ -201,3 +201,15 @@ QList<SemanticError> checkSemanticErrorsBeforeTreeWillBeBuilt(const Package &pac
 {
     return checkNestedClassesAndInterfacesInEachInterface(interfaces, classes);
 }
+
+QList<SemanticError> checkSemanticErrorsAfterTreeWasBuilt(const Program &program)
+{
+    QList<SemanticError> errors;
+    QSet<QString> ids;
+
+    errors << checkEnums(program.enums, ids);
+    errors << checkInterfaces(program.interfaces, ids);
+    errors << checkClasses(program.classes, ids);
+
+    return errors;
+}
