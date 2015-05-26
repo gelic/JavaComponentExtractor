@@ -112,3 +112,25 @@ void Test_SemanticErrors::test_checkClasses()
 
     QVERIFY2(expectedErrors == checkClasses(classes), "Test failed");
 }
+
+void Test_SemanticErrors::test_checkFields_data()
+{
+    QTest::addColumn<QList<Field>>("fields");
+    QTest::addColumn<QList<SemanticError>>("expectedErrors");
+
+    QTest::newRow("Field has no errors")
+        << QList<Field>{Field(QStringList{"public", "static"}, "int", "field", TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{};
+
+    QTest::newRow("Field has repeating modificator")
+        << QList<Field>{Field(QStringList{"public", "public"}, "int", "field", TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{SemanticError("Field has repeating modificator", TextLocation(1, 2, 3, 4))};
+}
+
+void Test_SemanticErrors::test_checkFields()
+{
+    QFETCH(QList<Field>, fields);
+    QFETCH(QList<SemanticError>, expectedErrors);
+
+    QVERIFY2(expectedErrors == checkFields(fields), "Test failed");
+}

@@ -98,3 +98,18 @@ QList<SemanticError> checkClasses(const QList<Class> &classes)
 
     return errors;
 }
+
+QList<SemanticError> checkFields(const QList<Field> &fields)
+{
+    QList<SemanticError> errors;
+
+    for (auto field : fields)
+    {
+        if (checkDuplicates(field.modificators))
+        {
+            errors << SemanticError("Field has repeating modificator", field.location);
+        }
+    }
+
+    return errors;
+}

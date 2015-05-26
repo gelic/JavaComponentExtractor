@@ -22,6 +22,9 @@ private slots:
 
     void test_checkClasses_data();
     void test_checkClasses();
+
+    void test_checkFields_data();
+    void test_checkFields();
 };
 
 #endif // TEST_SEMANTICERRORS_H
