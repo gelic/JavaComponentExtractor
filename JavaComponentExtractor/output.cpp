@@ -38,3 +38,20 @@ void writePackageNameAndImports(const QString &filePath, const QString &packageN
     xmlWriter.writeEndElement();
     xmlWriter.writeEndDocument();
 }
+
+void writeEnums(const QString &filePath, const QList<Enum> &enums) throw (const QString &)
+{
+    QFile file(filePath);
+
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        throw "Невозможно создать файл для вывода перечислений";
+    }
+
+    QTextStream out(&file);
+
+    for (auto enumToOut : enums)
+    {
+        out << enumToOut.text << endl << endl;
+    }
+}

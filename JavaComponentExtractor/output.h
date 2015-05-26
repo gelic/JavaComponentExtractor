@@ -15,4 +15,11 @@
 */
 void writePackageNameAndImports(const QString &filePath, const QString &packageName, const QList<Import> &imports) throw(const QString &);
 
+/*!
+* Вывести информацию о перечислениях в текстовом формате
+*\param[in] filePath - путь до файла
+*\param[in] enums - список структур, описывающих компонент-перечисление
+*/
+void writeEnums(const QString &filePath, const QList<Enum> &enums) throw(const QString &);
+
 #endif // OUTPUT_H
