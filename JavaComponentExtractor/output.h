@@ -22,4 +22,11 @@ void writePackageNameAndImports(const QString &filePath, const QString &packageN
 */
 void writeEnums(const QString &filePath, const QList<Enum> &enums) throw(const QString &);
 
+/*!
+* Вывести информацию о методах в текстовом формате
+*\param[in] filePath - путь до файла
+*\param[in] methods - список структур, описывающих компонент-метод
+*/
+void writeMethods(const QString &filePath, const QList<Method> &methods) throw(const QString &);
+
 #endif // OUTPUT_H

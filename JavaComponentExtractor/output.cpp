@@ -55,3 +55,20 @@ void writeEnums(const QString &filePath, const QList<Enum> &enums) throw (const 
         out << enumToOut.text << endl << endl;
     }
 }
+
+void writeMethods(const QString &filePath, const QList<Method> &methods) throw (const QString &)
+{
+    QFile file(filePath);
+
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        throw "Невозможно создать файл для вывода методов";
+    }
+
+    QTextStream out(&file);
+
+    for (auto method : methods)
+    {
+        out << method.text << endl << endl;
+    }
+}
