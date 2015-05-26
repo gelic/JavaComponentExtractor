@@ -113,6 +113,28 @@ void Test_SemanticErrors::test_checkClasses()
     QVERIFY2(expectedErrors == checkClasses(classes), "Test failed");
 }
 
+void Test_SemanticErrors::test_checkInterfaces_data()
+{
+    QTest::addColumn<QList<Interface>>("interfaces");
+    QTest::addColumn<QList<SemanticError>>("expectedErrors");
+
+    QTest::newRow("Interface has no errors")
+        << QList<Interface>{Interface(QStringList{"public", "static"}, "MyInterface", QStringList{"MyBaseInterface"}, TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{};
+
+    QTest::newRow("Interface has repeating modificator")
+        << QList<Interface>{Interface(QStringList{"public", "public"}, "MyInterface", QStringList{"MyBaseInterface"}, TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{SemanticError("Interface has repeating modificator", TextLocation(1, 2, 3, 4))};
+}
+
+void Test_SemanticErrors::test_checkInterfaces()
+{
+    QFETCH(QList<Interface>, interfaces);
+    QFETCH(QList<SemanticError>, expectedErrors);
+
+    QVERIFY2(expectedErrors == checkInterfaces(interfaces), "Test failed");
+}
+
 void Test_SemanticErrors::test_checkFields_data()
 {
     QTest::addColumn<QList<Field>>("fields");

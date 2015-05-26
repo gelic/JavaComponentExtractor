@@ -23,6 +23,9 @@ private slots:
     void test_checkClasses_data();
     void test_checkClasses();
 
+    void test_checkInterfaces_data();
+    void test_checkInterfaces();
+
     void test_checkFields_data();
     void test_checkFields();
 

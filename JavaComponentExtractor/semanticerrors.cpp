@@ -99,6 +99,21 @@ QList<SemanticError> checkClasses(const QList<Class> &classes)
     return errors;
 }
 
+QList<SemanticError> checkInterfaces(const QList<Interface> &interfaces)
+{
+    QList<SemanticError> errors;
+
+    for (auto interface : interfaces)
+    {
+        if (checkDuplicates(interface.modificators))
+        {
+            errors << SemanticError("Interface has repeating modificator", interface.location);
+        }
+    }
+
+    return errors;
+}
+
 QList<SemanticError> checkFields(const QList<Field> &fields)
 {
     QList<SemanticError> errors;
