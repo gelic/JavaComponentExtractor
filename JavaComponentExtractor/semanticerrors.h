@@ -18,4 +18,10 @@ QList<SemanticError> checkNestedClassesAndInterfacesInEachInterface(const QList<
 */
 bool checkDuplicates(const QStringList &strList);
 
+/*!
+* ¬ывести на экран список семантических ошибок
+*\param[in] semanticErrors - список семантических ошибок
+*/
+void printSemanticErrors(const QList<SemanticError> semanticErrors);
+
 #endif // SEMANTICERRORS_H

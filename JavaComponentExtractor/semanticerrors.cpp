@@ -34,3 +34,12 @@ bool checkDuplicates(const QStringList &strList)
     }
     return false;
 }
+
+void printSemanticErrors(const QList<SemanticError> semanticErrors)
+{
+    for (auto semanticError : semanticErrors)
+    {
+        QTextStream out(stderr);
+        out << semanticError.toString();
+    }
+}
