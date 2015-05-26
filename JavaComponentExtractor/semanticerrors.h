@@ -24,4 +24,10 @@ bool checkDuplicates(const QStringList &strList);
 */
 void printSemanticErrors(const QList<SemanticError> semanticErrors);
 
+/*!
+* Проверить в перечислениях наличие таких семантических ошибок, как дублирующие модификаторы и поля, а также одинаковые названия перечислений
+*\param[in] enums - список перечислений
+*/
+QList<SemanticError> checkEnums(const QList<Enum> &enums);
+
 #endif // SEMANTICERRORS_H

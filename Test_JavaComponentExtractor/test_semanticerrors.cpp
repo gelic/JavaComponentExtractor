@@ -52,3 +52,33 @@ void Test_SemanticErrors::test_checkDuplicates()
 
     QVERIFY2(expectation == checkDuplicates(strings), "Test failed");
 }
+
+void Test_SemanticErrors::test_checkEnums_data()
+{
+    QTest::addColumn<QList<Enum>>("enums");
+    QTest::addColumn<QList<SemanticError>>("expectedErrors");
+
+    QTest::newRow("Enum has no errors")
+        << QList<Enum>{Enum(QStringList{"public", "static"}, "MyEnum", QStringList{"RED", "GREEN", "BLUE"}, TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{};
+
+    QTest::newRow("Enum has repeating modificator")
+        << QList<Enum>{Enum(QStringList{"public", "public"}, "MyEnum", QStringList{"RED", "GREEN", "BLUE"}, TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{SemanticError("Enum has repeating modificator", TextLocation(1, 2, 3, 4))};
+
+    QTest::newRow("Enum has repeating field")
+        << QList<Enum>{Enum(QStringList{"public", "static"}, "MyEnum", QStringList{"RED", "RED"}, TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{SemanticError("Enum has repeating field", TextLocation(1, 2, 3, 4))};
+
+    QTest::newRow("Enum with non-unique name")
+        << QList<Enum>{Enum(QStringList(), "MyEnum", QStringList(), TextLocation(1, 2, 3, 4)), Enum(QStringList(), "MyEnum", QStringList(), TextLocation(1, 2, 3, 4))}
+        << QList<SemanticError>{SemanticError("There is enum with non-unique name", TextLocation(1, 2, 3, 4))};
+}
+
+void Test_SemanticErrors::test_checkEnums()
+{
+    QFETCH(QList<Enum>, enums);
+    QFETCH(QList<SemanticError>, expectedErrors);
+
+    QVERIFY2(expectedErrors == checkEnums(enums), "Test failed");
+}

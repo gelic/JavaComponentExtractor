@@ -16,6 +16,9 @@ private slots:
 
     void test_checkDuplicates_data();
     void test_checkDuplicates();
+
+    void test_checkEnums_data();
+    void test_checkEnums();
 };
 
 #endif // TEST_SEMANTICERRORS_H
