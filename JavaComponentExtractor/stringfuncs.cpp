@@ -1,6 +1,6 @@
 #include "stringfuncs.h"
 
-QString contentBetweenPositions( const QString &buffer, const TextLocation &location ) throw ( const char * )
+QString contentBetweenPositions( const QString &buffer, const TextLocation &location ) throw ( const QString & )
 {
     if ( buffer.isEmpty() )
         return QString();
@@ -10,7 +10,7 @@ QString contentBetweenPositions( const QString &buffer, const TextLocation &loca
     QString cap = rx.pattern();
 
     if ( location.firstLine > linesCount + 1 || location.lastLine > linesCount + 1 )
-        throw "Переданы неправильные номера первой и/или последней строк";
+        throw QString("Переданы неправильные номера первой и/или последней строк");
 
     QStringList lines = buffer.split( "\r\n" );
     QString split = "\r\n";
@@ -30,7 +30,7 @@ QString contentBetweenPositions( const QString &buffer, const TextLocation &loca
     int sizeOfEndStr = lines[location.lastLine - 1].length();
 
     if ( location.firstColumn > sizeOfStartStr || location.lastColumn > sizeOfEndStr )
-        throw "Переданы неправильные номера первой и/или последней колонок";
+        throw QString("Переданы неправильные номера первой и/или последней колонок");
 
     lines[location.firstLine - 1] = lines[location.firstLine - 1].right( sizeOfStartStr - location.firstColumn + 1 );
     lines[location.lastLine - 1] = lines[location.lastLine - 1].left( location.lastColumn );

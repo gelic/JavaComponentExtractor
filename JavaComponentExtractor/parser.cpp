@@ -2384,7 +2384,7 @@ yyreduce:
 
   case 20:
 #line 185 "parser.y" /* yacc.c:1646  */
-    {throw "Empty file";}
+    {throw QString("Empty file");}
 #line 2389 "parser.cpp" /* yacc.c:1646  */
     break;
 

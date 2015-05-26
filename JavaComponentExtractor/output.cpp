@@ -6,7 +6,7 @@ void writePackageNameAndImports(const QString &filePath, const QString &packageN
 
     if (!file.open(QIODevice::WriteOnly))
     {
-        throw "Невозможно создать файл для вывода названия пакета и списка импорта";
+        throw QString("Невозможно создать файл для вывода названия пакета и списка импорта");
     }
 
     QXmlStreamWriter xmlWriter;
@@ -45,7 +45,7 @@ void writeEnums(const QString &filePath, const QList<Enum> &enums) throw (const 
 
     if (!file.open(QIODevice::WriteOnly))
     {
-        throw "Невозможно создать файл для вывода перечислений";
+        throw QString("Невозможно создать файл для вывода перечислений");
     }
 
     QTextStream out(&file);
@@ -62,7 +62,7 @@ void writeMethods(const QString &filePath, const QList<Method> &methods) throw (
 
     if (!file.open(QIODevice::WriteOnly))
     {
-        throw "Невозможно создать файл для вывода методов";
+        throw QString("Невозможно создать файл для вывода методов");
     }
 
     QTextStream out(&file);
@@ -79,7 +79,7 @@ void writeFields(const QString &filePath, const QList<Field> &fields) throw(cons
 
     if (!file.open(QIODevice::WriteOnly))
     {
-        throw "Невозможно создать файл для вывода полей";
+        throw QString("Невозможно создать файл для вывода полей");
     }
 
     QTextStream out(&file);
@@ -96,7 +96,7 @@ void writeInterface(const QString &filePath, const Interface &interfaceToWrite) 
 
     if (!file.open(QIODevice::WriteOnly))
     {
-        throw "Невозможно создать файл для вывода интерфейса";
+        throw QString("Невозможно создать файл для вывода интерфейса");
     }
 
     QXmlStreamWriter xmlWriter;
@@ -135,7 +135,7 @@ void writeInterfaces(QDir &outputDir, const QList<Interface> &interfaces, const 
 {
     if (!outputDir.mkdir("Interfaces"))
     {
-        throw "Невозможно создать папку Classes";
+        throw QString("Невозможно создать папку Classes");
     }
 
     outputDir.cd("Interfaces");
@@ -144,7 +144,7 @@ void writeInterfaces(QDir &outputDir, const QList<Interface> &interfaces, const 
     {
         if (!outputDir.mkdir(interface.name))
         {
-            throw "Невозможно создать папку для интерфейса: " + interface.name;
+            throw QString("Невозможно создать папку для интерфейса: " + interface.name);
         }
 
         writeInterface(folderName + "/Interfaces/" + interface.name + "/", interface);
@@ -159,7 +159,7 @@ void writeClass(const QString &filePath, const Class &classToWrite) throw(const 
 
     if (!file.open(QIODevice::WriteOnly))
     {
-        throw "Невозможно создать файл для вывода класса";
+        throw QString("Невозможно создать файл для вывода класса");
     }
 
     QXmlStreamWriter xmlWriter;
@@ -218,7 +218,7 @@ void writeClasses(QDir outputDir, const QList<Class> &classes, const QString &fo
 {
     if (!outputDir.mkdir("Classes"))
     {
-        throw "Невозможно создать папку Classes";
+        throw QString("Невозможно создать папку Classes");
     }
 
     outputDir.cd("Classes");
@@ -227,7 +227,7 @@ void writeClasses(QDir outputDir, const QList<Class> &classes, const QString &fo
     {
         if (!outputDir.mkdir(classToWrite.name))
         {
-            throw "Невозможно создать папку для класса: " + classToWrite.name;
+            throw QString("Невозможно создать папку для класса: " + classToWrite.name);
         }
 
         writeClass("./" + folderName + "/Classes/" + classToWrite.name + "/", classToWrite);
@@ -242,12 +242,12 @@ void writeTreeToFiles(const QString &folderName, const Program &program) throw(c
 
     if (folderName.isEmpty())
     {
-        throw "Имя директории не может быть пустьм";
+        throw QString("Имя директории не может быть пустьм");
     }
 
     if (!outputDir.exists(folderName) && !outputDir.mkdir(folderName))
     {
-        throw "Невозможно создать директорию для выходных файлов";
+        throw QString("Невозможно создать директорию для выходных файлов");
     }
 
     if (!program.package.packageName.isEmpty() || !program.imports.isEmpty())

@@ -182,7 +182,7 @@ SemiColons
     ;
 
 CompilationUnit
-    : {throw "Empty file";}
+    : {throw QString("Empty file");}
     | ProgramFile
     ;
 
