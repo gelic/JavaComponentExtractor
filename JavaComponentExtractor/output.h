@@ -36,4 +36,11 @@ void writeMethods(const QString &filePath, const QList<Method> &methods) throw(c
 */
 void writeFields(const QString &filePath, const QList<Field> &fields) throw(const QString &);
 
+/*!
+* Вывести информацию об интерфейсе в XML формате и всех его вложенных компонентах
+*\param[in] filePath - путь до файла
+*\param[in] interfaceToWrite - структура, описывающая компонент-интерфейс
+*/
+void writeInterface(const QString &filePath, const Interface &interfaceToWrite) throw(const QString &);
+
 #endif // OUTPUT_H

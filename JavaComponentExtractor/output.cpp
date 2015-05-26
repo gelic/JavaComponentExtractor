@@ -89,3 +89,44 @@ void writeFields(const QString &filePath, const QList<Field> &fields) throw(cons
         out << field.text << endl;
     }
 }
+
+void writeInterface(const QString &filePath, const Interface &interfaceToWrite) throw(const QString &)
+{
+    QFile file(filePath + interfaceToWrite.name + ".xml");
+
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        throw "Невозможно создать файл для вывода интерфейса";
+    }
+
+    QXmlStreamWriter xmlWriter;
+    xmlWriter.setDevice(&file);
+    xmlWriter.setAutoFormatting(true);
+
+    xmlWriter.writeStartDocument();
+    xmlWriter.writeStartElement("interface");
+    xmlWriter.writeAttribute("name", interfaceToWrite.name);
+
+    if (!interfaceToWrite.modificators.isEmpty())
+    {
+        xmlWriter.writeAttribute("modificators", interfaceToWrite.modificators.join(' '));
+    }
+
+    if (!interfaceToWrite.baseInterfaces.isEmpty())
+    {
+        xmlWriter.writeAttribute("baseInterfaces", interfaceToWrite.baseInterfaces.join(' '));
+    }
+
+    xmlWriter.writeEndElement();
+    xmlWriter.writeEndDocument();
+
+    if (!interfaceToWrite.fields.isEmpty())
+    {
+        writeFields(filePath + "fields.txt", interfaceToWrite.fields);
+    }
+
+    if (!interfaceToWrite.methods.isEmpty())
+    {
+        writeMethods(filePath + "methods.txt", interfaceToWrite.methods);
+    }
+}
