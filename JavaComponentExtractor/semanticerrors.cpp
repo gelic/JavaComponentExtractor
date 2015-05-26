@@ -196,3 +196,8 @@ QList<SemanticError> checkMethods(const QList<Method> &methods, QSet<QString> &i
 
     return errors;
 }
+
+QList<SemanticError> checkSemanticErrorsBeforeTreeWillBeBuilt(const Package &package, const QList<Import> &imports, const QList<Enum> &enums, const QList<Interface> &interfaces, const QList<Class> &classes, const QList<Field> &fields, const QList<Method> &methods)
+{
+    return checkNestedClassesAndInterfacesInEachInterface(interfaces, classes);
+}

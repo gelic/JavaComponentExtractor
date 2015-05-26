@@ -59,4 +59,11 @@ QList<SemanticError> checkFields(const QList<Field> &fields, QSet<QString> &ids)
 */
 QList<SemanticError> checkMethods(const QList<Method> &methods, QSet<QString> &ids);
 
+/*!
+* Проверить программу на семантические ошибки перед построением дерева
+*\param[in] interfaces - список интерфейсов
+*\param[in] classes - список классов
+*/
+QList<SemanticError> checkSemanticErrorsBeforeTreeWillBeBuilt(const Package &package, const QList<Import> &imports, const QList<Enum> &enums, const QList<Interface> &interfaces, const QList<Class> &classes, const QList<Field> &fields, const QList<Method> &methods);
+
 #endif // SEMANTICERRORS_H
