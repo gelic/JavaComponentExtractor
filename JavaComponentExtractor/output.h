@@ -43,4 +43,27 @@ void writeFields(const QString &filePath, const QList<Field> &fields) throw(cons
 */
 void writeInterface(const QString &filePath, const Interface &interfaceToWrite) throw(const QString &);
 
+/*!
+* Вывести все интерфейсы
+*\param[in|out] outputDir - папка, в которой создастся папка "Interfaces"
+*\param[in] interfaces - список интерфейсов
+*\param[in] folderName - название выходной папки
+*/
+void writeInterfaces(QDir &outputDir, const QList<Interface> &interfaces, const QString &folderName) throw(const QString &);
+
+/*!
+* Вывести информацию о классе в XML формате и всех его вложенных компонентах
+*\param[in] filePath - путь до файла
+*\param[in] classToWrite - структура, описывающая компонент-класса
+*/
+void writeClass(const QString &filePath, const Class &classToWrite) throw(const QString &);
+
+/*!
+* Вывести все классы
+*\param[in|out] outputDir - папка, в которой создастся папка "Classes"
+*\param[in] classes - список классов
+*\param[in] folderName - название выходной папки
+*/
+void writeClasses(QDir outputDir, const QList<Class> &classes, const QString &folderName) throw(const QString &);
+
 #endif // OUTPUT_H

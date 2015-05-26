@@ -152,3 +152,86 @@ void writeInterfaces(QDir &outputDir, const QList<Interface> &interfaces, const 
 
     outputDir.cd("..");
 }
+
+void writeClass(const QString &filePath, const Class &classToWrite) throw(const QString &)
+{
+    QFile file(filePath + classToWrite.name + ".xml");
+
+    if (!file.open(QIODevice::WriteOnly))
+    {
+        throw "Невозможно создать файл для вывода класса";
+    }
+
+    QXmlStreamWriter xmlWriter;
+    xmlWriter.setDevice(&file);
+    xmlWriter.setAutoFormatting(true);
+
+    xmlWriter.writeStartDocument();
+    xmlWriter.writeStartElement("class");
+    xmlWriter.writeAttribute("name", classToWrite.name);
+
+    if (!classToWrite.modificators.isEmpty())
+    {
+        xmlWriter.writeAttribute("modificators", classToWrite.modificators.join(' '));
+    }
+
+    if (!classToWrite.baseClasses.isEmpty())
+    {
+        xmlWriter.writeAttribute("baseClasses", classToWrite.baseClasses.join(' '));
+    }
+
+    if (!classToWrite.implementedInterfaces.isEmpty())
+    {
+        xmlWriter.writeAttribute("implementedInterfaces", classToWrite.implementedInterfaces.join(' '));
+    }
+
+    xmlWriter.writeEndElement();
+    xmlWriter.writeEndDocument();
+
+    if (!classToWrite.enums.isEmpty())
+    {
+        writeEnums(filePath + "enums.txt", classToWrite.enums);
+    }
+
+    if (!classToWrite.fields.isEmpty())
+    {
+        writeFields(filePath + "fields.txt", classToWrite.fields);
+    }
+
+    if (!classToWrite.methods.isEmpty())
+    {
+        writeMethods(filePath + "methods.txt", classToWrite.methods);
+    }
+
+    if (!classToWrite.nestedInterfaces.isEmpty())
+    {
+        writeInterfaces(QDir(filePath), classToWrite.nestedInterfaces, filePath);
+    }
+
+    if (!classToWrite.nestedClasses.isEmpty())
+    {
+        writeClasses(QDir(filePath), classToWrite.nestedClasses, filePath);
+    }
+}
+
+void writeClasses(QDir outputDir, const QList<Class> &classes, const QString &folderName) throw(const QString &)
+{
+    if (!outputDir.mkdir("Classes"))
+    {
+        throw "Невозможно создать папку Classes";
+    }
+
+    outputDir.cd("Classes");
+
+    for (auto classToWrite : classes)
+    {
+        if (!outputDir.mkdir(classToWrite.name))
+        {
+            throw "Невозможно создать папку для класса: " + classToWrite.name;
+        }
+
+        writeClass("./" + folderName + "/Classes/" + classToWrite.name + "/", classToWrite);
+    }
+
+    outputDir.cd("..");
+}
