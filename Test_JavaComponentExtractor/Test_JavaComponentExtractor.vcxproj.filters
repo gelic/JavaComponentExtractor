@@ -134,6 +134,21 @@
     <ClCompile Include="test_treefuncs.cpp">
       <Filter>Tests\Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\semanticerror.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="..\JavaComponentExtractor\semanticerrors.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Debug\moc_test_semanticerrors.cpp">
+      <Filter>Generated Files\Debug</Filter>
+    </ClCompile>
+    <ClCompile Include="GeneratedFiles\Release\moc_test_semanticerrors.cpp">
+      <Filter>Generated Files\Release</Filter>
+    </ClCompile>
+    <ClCompile Include="test_semanticerrors.cpp">
+      <Filter>Tests\Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <CustomBuild Include="test_yyparse.h">
@@ -149,6 +164,9 @@
       <Filter>Tests\Header Files</Filter>
     </CustomBuild>
     <CustomBuild Include="test_treefuncs.h">
+      <Filter>Tests\Header Files</Filter>
+    </CustomBuild>
+    <CustomBuild Include="test_semanticerrors.h">
       <Filter>Tests\Header Files</Filter>
     </CustomBuild>
   </ItemGroup>
