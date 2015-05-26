@@ -148,6 +148,7 @@
     <ClCompile Include="lexer.cpp" />
     <ClCompile Include="main.cpp" />
     <ClCompile Include="method.cpp" />
+    <ClCompile Include="output.cpp" />
     <ClCompile Include="package.cpp" />
     <ClCompile Include="parser.cpp" />
     <ClCompile Include="semanticerror.cpp" />
@@ -165,6 +166,7 @@
     <ClInclude Include="interface.h" />
     <ClInclude Include="lexer.hpp" />
     <ClInclude Include="method.h" />
+    <ClInclude Include="output.h" />
     <ClInclude Include="package.h" />
     <ClInclude Include="parser.hpp" />
     <ClInclude Include="program.h" />

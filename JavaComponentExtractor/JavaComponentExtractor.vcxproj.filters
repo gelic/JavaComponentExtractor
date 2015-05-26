@@ -92,6 +92,9 @@
     <ClCompile Include="semanticerrors.cpp">
       <Filter>Source Files</Filter>
     </ClCompile>
+    <ClCompile Include="output.cpp">
+      <Filter>Source Files</Filter>
+    </ClCompile>
   </ItemGroup>
   <ItemGroup>
     <ClInclude Include="component.h">
@@ -140,6 +143,9 @@
       <Filter>Header Files</Filter>
     </ClInclude>
     <ClInclude Include="semanticerror.h">
+      <Filter>Header Files</Filter>
+    </ClInclude>
+    <ClInclude Include="output.h">
       <Filter>Header Files</Filter>
     </ClInclude>
   </ItemGroup>
