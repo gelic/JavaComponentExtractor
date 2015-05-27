@@ -313,7 +313,7 @@ void Test_TreeFuncs::test_findParentsToMethods_data()
         << QList<Method>{Method(TextLocation(5, 6, 7, 8))}
         << QList<Method>{};
 
-    QTest::newRow("Class has nested method and interface has nested Method")
+    QTest::newRow("Class has nested method and interface has nested method")
         << QList<Class>{Class(TextLocation(1, 20, 3, 4))}
         << QList<Class>{Class(QList<Method>{Method(TextLocation(5, 6, 7, 8))}, TextLocation(1, 20, 3, 4))}
         << QList<Interface>{Interface(TextLocation(30, 40, 5, 6))}
@@ -321,7 +321,7 @@ void Test_TreeFuncs::test_findParentsToMethods_data()
         << QList<Method>{Method(TextLocation(5, 6, 7, 8)), Method(TextLocation(31, 32, 7, 8))}
         << QList<Method>{};
 
-    QTest::newRow("Class has nested method and interface has nested Method, they are all on the same line")
+    QTest::newRow("Class has nested method and interface has nested method, they are all on the same line")
         << QList<Class>{Class(TextLocation(1, 1, 1, 20))}
         << QList<Class>{Class(QList<Method>{Method(TextLocation(1, 1, 7, 8))}, TextLocation(1, 1, 1, 20))}
         << QList<Interface>{Interface(TextLocation(1, 1, 21, 30))}
