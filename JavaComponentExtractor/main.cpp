@@ -62,7 +62,6 @@ int main(int argc, char *argv[])
 
         Program program;
         addComponentsToTree(program, package, imports, enums, interfaces, classes, fields, methods);
-
         semanticErrors << checkSemanticErrorsAfterTreeWasBuilt(program);
 
         if (!semanticErrors.length())
