@@ -226,6 +226,11 @@ void Test_SemanticErrors::test_checkMethods_data()
         << QList<Method>{Method(QStringList{"public", "static"}, "void", "method", QList<Method::Param>{Method::Param(false, "int", "param")}, QStringList{"Exception"}, TextLocation(1, 2, 3, 4))}
         << QSet<QString>{"method"}
         << QList<SemanticError>{SemanticError("Method with non-unique name", TextLocation(1, 2, 3, 4))};
+
+    QTest::newRow("Constructor")
+        << QList<Method>{Method(QStringList{"public", "static"}, "", "method", QList<Method::Param>{Method::Param(false, "int", "param")}, QStringList{"Exception"}, TextLocation(1, 2, 3, 4))}
+        << QSet<QString>{"method"}
+        << QList<SemanticError>{};
 }
 
 void Test_SemanticErrors::test_checkMethods()

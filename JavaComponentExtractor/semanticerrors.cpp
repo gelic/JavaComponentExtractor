@@ -184,7 +184,7 @@ QList<SemanticError> checkMethods(const QList<Method> &methods, QSet<QString> &i
             errors << SemanticError("Method has repeating modificator", method.location);
         }
 
-        if (!ids.contains(method.name))
+        if (!ids.contains(method.name) || method.returnValue.isEmpty())
         {
             ids.insert(method.name);
         }
