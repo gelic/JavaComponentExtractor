@@ -245,7 +245,13 @@ void writeTreeToFiles(const QString &folderName, const Program &program) throw(c
         throw QString("Folder name cannot be empty");
     }
 
-    if (!outputDir.exists(folderName) && !outputDir.mkdir(folderName))
+    if (outputDir.exists(folderName))
+    {
+        QDir dirToDelete(folderName);
+        dirToDelete.removeRecursively();
+    }
+
+    if (!outputDir.mkdir(folderName))
     {
         throw QString("Cannot create folder for output files");
     }
