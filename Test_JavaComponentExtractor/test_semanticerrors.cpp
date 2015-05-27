@@ -18,7 +18,7 @@ void Test_SemanticErrors::test_checkNestedClassesAndInterfacesInEachInterface_da
 
     QTest::newRow("Interface is nested into interface")
         << QList<Class>{}
-    << QList<Interface>{Interface(TextLocation(3, 6, 5, 6)), Interface(TextLocation(4, 5, 5, 6))}
+        << QList<Interface>{Interface(TextLocation(3, 6, 5, 6)), Interface(TextLocation(4, 5, 5, 6))}
         << QList<SemanticError>{SemanticError("There is nested interface in interface", TextLocation(3, 6, 5, 6))};
 }
 

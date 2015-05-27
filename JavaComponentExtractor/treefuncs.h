@@ -11,7 +11,7 @@
 *\param[in,out] classes - список классов
 *\param[in,out] enums - список перечислений
 */
-void findParentsToEnums( QList<Class> &classes, QList<Enum> &enums );
+void findParentsToEnums(QList<Class> &classes, QList<Enum> &enums);
 
 /*!
 * Найти родителей интерфейсов среди классов и переместить их в них
