@@ -263,6 +263,14 @@ void Test_TreeFuncs::test_findParentsToFields_data()
         << QList<Interface>{Interface(QList<Field>{Field(TextLocation(1, 1, 25, 26))}, TextLocation(1, 1, 21, 30))}
         << QList<Field>{Field(TextLocation(1, 1, 7, 8)), Field(TextLocation(1, 1, 25, 26))}
         << QList<Field>{};
+
+    QTest::newRow("Class has two fields and interface hasn`t any fields")
+        << QList<Class>{Class(TextLocation(1, 100, 1, 20))}
+        << QList<Class>{Class(QList<Field>{Field(TextLocation(10, 11, 7, 8)), Field(TextLocation(20, 21, 25, 26))}, TextLocation(1, 100, 1, 20))}
+        << QList<Interface>{Interface(TextLocation(101, 200, 1, 1))}
+        << QList<Interface>{Interface(TextLocation(101, 200, 1, 1))}
+        << QList<Field>{Field(TextLocation(10, 11, 7, 8)), Field(TextLocation(20, 21, 25, 26))}
+        << QList<Field>{};
 }
 
 void Test_TreeFuncs::test_findParentsToFields()
@@ -319,6 +327,14 @@ void Test_TreeFuncs::test_findParentsToMethods_data()
         << QList<Interface>{Interface(TextLocation(1, 1, 21, 30))}
         << QList<Interface>{Interface(QList<Method>{Method(TextLocation(1, 1, 25, 26))}, TextLocation(1, 1, 21, 30))}
         << QList<Method>{Method(TextLocation(1, 1, 7, 8)), Method(TextLocation(1, 1, 25, 26))}
+        << QList<Method>{};
+
+    QTest::newRow("Class has two methods and interface hasn`t any methods")
+        << QList<Class>{Class(TextLocation(1, 100, 1, 20))}
+        << QList<Class>{Class(QList<Method>{Method(TextLocation(10, 11, 7, 8)), Method(TextLocation(20, 21, 25, 26))}, TextLocation(1, 100, 1, 20))}
+        << QList<Interface>{Interface(TextLocation(101, 200, 1, 1))}
+        << QList<Interface>{Interface(TextLocation(101, 200, 1, 1))}
+        << QList<Method>{Method(TextLocation(10, 11, 7, 8)), Method(TextLocation(20, 21, 25, 26))}
         << QList<Method>{};
 }
 

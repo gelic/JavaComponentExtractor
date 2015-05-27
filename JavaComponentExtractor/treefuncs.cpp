@@ -315,6 +315,8 @@ void findParentsToFields(QList<Class> &classes, QList<Interface> &interfaces, QL
                     }
                 }
             }
+
+            isMinimumSet = false;
         }
 
         // insert fields into their parents
@@ -423,6 +425,8 @@ void findParentsToMethods(QList<Class> &classes, QList<Interface> &interfaces, Q
                     }
                 }
             }
+
+            isMinimumSet = false;
         }
 
         // insert methods into their parents
