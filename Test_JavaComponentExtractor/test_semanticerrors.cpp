@@ -1,4 +1,4 @@
-#include "test_semanticerrors.h"
+﻿#include "test_semanticerrors.h"
 
 void Test_SemanticErrors::test_checkNestedClassesAndInterfacesInEachInterface_data()
 {

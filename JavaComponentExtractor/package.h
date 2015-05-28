@@ -1,10 +1,10 @@
-#ifndef PACKAGE_H
+п»ї#ifndef PACKAGE_H
 #define PACKAGE_H
 
 #include <QString>
 #include "component.h"
 
-// Класс, описывающий компонент пакета.
+// РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ РєРѕРјРїРѕРЅРµРЅС‚ РїР°РєРµС‚Р°.
 class Package : public Component
 {
 public:

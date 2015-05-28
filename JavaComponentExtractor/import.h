@@ -1,14 +1,14 @@
-#ifndef IMPORT_H
+п»ї#ifndef IMPORT_H
 #define IMPORT_H
 
 #include <QString>
 #include "component.h"
 
-// Класс, описывающий компонент импортиртируемого класса
+// РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ РєРѕРјРїРѕРЅРµРЅС‚ РёРјРїРѕСЂС‚РёСЂС‚РёСЂСѓРµРјРѕРіРѕ РєР»Р°СЃСЃР°
 class Import : public Component
 {
 public:
-    bool isStatic = false; // Для импорта статических методов класса
+    bool isStatic = false; // Р”Р»СЏ РёРјРїРѕСЂС‚Р° СЃС‚Р°С‚РёС‡РµСЃРєРёС… РјРµС‚РѕРґРѕРІ РєР»Р°СЃСЃР°
     QString importedClass;
 
     Import();

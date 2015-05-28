@@ -1,4 +1,4 @@
-#include "semanticerrors.h"
+﻿#include "semanticerrors.h"
 
 QList<SemanticError> checkNestedClassesAndInterfacesInEachInterface(const QList<Interface> &interfaces, const QList<Class> &classes)
 {

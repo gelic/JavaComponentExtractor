@@ -1,4 +1,4 @@
-#include "stringfuncs.h"
+﻿#include "stringfuncs.h"
 
 QString contentBetweenPositions(const QString &buffer, const TextLocation &location) throw (const QString &)
 {

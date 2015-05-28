@@ -1,4 +1,4 @@
-#include "test_treefuncs.h"
+﻿#include "test_treefuncs.h"
 
 void Test_TreeFuncs::test_findParentsToEnums_data()
 {

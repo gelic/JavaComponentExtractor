@@ -1,14 +1,14 @@
-#ifndef METHOD_H
+п»ї#ifndef METHOD_H
 #define METHOD_H
 
 #include <QStringList>
 #include "component.h"
 
-// Класс, описывающий компонент метода
+// РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ РєРѕРјРїРѕРЅРµРЅС‚ РјРµС‚РѕРґР°
 class Method : public Component
 {
 public:
-    // Класс, описывающий параметр метода
+    // РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ РїР°СЂР°РјРµС‚СЂ РјРµС‚РѕРґР°
     class Param
     {
     public:

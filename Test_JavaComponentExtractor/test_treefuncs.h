@@ -1,4 +1,4 @@
-#ifndef TESTTREEFUNCS_H
+﻿#ifndef TESTTREEFUNCS_H
 #define TESTTREEFUNCS_H
 
 #include <QObject>

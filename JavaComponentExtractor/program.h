@@ -1,4 +1,4 @@
-#ifndef PROGRAM_H
+п»ї#ifndef PROGRAM_H
 #define PROGRAM_H
 
 #include "package.h"
@@ -7,7 +7,7 @@
 #include "interface.h"
 #include "class.h"
 
-// Класс, содержащий информацию о компонентах программы и их иерархичности
+// РљР»Р°СЃСЃ, СЃРѕРґРµСЂР¶Р°С‰РёР№ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РєРѕРјРїРѕРЅРµРЅС‚Р°С… РїСЂРѕРіСЂР°РјРјС‹ Рё РёС… РёРµСЂР°СЂС…РёС‡РЅРѕСЃС‚Рё
 class Program
 {
 public:

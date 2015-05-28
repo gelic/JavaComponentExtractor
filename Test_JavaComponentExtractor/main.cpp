@@ -1,4 +1,4 @@
-#include <QtCore/QCoreApplication>
+﻿#include <QtCore/QCoreApplication>
 #include <QTextStream>
 #include <vld.h>
 #include "test_component.h"

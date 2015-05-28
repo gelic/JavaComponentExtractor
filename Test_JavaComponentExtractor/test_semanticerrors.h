@@ -1,4 +1,4 @@
-#ifndef TEST_SEMANTICERRORS_H
+﻿#ifndef TEST_SEMANTICERRORS_H
 #define TEST_SEMANTICERRORS_H
 
 #include <QObject>

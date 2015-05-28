@@ -1,4 +1,4 @@
-#ifndef SEMANTICERROR_H
+п»ї#ifndef SEMANTICERROR_H
 #define SEMANTICERROR_H
 
 #include <QStringList>
@@ -7,7 +7,7 @@
 #include <QSet>
 #include "program.h"
 
-// Класс, содержащий информацию о семантической ошибке
+// РљР»Р°СЃСЃ, СЃРѕРґРµСЂР¶Р°С‰РёР№ РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ СЃРµРјР°РЅС‚РёС‡РµСЃРєРѕР№ РѕС€РёР±РєРµ
 class SemanticError
 {
 public:

@@ -1,4 +1,4 @@
-#include "test_stringfuncs.h"
+﻿#include "test_stringfuncs.h"
 
 void Test_StringFuncs::test_contentBetweenPositions_data()
 {

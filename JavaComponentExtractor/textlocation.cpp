@@ -1,4 +1,4 @@
-#include "textlocation.h"
+﻿#include "textlocation.h"
 
 TextLocation::TextLocation()
 {

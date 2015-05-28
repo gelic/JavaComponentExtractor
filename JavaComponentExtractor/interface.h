@@ -1,4 +1,4 @@
-#ifndef INTERFACE_H
+п»ї#ifndef INTERFACE_H
 #define INTERFACE_H
 
 #include <QStringList>
@@ -6,7 +6,7 @@
 #include "field.h"
 #include "method.h"
 
-// Класс, описывающий компонент интерфейса
+// РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ РєРѕРјРїРѕРЅРµРЅС‚ РёРЅС‚РµСЂС„РµР№СЃР°
 class Interface : public Component
 {
 public:

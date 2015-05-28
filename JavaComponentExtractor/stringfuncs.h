@@ -1,4 +1,4 @@
-#ifndef STRINGFUNCS_H
+п»ї#ifndef STRINGFUNCS_H
 #define STRINGFUNCS_H
 
 #include <QString>
@@ -7,10 +7,10 @@
 #include "textlocation.h"
 
 /*!
-* Вернуть содержимое текста между указанными начальными и конечными номерами строк и колонок
-*\param[in] buffer - текст
-*\param[in] location - структура, содержащая номера начальных и конечных строк и колонок
-*\return требуемое содержимое
+* Р’РµСЂРЅСѓС‚СЊ СЃРѕРґРµСЂР¶РёРјРѕРµ С‚РµРєСЃС‚Р° РјРµР¶РґСѓ СѓРєР°Р·Р°РЅРЅС‹РјРё РЅР°С‡Р°Р»СЊРЅС‹РјРё Рё РєРѕРЅРµС‡РЅС‹РјРё РЅРѕРјРµСЂР°РјРё СЃС‚СЂРѕРє Рё РєРѕР»РѕРЅРѕРє
+*\param[in] buffer - С‚РµРєСЃС‚
+*\param[in] location - СЃС‚СЂСѓРєС‚СѓСЂР°, СЃРѕРґРµСЂР¶Р°С‰Р°СЏ РЅРѕРјРµСЂР° РЅР°С‡Р°Р»СЊРЅС‹С… Рё РєРѕРЅРµС‡РЅС‹С… СЃС‚СЂРѕРє Рё РєРѕР»РѕРЅРѕРє
+*\return С‚СЂРµР±СѓРµРјРѕРµ СЃРѕРґРµСЂР¶РёРјРѕРµ
 */
 QString contentBetweenPositions(const QString &buffer, const TextLocation &location) throw(const QString &);
 

@@ -1,10 +1,10 @@
-#ifndef COMPONENT_H
+п»ї#ifndef COMPONENT_H
 #define COMPONENT_H
 
 #include <QString>
 #include "textlocation.h"
 
-// Класс, описывающий компонент программы
+// РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ РєРѕРјРїРѕРЅРµРЅС‚ РїСЂРѕРіСЂР°РјРјС‹
 class Component
 {
 public:
@@ -15,9 +15,9 @@ public:
     Component(const TextLocation &location);
 
     /*!
-    * Проверить, вложен ли компонент в другой компонент
-    *\param[in] anotherComponent - компонент, в который проверяется вложенность
-    *\return признак вложенности
+    * РџСЂРѕРІРµСЂРёС‚СЊ, РІР»РѕР¶РµРЅ Р»Рё РєРѕРјРїРѕРЅРµРЅС‚ РІ РґСЂСѓРіРѕР№ РєРѕРјРїРѕРЅРµРЅС‚
+    *\param[in] anotherComponent - РєРѕРјРїРѕРЅРµРЅС‚, РІ РєРѕС‚РѕСЂС‹Р№ РїСЂРѕРІРµСЂСЏРµС‚СЃСЏ РІР»РѕР¶РµРЅРЅРѕСЃС‚СЊ
+    *\return РїСЂРёР·РЅР°Рє РІР»РѕР¶РµРЅРЅРѕСЃС‚Рё
     */
     bool isNested(const Component &component);
 };

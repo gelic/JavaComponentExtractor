@@ -1,4 +1,4 @@
-#ifndef TEST_COMPONENT_H
+﻿#ifndef TEST_COMPONENT_H
 #define TEST_COMPONENT_H
 
 #include <QObject>

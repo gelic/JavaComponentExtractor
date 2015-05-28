@@ -1,4 +1,4 @@
-#ifndef OUTPUT_H
+п»ї#ifndef OUTPUT_H
 #define OUTPUT_H
 
 #include <QDir>
@@ -8,68 +8,68 @@
 #include "program.h"
 
 /*!
-* Вывести информацию о названии пакета и списке импортируемых файлов в XML формате
-*\param[in] filePath - путь до создаваемого файла
-*\param[in] packageName - название пакета
-*\param[in] imports - список импортируемых классов
+* Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РЅР°Р·РІР°РЅРёРё РїР°РєРµС‚Р° Рё СЃРїРёСЃРєРµ РёРјРїРѕСЂС‚РёСЂСѓРµРјС‹С… С„Р°Р№Р»РѕРІ РІ XML С„РѕСЂРјР°С‚Рµ
+*\param[in] filePath - РїСѓС‚СЊ РґРѕ СЃРѕР·РґР°РІР°РµРјРѕРіРѕ С„Р°Р№Р»Р°
+*\param[in] packageName - РЅР°Р·РІР°РЅРёРµ РїР°РєРµС‚Р°
+*\param[in] imports - СЃРїРёСЃРѕРє РёРјРїРѕСЂС‚РёСЂСѓРµРјС‹С… РєР»Р°СЃСЃРѕРІ
 */
 void writePackageNameAndImports(const QString &filePath, const QString &packageName, const QList<Import> &imports) throw(const QString &);
 
 /*!
-* Вывести информацию о перечислениях в текстовом формате
-*\param[in] filePath - путь до файла
-*\param[in] enums - список структур, описывающих компонент-перечисление
+* Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РїРµСЂРµС‡РёСЃР»РµРЅРёСЏС… РІ С‚РµРєСЃС‚РѕРІРѕРј С„РѕСЂРјР°С‚Рµ
+*\param[in] filePath - РїСѓС‚СЊ РґРѕ С„Р°Р№Р»Р°
+*\param[in] enums - СЃРїРёСЃРѕРє СЃС‚СЂСѓРєС‚СѓСЂ, РѕРїРёСЃС‹РІР°СЋС‰РёС… РєРѕРјРїРѕРЅРµРЅС‚-РїРµСЂРµС‡РёСЃР»РµРЅРёРµ
 */
 void writeEnums(const QString &filePath, const QList<Enum> &enums) throw(const QString &);
 
 /*!
-* Вывести информацию о методах в текстовом формате
-*\param[in] filePath - путь до файла
-*\param[in] methods - список структур, описывающих компонент-метод
+* Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РјРµС‚РѕРґР°С… РІ С‚РµРєСЃС‚РѕРІРѕРј С„РѕСЂРјР°С‚Рµ
+*\param[in] filePath - РїСѓС‚СЊ РґРѕ С„Р°Р№Р»Р°
+*\param[in] methods - СЃРїРёСЃРѕРє СЃС‚СЂСѓРєС‚СѓСЂ, РѕРїРёСЃС‹РІР°СЋС‰РёС… РєРѕРјРїРѕРЅРµРЅС‚-РјРµС‚РѕРґ
 */
 void writeMethods(const QString &filePath, const QList<Method> &methods) throw(const QString &);
 
 /*!
-* Вывести информацию о полях в текстовом формате
-*\param[in] filePath - путь до файла
-*\param[in] fields - список структур, описывающих компонент-поле
+* Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РїРѕР»СЏС… РІ С‚РµРєСЃС‚РѕРІРѕРј С„РѕСЂРјР°С‚Рµ
+*\param[in] filePath - РїСѓС‚СЊ РґРѕ С„Р°Р№Р»Р°
+*\param[in] fields - СЃРїРёСЃРѕРє СЃС‚СЂСѓРєС‚СѓСЂ, РѕРїРёСЃС‹РІР°СЋС‰РёС… РєРѕРјРїРѕРЅРµРЅС‚-РїРѕР»Рµ
 */
 void writeFields(const QString &filePath, const QList<Field> &fields) throw(const QString &);
 
 /*!
-* Вывести информацию об интерфейсе в XML формате и всех его вложенных компонентах
-*\param[in] filePath - путь до файла
-*\param[in] interfaceToWrite - структура, описывающая компонент-интерфейс
+* Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ РѕР± РёРЅС‚РµСЂС„РµР№СЃРµ РІ XML С„РѕСЂРјР°С‚Рµ Рё РІСЃРµС… РµРіРѕ РІР»РѕР¶РµРЅРЅС‹С… РєРѕРјРїРѕРЅРµРЅС‚Р°С…
+*\param[in] filePath - РїСѓС‚СЊ РґРѕ С„Р°Р№Р»Р°
+*\param[in] interfaceToWrite - СЃС‚СЂСѓРєС‚СѓСЂР°, РѕРїРёСЃС‹РІР°СЋС‰Р°СЏ РєРѕРјРїРѕРЅРµРЅС‚-РёРЅС‚РµСЂС„РµР№СЃ
 */
 void writeInterface(const QString &filePath, const Interface &interfaceToWrite) throw(const QString &);
 
 /*!
-* Вывести все интерфейсы
-*\param[in|out] outputDir - папка, в которой создастся папка "Interfaces"
-*\param[in] interfaces - список интерфейсов
-*\param[in] folderName - название выходной папки
+* Р’С‹РІРµСЃС‚Рё РІСЃРµ РёРЅС‚РµСЂС„РµР№СЃС‹
+*\param[in|out] outputDir - РїР°РїРєР°, РІ РєРѕС‚РѕСЂРѕР№ СЃРѕР·РґР°СЃС‚СЃСЏ РїР°РїРєР° "Interfaces"
+*\param[in] interfaces - СЃРїРёСЃРѕРє РёРЅС‚РµСЂС„РµР№СЃРѕРІ
+*\param[in] folderName - РЅР°Р·РІР°РЅРёРµ РІС‹С…РѕРґРЅРѕР№ РїР°РїРєРё
 */
 void writeInterfaces(QDir &outputDir, const QList<Interface> &interfaces, const QString &folderName) throw(const QString &);
 
 /*!
-* Вывести информацию о классе в XML формате и всех его вложенных компонентах
-*\param[in] filePath - путь до файла
-*\param[in] classToWrite - структура, описывающая компонент-класса
+* Р’С‹РІРµСЃС‚Рё РёРЅС„РѕСЂРјР°С†РёСЋ Рѕ РєР»Р°СЃСЃРµ РІ XML С„РѕСЂРјР°С‚Рµ Рё РІСЃРµС… РµРіРѕ РІР»РѕР¶РµРЅРЅС‹С… РєРѕРјРїРѕРЅРµРЅС‚Р°С…
+*\param[in] filePath - РїСѓС‚СЊ РґРѕ С„Р°Р№Р»Р°
+*\param[in] classToWrite - СЃС‚СЂСѓРєС‚СѓСЂР°, РѕРїРёСЃС‹РІР°СЋС‰Р°СЏ РєРѕРјРїРѕРЅРµРЅС‚-РєР»Р°СЃСЃР°
 */
 void writeClass(const QString &filePath, const Class &classToWrite) throw(const QString &);
 
 /*!
-* Вывести все классы
-*\param[in|out] outputDir - папка, в которой создастся папка "Classes"
-*\param[in] classes - список классов
-*\param[in] folderName - название выходной папки
+* Р’С‹РІРµСЃС‚Рё РІСЃРµ РєР»Р°СЃСЃС‹
+*\param[in|out] outputDir - РїР°РїРєР°, РІ РєРѕС‚РѕСЂРѕР№ СЃРѕР·РґР°СЃС‚СЃСЏ РїР°РїРєР° "Classes"
+*\param[in] classes - СЃРїРёСЃРѕРє РєР»Р°СЃСЃРѕРІ
+*\param[in] folderName - РЅР°Р·РІР°РЅРёРµ РІС‹С…РѕРґРЅРѕР№ РїР°РїРєРё
 */
 void writeClasses(QDir outputDir, const QList<Class> &classes, const QString &folderName) throw(const QString &);
 
 /*!
-* Вывести компоненты программы в иерархию папок и файлов
-*\param[in] folderName - название выходной папки
-*\param[in] program - структура, описывающая компоненты программы
+* Р’С‹РІРµСЃС‚Рё РєРѕРјРїРѕРЅРµРЅС‚С‹ РїСЂРѕРіСЂР°РјРјС‹ РІ РёРµСЂР°СЂС…РёСЋ РїР°РїРѕРє Рё С„Р°Р№Р»РѕРІ
+*\param[in] folderName - РЅР°Р·РІР°РЅРёРµ РІС‹С…РѕРґРЅРѕР№ РїР°РїРєРё
+*\param[in] program - СЃС‚СЂСѓРєС‚СѓСЂР°, РѕРїРёСЃС‹РІР°СЋС‰Р°СЏ РєРѕРјРїРѕРЅРµРЅС‚С‹ РїСЂРѕРіСЂР°РјРјС‹
 */
 void writeTreeToFiles(const QString &folderName, const Program &program) throw(const QString &);
 

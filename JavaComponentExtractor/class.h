@@ -1,4 +1,4 @@
-#ifndef CLASS_H
+п»ї#ifndef CLASS_H
 #define CLASS_H
 
 #include <QStringList>
@@ -8,7 +8,7 @@
 #include "enum.h"
 #include "interface.h"
 
-// Класс, описывающий компонент класса
+// РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ РєРѕРјРїРѕРЅРµРЅС‚ РєР»Р°СЃСЃР°
 class Class : public Component
 {
 public:

@@ -1,4 +1,4 @@
-#ifndef TREENODES_H
+п»ї#ifndef TREENODES_H
 #define TREENODES_H
 
 #include <QString>
@@ -7,64 +7,64 @@
 #include "program.h"
 
 /*!
-* Найти родителей перечислений среди классов и переместить их в них
-*\param[in,out] classes - список классов
-*\param[in,out] enums - список перечислений
+* РќР°Р№С‚Рё СЂРѕРґРёС‚РµР»РµР№ РїРµСЂРµС‡РёСЃР»РµРЅРёР№ СЃСЂРµРґРё РєР»Р°СЃСЃРѕРІ Рё РїРµСЂРµРјРµСЃС‚РёС‚СЊ РёС… РІ РЅРёС…
+*\param[in,out] classes - СЃРїРёСЃРѕРє РєР»Р°СЃСЃРѕРІ
+*\param[in,out] enums - СЃРїРёСЃРѕРє РїРµСЂРµС‡РёСЃР»РµРЅРёР№
 */
 void findParentsToEnums(QList<Class> &classes, QList<Enum> &enums);
 
 /*!
-* Найти родителей интерфейсов среди классов и переместить их в них
-*\param[in,out] classes - список классов
-*\param[in,out] interfaces - список интерфейсов
+* РќР°Р№С‚Рё СЂРѕРґРёС‚РµР»РµР№ РёРЅС‚РµСЂС„РµР№СЃРѕРІ СЃСЂРµРґРё РєР»Р°СЃСЃРѕРІ Рё РїРµСЂРµРјРµСЃС‚РёС‚СЊ РёС… РІ РЅРёС…
+*\param[in,out] classes - СЃРїРёСЃРѕРє РєР»Р°СЃСЃРѕРІ
+*\param[in,out] interfaces - СЃРїРёСЃРѕРє РёРЅС‚РµСЂС„РµР№СЃРѕРІ
 */
 void findParentsToInterfaces(QList<Class> &classes, QList<Interface> &interfaces);
 
 /*!
-* Найти родителей классов среди классов и переместить их в них
-*\param[in,out] classes - список классов
+* РќР°Р№С‚Рё СЂРѕРґРёС‚РµР»РµР№ РєР»Р°СЃСЃРѕРІ СЃСЂРµРґРё РєР»Р°СЃСЃРѕРІ Рё РїРµСЂРµРјРµСЃС‚РёС‚СЊ РёС… РІ РЅРёС…
+*\param[in,out] classes - СЃРїРёСЃРѕРє РєР»Р°СЃСЃРѕРІ
 */
 void findParentsToClasses(QList<Class> &classes);
 
 /*!
-* Найти родителей полей среди классов и интерфейсов и переместить их в них
-*\param[in,out] classes - список классов
-*\param[in,out] interfaces - список интерфейсов
-*\param[in,out] fields - список полей
+* РќР°Р№С‚Рё СЂРѕРґРёС‚РµР»РµР№ РїРѕР»РµР№ СЃСЂРµРґРё РєР»Р°СЃСЃРѕРІ Рё РёРЅС‚РµСЂС„РµР№СЃРѕРІ Рё РїРµСЂРµРјРµСЃС‚РёС‚СЊ РёС… РІ РЅРёС…
+*\param[in,out] classes - СЃРїРёСЃРѕРє РєР»Р°СЃСЃРѕРІ
+*\param[in,out] interfaces - СЃРїРёСЃРѕРє РёРЅС‚РµСЂС„РµР№СЃРѕРІ
+*\param[in,out] fields - СЃРїРёСЃРѕРє РїРѕР»РµР№
 */
 void findParentsToFields(QList<Class> &classes, QList<Interface> &interfaces, QList<Field> &fields);
 
 /*!
-* Найти родителей методов среди классов и интерфейсов и переместить их в них
-*\param[in,out] classes - список классов
-*\param[in,out] interfaces - список интерфейсов
-*\param[in,out] methods - список методов
+* РќР°Р№С‚Рё СЂРѕРґРёС‚РµР»РµР№ РјРµС‚РѕРґРѕРІ СЃСЂРµРґРё РєР»Р°СЃСЃРѕРІ Рё РёРЅС‚РµСЂС„РµР№СЃРѕРІ Рё РїРµСЂРµРјРµСЃС‚РёС‚СЊ РёС… РІ РЅРёС…
+*\param[in,out] classes - СЃРїРёСЃРѕРє РєР»Р°СЃСЃРѕРІ
+*\param[in,out] interfaces - СЃРїРёСЃРѕРє РёРЅС‚РµСЂС„РµР№СЃРѕРІ
+*\param[in,out] methods - СЃРїРёСЃРѕРє РјРµС‚РѕРґРѕРІ
 */
 void findParentsToMethods(QList<Class> &classes, QList<Interface> &interfaces, QList<Method> &methods);
 
 /*!
-* Записать в компоненты их текст
-*\param[in] buffer - текст программы
-*\param[in,out] package - пакет
-*\param[in,out] imports - импорты
-*\param[in,out] enums - перечисления
-*\param[in,out] interfaces - интерфейсы
-*\param[in,out] classes - классы
-*\param[in,out] fields - поля
-*\param[in,out] methods - методы
+* Р—Р°РїРёСЃР°С‚СЊ РІ РєРѕРјРїРѕРЅРµРЅС‚С‹ РёС… С‚РµРєСЃС‚
+*\param[in] buffer - С‚РµРєСЃС‚ РїСЂРѕРіСЂР°РјРјС‹
+*\param[in,out] package - РїР°РєРµС‚
+*\param[in,out] imports - РёРјРїРѕСЂС‚С‹
+*\param[in,out] enums - РїРµСЂРµС‡РёСЃР»РµРЅРёСЏ
+*\param[in,out] interfaces - РёРЅС‚РµСЂС„РµР№СЃС‹
+*\param[in,out] classes - РєР»Р°СЃСЃС‹
+*\param[in,out] fields - РїРѕР»СЏ
+*\param[in,out] methods - РјРµС‚РѕРґС‹
 */
 void getComponentsText(const QString &buffer, Package &package, QList<Import> &imports, QList<Enum> &enums, QList<Interface> &interfaces, QList<Class> &classes, QList<Field> &fields, QList<Method> &methods);
 
 /*!
-* Добавить в структуру программы перечисления, интерфейсы, классы, поля и методы с учетом их иерархии
-*\param[in,out] program - класс, описывающий компоненты программы
-*\param[in,out] package - пакет
-*\param[in,out] imports - импорты
-*\param[in,out] enums - перечисления
-*\param[in,out] interfaces - интерфейсы
-*\param[in,out] classes - классы
-*\param[in,out] fields - поля
-*\param[in,out] methods - методы
+* Р”РѕР±Р°РІРёС‚СЊ РІ СЃС‚СЂСѓРєС‚СѓСЂСѓ РїСЂРѕРіСЂР°РјРјС‹ РїРµСЂРµС‡РёСЃР»РµРЅРёСЏ, РёРЅС‚РµСЂС„РµР№СЃС‹, РєР»Р°СЃСЃС‹, РїРѕР»СЏ Рё РјРµС‚РѕРґС‹ СЃ СѓС‡РµС‚РѕРј РёС… РёРµСЂР°СЂС…РёРё
+*\param[in,out] program - РєР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ РєРѕРјРїРѕРЅРµРЅС‚С‹ РїСЂРѕРіСЂР°РјРјС‹
+*\param[in,out] package - РїР°РєРµС‚
+*\param[in,out] imports - РёРјРїРѕСЂС‚С‹
+*\param[in,out] enums - РїРµСЂРµС‡РёСЃР»РµРЅРёСЏ
+*\param[in,out] interfaces - РёРЅС‚РµСЂС„РµР№СЃС‹
+*\param[in,out] classes - РєР»Р°СЃСЃС‹
+*\param[in,out] fields - РїРѕР»СЏ
+*\param[in,out] methods - РјРµС‚РѕРґС‹
 */
 void addComponentsToTree(Program &program, const Package &package, const QList<Import> &imports, QList<Enum> &enums, QList<Interface> &interfaces, QList<Class> &classes, QList<Field> &fields, QList<Method> &methods);
 

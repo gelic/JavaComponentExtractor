@@ -1,4 +1,4 @@
-#include "semanticerror.h"
+﻿#include "semanticerror.h"
 
 SemanticError::SemanticError(const QString &message, const TextLocation &anotherLocaiton)
 {

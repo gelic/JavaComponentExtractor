@@ -1,10 +1,10 @@
-#ifndef ENUM_H
+п»ї#ifndef ENUM_H
 #define ENUM_H
 
 #include <QStringList>
 #include "component.h"
 
-// Класс, описывающий компонент перечисления
+// РљР»Р°СЃСЃ, РѕРїРёСЃС‹РІР°СЋС‰РёР№ РєРѕРјРїРѕРЅРµРЅС‚ РїРµСЂРµС‡РёСЃР»РµРЅРёСЏ
 class Enum : public Component
 {
 public:
