@@ -4,17 +4,26 @@
 #include <QString>
 #include "component.h"
 
-// Класс, описывающий компонент импортиртируемого класса
+/*!
+*\brief Класс импорта.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный класс описывает компонент импортируемого класса.
+*/
 class Import : public Component
 {
 public:
-    bool isStatic = false; // Для импорта статических методов класса
-    QString importedClass;
+    bool isStatic = false; ///< Импортировать ли только статические методы класса.
+    QString importedClass; ///< Импортируемый класс.
 
+    /*! Создает объект импорта. */
     Import();
+    /*! Создает объект импорта на основании переданных импортируемого класса и флага, отвечающего за статический импорт. */
     Import(const QString &importedClass, bool isStatic);
+    /*! Создает объект импорта на основании переданных импортируемого класса, флага, отвечающего за статический импорт, и положения. */
     Import(const QString &importedClass, bool isStatic, const TextLocation &location);
 
+    /*! Сравнивает два импорта друг с другом. */
     bool operator==(const Import &import);
 };
 

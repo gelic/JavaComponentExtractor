@@ -42,7 +42,9 @@ QString contentBetweenPositions(const QString &buffer, const TextLocation &locat
 
     QStringList resultLines;
     for (int i = location.firstLine - 1; i < location.lastLine; ++i)
+    {
         resultLines += lines[i];
+    }
 
     return resultLines.join(split);
 }

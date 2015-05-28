@@ -7,15 +7,20 @@
 #include "interface.h"
 #include "class.h"
 
-// Класс, содержащий информацию о компонентах программы и их иерархичности
+/*!
+*\brief Класс дерева программы.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный класс описывает дерево компонентов программы.
+*/
 class Program
 {
 public:
-    Package package;
-    QList<Import> imports;
-    QList<Enum> enums;
-    QList<Interface> interfaces;
-    QList<Class> classes;
+    Package package; ///< Пакет.
+    QList<Import> imports; ///< Импорты.
+    QList<Enum> enums; ///< Перечисления.
+    QList<Interface> interfaces; ///< Интерфейсы.
+    QList<Class> classes; ///< Классы.
 };
 
 #endif // PROGRAM_H

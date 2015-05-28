@@ -7,18 +7,26 @@
 #include <QSet>
 #include "program.h"
 
-// Класс, содержащий информацию о семантической ошибке
+/*!
+*\brief Класс семантической ошибки.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный класс описывает семантическую ошибку.
+*/
 class SemanticError
 {
 public:
+    /*! Создает объект семантической ошибки на основании переданных сообщения и положения. */
     SemanticError(const QString &message, const TextLocation &anotherLocaiton);
 
+    /*! Возвращает строковое представление семантической ошибки в формате: "строка.колонка: сообщение об ошибке". */
     QString toString() const;
+    /*! Сравнивает две семантические ошибки между собой. */
     bool operator==(const SemanticError &error);
 
 private:
-    QString message;
-    TextLocation location;
+    QString message; ///< Сообщение о семантической ошибке.
+    TextLocation location; ///< Положение ошибки.
 };
 
 #endif // SEMANTICERROR_H

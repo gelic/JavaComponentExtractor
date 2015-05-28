@@ -3,20 +3,29 @@
 
 #include <QString>
 
-// Класс, описывающий начальное и конечное положения компонента в файле
+/*!
+*\brief Класс положения в тексте.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный класс описывает положение компонента в тексте.
+*/
 class TextLocation
 {
 public:
-    int firstLine = 0;
-    int lastLine = 0;
-    int firstColumn = 0;
-    int lastColumn = 0;
-    QString fileName;
+    int firstLine = 0; ///< Начальная строка.
+    int lastLine = 0; ///< Конечная строка.
+    int firstColumn = 0; ///< Начальная колонка.
+    int lastColumn = 0; ///< Конечная колонка.
+    QString fileName; ///< Файл, в котором расположен компонент.
 
+    /*! Создает объект положения. */
     TextLocation();
+    /*! Создает объект положения на основании переданных начальных и конечных строк и колонок. */
     TextLocation(int firstLine, int lastLine, int firstColumn, int lastColumn);
+    /*! Создает объект положения на основании переданных начальных и конечных строк и колонок, а также имени файла. */
     TextLocation(int firstLine, int lastLine, int firstColumn, int lastColumn, const QString &fileName);
 
+    /*! Сравнивает два положения друг с другом. */
     bool operator==(const TextLocation &location);
 };
 
