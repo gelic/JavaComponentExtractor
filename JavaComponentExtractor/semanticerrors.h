@@ -93,3 +93,4 @@ QList<SemanticError> checkSemanticErrorsBeforeTreeWillBeBuilt(const Package &pac
 QList<SemanticError> checkSemanticErrorsAfterTreeWasBuilt(const Program &program);
 
 #endif // SEMANTICERRORS_H
+
