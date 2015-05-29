@@ -1,4 +1,12 @@
-﻿#ifndef FIELD_H
+﻿/*!
+*\file
+*\brief Файл объявления класса компонента поля.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный файл содержит в себе класс компонента поля.
+*/
+
+#ifndef FIELD_H
 #define FIELD_H
 
 #include <QStringList>

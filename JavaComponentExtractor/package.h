@@ -1,4 +1,12 @@
-﻿#ifndef PACKAGE_H
+﻿/*!
+*\file
+*\brief Файл объявления класса компонента пакета.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный файл содержит в себе класс компонента пакета.
+*/
+
+#ifndef PACKAGE_H
 #define PACKAGE_H
 
 #include <QString>

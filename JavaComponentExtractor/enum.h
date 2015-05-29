@@ -1,4 +1,12 @@
-﻿#ifndef ENUM_H
+﻿/*!
+*\file
+*\brief Файл объявления класса компонента перечисления.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный файл содержит в себе класс компонента перечисления.
+*/
+
+#ifndef ENUM_H
 #define ENUM_H
 
 #include <QStringList>

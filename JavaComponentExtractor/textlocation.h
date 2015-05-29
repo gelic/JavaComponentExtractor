@@ -1,4 +1,12 @@
-﻿#ifndef LOCATION_H
+﻿/*!
+*\file
+*\brief Файл объявления класса положения компонента в тексте.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный файл содержит в себе класс положения компонента в тексте.
+*/
+
+#ifndef LOCATION_H
 #define LOCATION_H
 
 #include <QString>

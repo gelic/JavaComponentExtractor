@@ -1,4 +1,12 @@
-﻿#ifndef SEMANTICERROR_H
+﻿/*!
+*\file
+*\brief Файл объявления класса семантической ошибки.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный файл содержит в себе класс семантической ошибки.
+*/
+
+#ifndef SEMANTICERROR_H
 #define SEMANTICERROR_H
 
 #include <QStringList>

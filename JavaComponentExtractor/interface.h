@@ -1,4 +1,12 @@
-﻿#ifndef INTERFACE_H
+﻿/*!
+*\file
+*\brief Файл объявления класса компонента интерфейса.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный файл содержит в себе класс компонента интерфейса.
+*/
+
+#ifndef INTERFACE_H
 #define INTERFACE_H
 
 #include <QStringList>

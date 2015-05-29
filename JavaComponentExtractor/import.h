@@ -1,4 +1,12 @@
-﻿#ifndef IMPORT_H
+﻿/*!
+*\file
+*\brief Файл объявления класса компонента импорта.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный файл содержит в себе класс компонента импорта.
+*/
+
+#ifndef IMPORT_H
 #define IMPORT_H
 
 #include <QString>

@@ -1,4 +1,12 @@
-﻿#ifndef METHOD_H
+﻿/*!
+*\file
+*\brief Файл объявления класса компонента метода.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный файл содержит в себе класс компонента метода.
+*/
+
+#ifndef METHOD_H
 #define METHOD_H
 
 #include <QStringList>

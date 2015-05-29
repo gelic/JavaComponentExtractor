@@ -1,4 +1,12 @@
-﻿#ifndef COMPONENT_H
+﻿/*!
+*\file
+*\brief Файл объявления класса компонента.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный файл содержит в себе класс компонента.
+*/
+
+#ifndef COMPONENT_H
 #define COMPONENT_H
 
 #include <QString>

@@ -1,4 +1,12 @@
-﻿#ifndef PROGRAM_H
+﻿/*!
+*\file
+*\brief Файл объявления класса компонента программы.
+*\author Александр Мелихов amelihovv@ya.ru.
+*
+* Данный файл содержит в себе класс дерева программы.
+*/
+
+#ifndef PROGRAM_H
 #define PROGRAM_H
 
 #include "package.h"
