@@ -1,25 +1,16 @@
 ﻿#include "field.h"
 
-Field::Field()
-{
-}
-
-Field::Field(const TextLocation &location)
+Field::Field(const TextLocation &location /*= TextLocation()*/)
 {
     this->location = location;
 }
 
-Field::Field(const QStringList &modificators, const QString &type, const QString &name)
+Field::Field(const QStringList &modificators, const QString &type, const QString &name, const TextLocation &location /*= TextLocation()*/)
 {
+    *this = Field::Field(location);
     this->modificators = modificators;
     this->type = type;
     this->name = name;
-}
-
-Field::Field(const QStringList &modificators, const QString &type, const QString &name, const TextLocation &location)
-{
-    *this = Field::Field(modificators, type, name);
-    this->location = location;
 }
 
 bool Field::operator==(const Field &field)

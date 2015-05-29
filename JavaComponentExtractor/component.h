@@ -24,10 +24,8 @@ public:
     TextLocation location; ///< Положение компонента в тексте.
     QString text; ///< Текст компонента.
 
-    /*! Создает объект компонента. */
-    Component();
     /*! Создает объект компонента на основании переданного положения. */
-    Component(const TextLocation &location);
+    Component(const TextLocation &location = TextLocation());
 
     /*!
     *\brief Проверить, вложен ли компонент в другой компонент.

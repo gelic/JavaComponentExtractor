@@ -25,16 +25,10 @@ public:
     QString name; ///< Имя перечисления.
     QStringList enumList; ///< Набор именованных констант.
 
-    /*! Создает объект перечисления. */
-    Enum();
     /*! Создает объект перечисления на основании переданного положения. */
-    Enum(const TextLocation &location);
-    /*! Создает объект перечисления на основании переданных модификаторов и имени перечисления. */
-    Enum(const QStringList &modificators, const QString &name);
-    /*! Создает объект перечисления на основании переданных модификаторов, имени перечисления и набора именованных констант. */
-    Enum(const QStringList &modificators, const QString &name, const QStringList &enumList);
+    Enum(const TextLocation &location = TextLocation());
     /*! Создает объект перечисления на основании переданных модификаторов, имени перечисления, набора именованных констант и положения. */
-    Enum(const QStringList &modificators, const QString &name, const QStringList &enumList, const TextLocation &location);
+    Enum(const QStringList &modificators, const QString &name, const QStringList &enumList = QStringList(), const TextLocation &location = TextLocation());
 
     /*! Сравнивает два перечисления друг с другом. */
     bool operator==(const Enum &enumToCompare);

@@ -47,14 +47,10 @@ public:
     QList<Param> params; // Параметры метода.
     QStringList threwExceptions; // Бросаемые исключения.
 
-    /*! Создает объект метода. */
-    Method();
     /*! Создает объект метода на основании переданного положения. */
-    Method(const TextLocation &location);
-    /*! Создает объект метода на основании переданных модификаторов, возвращаемого значения, имени, параметров и бросаемых исключений. */
-    Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions);
+    Method(const TextLocation &location = TextLocation());
     /*! Создает объект метода на основании переданных модификаторов, возвращаемого значения, имени, параметров, бросаемых исключений и положения. */
-    Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions, const TextLocation &location);
+    Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions, const TextLocation &location = TextLocation());
 
     /*! Сравнивает два метода друг с другом. */
     bool operator==(const Method &method);

@@ -1,19 +1,15 @@
 ﻿#include "import.h"
 
-Import::Import()
+Import::Import(const TextLocation &location)
 {
+    this->location = location;
 }
 
-Import::Import(const QString &importedClass, bool isStatic)
+Import::Import(const QString &importedClass, bool isStatic, const TextLocation &location /*= TextLocation()*/)
 {
+    *this = Import::Import(location);
     this->importedClass = importedClass;
     this->isStatic = isStatic;
-}
-
-Import::Import(const QString &importedClass, bool isStatic, const TextLocation &location)
-{
-    *this = Import::Import(importedClass, isStatic);
-    this->location = location;
 }
 
 bool Import::operator==(const Import &import)

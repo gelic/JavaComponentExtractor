@@ -1,10 +1,6 @@
 ﻿#include "component.h"
 
-Component::Component()
-{
-}
-
-Component::Component(const TextLocation &location)
+Component::Component(const TextLocation &location /*= TextLocation()*/)
 {
     this->location = location;
 }

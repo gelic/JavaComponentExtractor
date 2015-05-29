@@ -1,18 +1,14 @@
 ﻿#include "package.h"
 
-Package::Package()
+Package::Package(const TextLocation &location /*= TextLocation()*/)
 {
-}
-
-Package::Package(const QString &packageName)
-{
-    this->packageName = packageName;
-}
-
-Package::Package(const QString &packageName, const TextLocation &location)
-{
-    *this = Package::Package(packageName);
     this->location = location;
+}
+
+Package::Package(const QString &packageName, const TextLocation &location /*= TextLocation()*/)
+{
+    *this = Package::Package(location);
+    this->packageName = packageName;
 }
 
 bool Package::operator==(const Package &package)

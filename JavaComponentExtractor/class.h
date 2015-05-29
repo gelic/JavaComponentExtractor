@@ -35,10 +35,8 @@ public:
     QList<Class> nestedClasses; ///< Вложенные классы.
     QList<Interface> nestedInterfaces; ///< Вложенные интерфейсы.
 
-    /*! Создает объект класса. */
-    Class();
     /*! Создает объект класса на основании переданного положения. */
-    Class(const TextLocation &location);
+    Class(const TextLocation &location = TextLocation());
     /*! Создает объект класса на основании переданных вложенных классов и положения. */
     Class(const QList<Class> &nestedClasses, const TextLocation &location);
     /*! Создает объект класса на основании переданных вложенных перечислений и положения. */
@@ -49,10 +47,8 @@ public:
     Class(const QList<Field> &fields, const TextLocation &location);
     /*! Создает объект класса на основании переданных вложенных методов и положения. */
     Class(const QList<Method> &methods, const TextLocation &location);
-    /*! Создает объект класса на основании переданных модификаторов, имя, базовых классов и реализуемых интерфейсов. */
-    Class(const QStringList &modificators, const QString &name, const QStringList &baseClasses, const QStringList &implementedInterfaces);
     /*! Создает объект класса на основании переданных модификаторов, имя, базовых классов, реализуемых интерфейсов и положения. */
-    Class(const QStringList &modificators, const QString &name, const QStringList &baseClasses, const QStringList &implementedInterfaces, const TextLocation &location);
+    Class(const QStringList &modificators, const QString &name, const QStringList &baseClasses, const QStringList &implementedInterfaces, const TextLocation &location = TextLocation());
 
     /*! Сравнивает два класса друг с другом. */
     bool operator==(const Class &classToCompare);

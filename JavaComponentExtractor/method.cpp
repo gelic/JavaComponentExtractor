@@ -1,27 +1,18 @@
 ﻿#include "method.h"
 
-Method::Method()
-{
-}
-
-Method::Method(const TextLocation &location)
+Method::Method(const TextLocation &location /*= TextLocation()*/)
 {
     this->location = location;
 }
 
-Method::Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions)
+Method::Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions, const TextLocation &location /*= TextLocation()*/)
 {
+    *this = Method::Method(location);
     this->modificators = modificators;
     this->returnValue = returnValue;
     this->name = name;
     this->params = params;
     this->threwExceptions = threwExceptions;
-}
-
-Method::Method(const QStringList &modificators, const QString &returnValue, const QString &name, const QList<Param> &params, const QStringList &threwExceptions, const TextLocation &location)
-{
-    *this = Method::Method(modificators, returnValue, name, params, threwExceptions);
-    this->location = location;
 }
 
 bool Method::operator==(const Method &method)

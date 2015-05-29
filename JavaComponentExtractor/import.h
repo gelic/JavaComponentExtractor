@@ -25,11 +25,9 @@ public:
     QString importedClass; ///< Импортируемый класс.
 
     /*! Создает объект импорта. */
-    Import();
-    /*! Создает объект импорта на основании переданных импортируемого класса и флага, отвечающего за статический импорт. */
-    Import(const QString &importedClass, bool isStatic);
+    Import(const TextLocation &location);
     /*! Создает объект импорта на основании переданных импортируемого класса, флага, отвечающего за статический импорт, и положения. */
-    Import(const QString &importedClass, bool isStatic, const TextLocation &location);
+    Import(const QString &importedClass, bool isStatic, const TextLocation &location = TextLocation());
 
     /*! Сравнивает два импорта друг с другом. */
     bool operator==(const Import &import);

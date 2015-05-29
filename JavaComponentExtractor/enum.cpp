@@ -1,30 +1,16 @@
 ﻿#include "enum.h"
 
-Enum::Enum()
-{
-}
-
-Enum::Enum(const TextLocation &location)
+Enum::Enum(const TextLocation &location /*= TextLocation()*/)
 {
     this->location = location;
 }
 
-Enum::Enum(const QStringList &modificators, const QString &name)
+Enum::Enum(const QStringList &modificators, const QString &name, const QStringList &enumList /*= QStringList()*/, const TextLocation &location /*= TextLocation()*/)
 {
+    *this = Enum::Enum(location);
     this->modificators = modificators;
     this->name = name;
-}
-
-Enum::Enum(const QStringList &modificators, const QString &name, const QStringList &enumList)
-{
-    *this = Enum::Enum(modificators, name);
     this->enumList = enumList;
-}
-
-Enum::Enum(const QStringList &modificators, const QString &name, const QStringList &enumList, const TextLocation &location)
-{
-    *this = Enum::Enum(modificators, name, enumList);
-    this->location = location;
 }
 
 bool Enum::operator==(const Enum &enumToCompare)
