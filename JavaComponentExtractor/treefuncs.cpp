@@ -330,7 +330,11 @@ void findParentsToFields(QList<Class> &classes, QList<Interface> &interfaces, QL
                     {
                         classes[j].fields << fields[i];
                     }
-                    else if (&interfaces[j] == parents[i])
+                }
+
+                for (int j = 0; j < interfacesSize; ++j)
+                {
+                    if (&interfaces[j] == parents[i])
                     {
                         interfaces[j].fields << fields[i];
                     }
@@ -440,7 +444,11 @@ void findParentsToMethods(QList<Class> &classes, QList<Interface> &interfaces, Q
                     {
                         classes[j].methods << methods[i];
                     }
-                    else if (&interfaces[j] == parents[i])
+                }
+
+                for (int j = 0; j < interfacesSize; ++j)
+                {
+                    if (&interfaces[j] == parents[i])
                     {
                         interfaces[j].methods << methods[i];
                     }
