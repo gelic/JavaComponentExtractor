@@ -197,3 +197,4 @@ FakesAssemblies/
 
 # My ignoring files
 Documentation/
+Test_JavaComponentExtractor/GeneratedFiles/Profiling/
