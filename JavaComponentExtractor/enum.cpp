@@ -1,4 +1,4 @@
-﻿#include "enum.h"
+#include "enum.h"
 
 Enum::Enum(const TextLocation &location /*= TextLocation()*/)
 {

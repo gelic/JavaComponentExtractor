@@ -1,4 +1,4 @@
-﻿#include "test_yylex.h"
+#include "test_yylex.h"
 
 void Test_Yylex::cleanup()
 {

@@ -1,4 +1,4 @@
-﻿#ifndef TESTSTRINGFUNCS_H
+#ifndef TESTSTRINGFUNCS_H
 #define TESTSTRINGFUNCS_H
 
 #include <QObject>

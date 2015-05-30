@@ -1,4 +1,4 @@
-﻿#include "interface.h"
+#include "interface.h"
 
 Interface::Interface(const TextLocation &location /*= TextLocation()*/)
 {

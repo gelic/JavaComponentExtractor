@@ -1,4 +1,4 @@
-﻿#include "method.h"
+#include "method.h"
 
 Method::Method(const TextLocation &location /*= TextLocation()*/)
 {

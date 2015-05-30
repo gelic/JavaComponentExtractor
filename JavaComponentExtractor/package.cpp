@@ -1,4 +1,4 @@
-﻿#include "package.h"
+#include "package.h"
 
 Package::Package(const TextLocation &location /*= TextLocation()*/)
 {

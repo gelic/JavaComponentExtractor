@@ -1,4 +1,4 @@
-﻿#include "field.h"
+#include "field.h"
 
 Field::Field(const TextLocation &location /*= TextLocation()*/)
 {

@@ -1,4 +1,4 @@
-﻿#ifndef DECLARATIONS_H
+#ifndef DECLARATIONS_H
 #define DECLARATIONS_H
 
 #include "../JavaComponentExtractor/program.h"

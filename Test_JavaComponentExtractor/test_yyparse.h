@@ -1,4 +1,4 @@
-﻿#ifndef TEST_YYPARSE_H
+#ifndef TEST_YYPARSE_H
 #define TEST_YYPARSE_H
 
 #include <QObject>

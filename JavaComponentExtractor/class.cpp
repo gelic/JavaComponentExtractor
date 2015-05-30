@@ -1,4 +1,4 @@
-﻿#include "class.h"
+#include "class.h"
 
 Class::Class(const TextLocation &location /*= TextLocation()*/)
 {

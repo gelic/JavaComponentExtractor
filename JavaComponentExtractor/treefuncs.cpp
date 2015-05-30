@@ -1,4 +1,4 @@
-﻿#include "treefuncs.h"
+#include "treefuncs.h"
 
 void findParentsToEnums(QList<Class> &classes, QList<Enum> &enums)
 {

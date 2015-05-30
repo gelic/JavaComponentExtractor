@@ -1,4 +1,4 @@
-﻿#include "test_yyparse.h"
+#include "test_yyparse.h"
 
 void Test_Yyparse::parse(const QString &text)
 {

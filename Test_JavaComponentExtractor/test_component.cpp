@@ -1,4 +1,4 @@
-﻿#include "test_component.h"
+#include "test_component.h"
 
 void Test_Component::test_isNested_data()
 {

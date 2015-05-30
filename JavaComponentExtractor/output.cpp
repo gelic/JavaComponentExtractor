@@ -1,4 +1,4 @@
-﻿#include "output.h"
+#include "output.h"
 
 void writePackageNameAndImports(const QString &filePath, const QString &packageName, const QList<Import> &imports) throw(const QString &)
 {

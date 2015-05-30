@@ -1,4 +1,4 @@
-﻿#include <QtCore/QCoreApplication>
+#include <QtCore/QCoreApplication>
 #include <QFile>
 #include <QTextStream>
 #include <vld.h>

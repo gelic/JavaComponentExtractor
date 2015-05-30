@@ -1,4 +1,4 @@
-﻿#ifndef TEST_YYLEX_H
+#ifndef TEST_YYLEX_H
 #define TEST_YYLEX_H
 
 #include <QObject>
