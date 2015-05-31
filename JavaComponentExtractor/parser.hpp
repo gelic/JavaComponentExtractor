@@ -78,6 +78,7 @@ extern int yydebug;
 
     #define YYLTYPE_IS_DECLARED 1
 
+    // Ётот макрос будет выполн€тьс€ при разборе каждого нетокена
     #define YYLLOC_DEFAULT(Current, Rhs, N) \
         do \
             if (N) \
@@ -98,8 +99,8 @@ extern int yydebug;
             }                                                            \
         while (0)
 
-    void addEndPositionsToClassComponent(const YYLTYPE &yylocation);
-    void addEndPositionsToInterfaceComponent(const YYLTYPE &yylocation);
+    void addEndPositionsToClassComponent(const YYLTYPE &yylocation); // ƒл€ добавлени€ конечных позиций класса
+    void addEndPositionsToInterfaceComponent(const YYLTYPE &yylocation); // ƒл€ добавлени€ конечных позиций интерфейса
 
     struct MethodNameAndParams
     {
@@ -107,7 +108,7 @@ extern int yydebug;
         QString name;
     };
 
-#line 111 "parser.hpp" /* yacc.c:1909  */
+#line 112 "parser.hpp" /* yacc.c:1909  */
 
 /* Token type.  */
 #ifndef YYTOKENTYPE
@@ -196,7 +197,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 90 "parser.y" /* yacc.c:1909  */
+#line 91 "parser.y" /* yacc.c:1909  */
 
     QString *str = nullptr;
     QStringList *strList;
@@ -204,7 +205,7 @@ union YYSTYPE
     QList<Method::Param> *params;
     MethodNameAndParams *methodNameAndParams;
 
-#line 208 "parser.hpp" /* yacc.c:1909  */
+#line 209 "parser.hpp" /* yacc.c:1909  */
 };
 
 typedef union YYSTYPE YYSTYPE;

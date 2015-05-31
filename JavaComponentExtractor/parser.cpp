@@ -62,7 +62,7 @@
 
 
 /* Copy the first part of user declarations.  */
-#line 73 "parser.y" /* yacc.c:339  */
+#line 74 "parser.y" /* yacc.c:339  */
 
     #include "program.h"
     #pragma warning(disable: 4996)
@@ -146,6 +146,7 @@ extern int yydebug;
 
     #define YYLTYPE_IS_DECLARED 1
 
+    // Этот макрос будет выполняться при разборе каждого нетокена
     #define YYLLOC_DEFAULT(Current, Rhs, N) \
         do \
             if (N) \
@@ -166,8 +167,8 @@ extern int yydebug;
             }                                                            \
         while (0)
 
-    void addEndPositionsToClassComponent(const YYLTYPE &yylocation);
-    void addEndPositionsToInterfaceComponent(const YYLTYPE &yylocation);
+    void addEndPositionsToClassComponent(const YYLTYPE &yylocation); // Для добавления конечных позиций класса
+    void addEndPositionsToInterfaceComponent(const YYLTYPE &yylocation); // Для добавления конечных позиций интерфейса
 
     struct MethodNameAndParams
     {
@@ -175,7 +176,7 @@ extern int yydebug;
         QString name;
     };
 
-#line 179 "parser.cpp" /* yacc.c:355  */
+#line 180 "parser.cpp" /* yacc.c:355  */
 
 /* Token type.  */
 #ifndef YYTOKENTYPE
@@ -264,7 +265,7 @@ extern int yydebug;
 
 union YYSTYPE
 {
-#line 90 "parser.y" /* yacc.c:355  */
+#line 91 "parser.y" /* yacc.c:355  */
 
     QString *str = nullptr;
     QStringList *strList;
@@ -272,7 +273,7 @@ union YYSTYPE
     QList<Method::Param> *params;
     MethodNameAndParams *methodNameAndParams;
 
-#line 276 "parser.cpp" /* yacc.c:355  */
+#line 277 "parser.cpp" /* yacc.c:355  */
 };
 
 typedef union YYSTYPE YYSTYPE;
@@ -303,7 +304,7 @@ int yyparse (void);
 
 /* Copy the second part of user declarations.  */
 
-#line 307 "parser.cpp" /* yacc.c:358  */
+#line 308 "parser.cpp" /* yacc.c:358  */
 
 #ifdef short
 # undef short
@@ -610,36 +611,36 @@ static const yytype_uint8 yytranslate[] =
   /* YYRLINE[YYN] -- Source line where rule number YYN was defined.  */
 static const yytype_uint16 yyrline[] =
 {
-       0,   137,   137,   138,   147,   148,   152,   158,   167,   168,
-     169,   170,   171,   172,   173,   174,   175,   176,   180,   181,
-     185,   186,   190,   191,   192,   193,   194,   195,   196,   200,
-     210,   211,   215,   216,   220,   221,   225,   232,   239,   248,
-     257,   261,   262,   271,   273,   275,   277,   279,   281,   286,
-     299,   310,   321,   332,   341,   350,   359,   369,   387,   398,
-     414,   430,   439,   448,   462,   472,   481,   491,   497,   506,
-     512,   521,   522,   523,   524,   525,   526,   527,   528,   529,
-     530,   534,   538,   544,   553,   554,   558,   559,   563,   564,
-     565,   566,   567,   568,   569,   573,   585,   597,   598,   602,
-     603,   607,   608,   609,   613,   614,   615,   619,   632,   643,
-     654,   666,   676,   684,   692,   699,   708,   716,   727,   728,
-     737,   741,   742,   746,   757,   766,   775,   785,   795,   806,
-     810,   814,   815,   819,   820,   824,   825,   829,   834,   842,
-     843,   844,   845,   846,   847,   848,   849,   853,   857,   862,
-     863,   867,   871,   872,   873,   877,   878,   879,   880,   884,
-     885,   886,   890,   891,   895,   899,   900,   904,   909,   910,
-     915,   916,   917,   918,   922,   923,   924,   925,   929,   930,
-     934,   938,   945,   953,   957,   962,   966,   967,   968,   972,
-     973,   977,   978,   979,   980,   981,   985,   990,   994,   999,
-    1004,  1009,  1014,  1022,  1023,  1027,  1028,  1029,  1037,  1038,
-    1039,  1043,  1044,  1048,  1049,  1057,  1058,  1059,  1060,  1061,
-    1062,  1066,  1071,  1079,  1086,  1091,  1101,  1102,  1106,  1110,
-    1111,  1120,  1121,  1125,  1126,  1130,  1131,  1132,  1133,  1137,
-    1138,  1142,  1143,  1147,  1148,  1152,  1153,  1154,  1155,  1159,
-    1164,  1174,  1184,  1185,  1186,  1187,  1191,  1192,  1193,  1197,
-    1198,  1199,  1200,  1204,  1205,  1206,  1207,  1208,  1209,  1217,
-    1218,  1219,  1223,  1224,  1228,  1229,  1233,  1234,  1238,  1239,
-    1243,  1244,  1248,  1249,  1253,  1254,  1258,  1259,  1260,  1261,
-    1262,  1263,  1264,  1265,  1266,  1267,  1268,  1269,  1273,  1277
+       0,   138,   138,   139,   148,   149,   153,   159,   168,   169,
+     170,   171,   172,   173,   174,   175,   176,   177,   181,   182,
+     186,   187,   191,   192,   193,   194,   195,   196,   197,   201,
+     211,   212,   216,   217,   221,   222,   226,   233,   240,   249,
+     258,   262,   263,   272,   274,   276,   278,   280,   282,   287,
+     300,   311,   322,   333,   342,   351,   360,   370,   388,   399,
+     415,   431,   440,   449,   463,   473,   482,   492,   498,   507,
+     513,   522,   523,   524,   525,   526,   527,   528,   529,   530,
+     531,   535,   539,   545,   554,   555,   559,   560,   564,   565,
+     566,   567,   568,   569,   570,   574,   586,   598,   599,   603,
+     604,   608,   609,   610,   614,   615,   616,   620,   633,   644,
+     655,   667,   677,   685,   693,   700,   709,   717,   728,   729,
+     738,   742,   743,   747,   758,   767,   776,   786,   796,   807,
+     811,   815,   816,   820,   821,   825,   826,   830,   835,   843,
+     844,   845,   846,   847,   848,   849,   850,   854,   858,   863,
+     864,   868,   872,   873,   874,   878,   879,   880,   881,   885,
+     886,   887,   891,   892,   896,   900,   901,   905,   910,   911,
+     916,   917,   918,   919,   923,   924,   925,   926,   930,   931,
+     935,   939,   946,   954,   958,   963,   967,   968,   969,   973,
+     974,   978,   979,   980,   981,   982,   986,   991,   995,  1000,
+    1005,  1010,  1015,  1023,  1024,  1028,  1029,  1030,  1038,  1039,
+    1040,  1044,  1045,  1049,  1050,  1058,  1059,  1060,  1061,  1062,
+    1063,  1067,  1072,  1080,  1087,  1092,  1102,  1103,  1107,  1111,
+    1112,  1121,  1122,  1126,  1127,  1131,  1132,  1133,  1134,  1138,
+    1139,  1143,  1144,  1148,  1149,  1153,  1154,  1155,  1156,  1160,
+    1165,  1175,  1185,  1186,  1187,  1188,  1192,  1193,  1194,  1198,
+    1199,  1200,  1201,  1205,  1206,  1207,  1208,  1209,  1210,  1218,
+    1219,  1220,  1224,  1225,  1229,  1230,  1234,  1235,  1239,  1240,
+    1244,  1245,  1249,  1250,  1254,  1255,  1259,  1260,  1261,  1262,
+    1263,  1264,  1265,  1266,  1267,  1268,  1269,  1270,  1274,  1278
 };
 #endif
 
@@ -1825,243 +1826,243 @@ yydestruct (const char *yymsg, int yytype, YYSTYPE *yyvaluep, YYLTYPE *yylocatio
   switch (yytype)
     {
           case 3: /* ABSTRACT  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1831 "parser.cpp" /* yacc.c:1257  */
+#line 1832 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 4: /* FINAL  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1837 "parser.cpp" /* yacc.c:1257  */
+#line 1838 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 5: /* PUBLIC  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1843 "parser.cpp" /* yacc.c:1257  */
+#line 1844 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 6: /* PROTECTED  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1849 "parser.cpp" /* yacc.c:1257  */
+#line 1850 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 7: /* PRIVATE  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1855 "parser.cpp" /* yacc.c:1257  */
+#line 1856 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 8: /* STATIC  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1861 "parser.cpp" /* yacc.c:1257  */
+#line 1862 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 9: /* TRANSIENT  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1867 "parser.cpp" /* yacc.c:1257  */
+#line 1868 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 10: /* VOLATILE  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1873 "parser.cpp" /* yacc.c:1257  */
+#line 1874 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 11: /* NATIVE  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1879 "parser.cpp" /* yacc.c:1257  */
+#line 1880 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 12: /* SYNCHRONIZED  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1885 "parser.cpp" /* yacc.c:1257  */
+#line 1886 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 13: /* YYBOOLEAN  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1891 "parser.cpp" /* yacc.c:1257  */
+#line 1892 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 14: /* YYBYTE  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1897 "parser.cpp" /* yacc.c:1257  */
+#line 1898 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 15: /* YYCHAR  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1903 "parser.cpp" /* yacc.c:1257  */
+#line 1904 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 16: /* YYDOUBLE  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1909 "parser.cpp" /* yacc.c:1257  */
+#line 1910 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 17: /* YYFLOAT  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1915 "parser.cpp" /* yacc.c:1257  */
+#line 1916 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 18: /* YYINT  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1921 "parser.cpp" /* yacc.c:1257  */
+#line 1922 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 19: /* YYLONG  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1927 "parser.cpp" /* yacc.c:1257  */
+#line 1928 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 20: /* YYSHORT  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1933 "parser.cpp" /* yacc.c:1257  */
+#line 1934 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 21: /* YYVOID  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1939 "parser.cpp" /* yacc.c:1257  */
+#line 1940 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 22: /* YYSTRING  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1945 "parser.cpp" /* yacc.c:1257  */
+#line 1946 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 23: /* IDENTIFIER  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1951 "parser.cpp" /* yacc.c:1257  */
+#line 1952 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 24: /* OP_DIM  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1957 "parser.cpp" /* yacc.c:1257  */
+#line 1958 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 102: /* TypeSpecifier  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1963 "parser.cpp" /* yacc.c:1257  */
+#line 1964 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 103: /* TypeName  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1969 "parser.cpp" /* yacc.c:1257  */
+#line 1970 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 104: /* ClassNameList  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).strList);}
-#line 1975 "parser.cpp" /* yacc.c:1257  */
+#line 1976 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 105: /* PrimitiveType  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1981 "parser.cpp" /* yacc.c:1257  */
+#line 1982 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 114: /* QualifiedName  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1987 "parser.cpp" /* yacc.c:1257  */
+#line 1988 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 120: /* Modifiers  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).strList);}
-#line 1993 "parser.cpp" /* yacc.c:1257  */
+#line 1994 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 121: /* Modifier  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 1999 "parser.cpp" /* yacc.c:1257  */
+#line 2000 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 122: /* Interfaces  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).strList);}
-#line 2005 "parser.cpp" /* yacc.c:1257  */
+#line 2006 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 123: /* Extends  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).strList);}
-#line 2011 "parser.cpp" /* yacc.c:1257  */
+#line 2012 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 128: /* VariableDeclarators  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 2017 "parser.cpp" /* yacc.c:1257  */
+#line 2018 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 129: /* VariableDeclarator  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 2023 "parser.cpp" /* yacc.c:1257  */
+#line 2024 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 133: /* MethodDeclarator  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).methodNameAndParams);}
-#line 2029 "parser.cpp" /* yacc.c:1257  */
+#line 2030 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 134: /* ParameterList  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).params);}
-#line 2035 "parser.cpp" /* yacc.c:1257  */
+#line 2036 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 135: /* Parameter  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).param);}
-#line 2041 "parser.cpp" /* yacc.c:1257  */
+#line 2042 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 136: /* DeclaratorName  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 2047 "parser.cpp" /* yacc.c:1257  */
+#line 2048 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 137: /* Throws  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).strList);}
-#line 2053 "parser.cpp" /* yacc.c:1257  */
+#line 2054 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 140: /* ConstructorDeclarator  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).methodNameAndParams);}
-#line 2059 "parser.cpp" /* yacc.c:1257  */
+#line 2060 "parser.cpp" /* yacc.c:1257  */
         break;
 
     case 179: /* Dims  */
-#line 131 "parser.y" /* yacc.c:1257  */
+#line 132 "parser.y" /* yacc.c:1257  */
       {delete ((*yyvaluep).str);}
-#line 2065 "parser.cpp" /* yacc.c:1257  */
+#line 2066 "parser.cpp" /* yacc.c:1257  */
         break;
 
 
@@ -2347,82 +2348,82 @@ yyreduce:
   switch (yyn)
     {
         case 2:
-#line 137 "parser.y" /* yacc.c:1646  */
+#line 138 "parser.y" /* yacc.c:1646  */
     {(yyval.str) = (yyvsp[0].str);}
-#line 2353 "parser.cpp" /* yacc.c:1646  */
+#line 2354 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 3:
-#line 139 "parser.y" /* yacc.c:1646  */
+#line 140 "parser.y" /* yacc.c:1646  */
     {
             *(yyval.str) += *(yyvsp[0].str);
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2363 "parser.cpp" /* yacc.c:1646  */
+#line 2364 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 6:
-#line 153 "parser.y" /* yacc.c:1646  */
+#line 154 "parser.y" /* yacc.c:1646  */
     {
             (yyval.strList) = new QStringList(*(yyvsp[0].str));
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2373 "parser.cpp" /* yacc.c:1646  */
+#line 2374 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 7:
-#line 159 "parser.y" /* yacc.c:1646  */
+#line 160 "parser.y" /* yacc.c:1646  */
     {
             *(yyval.strList) << *(yyvsp[0].str);
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2383 "parser.cpp" /* yacc.c:1646  */
+#line 2384 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 20:
-#line 185 "parser.y" /* yacc.c:1646  */
+#line 186 "parser.y" /* yacc.c:1646  */
     {throw QString("Empty file");}
-#line 2389 "parser.cpp" /* yacc.c:1646  */
+#line 2390 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 29:
-#line 201 "parser.y" /* yacc.c:1646  */
+#line 202 "parser.y" /* yacc.c:1646  */
     {
             package = Package(*(yyvsp[-1].str));
             COPY_POSITIONS(package.location, (yylsp[-2]), (yylsp[0]))
             delete (yyvsp[-1].str);
             (yyvsp[-1].str) = nullptr;
         }
-#line 2400 "parser.cpp" /* yacc.c:1646  */
+#line 2401 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 36:
-#line 226 "parser.y" /* yacc.c:1646  */
+#line 227 "parser.y" /* yacc.c:1646  */
     {
             imports << Import(*(yyvsp[-1].str), false);
             COPY_POSITIONS(imports.last().location, (yylsp[-2]), (yylsp[0]))
             delete (yyvsp[-1].str);
             (yyvsp[-1].str) = nullptr;
         }
-#line 2411 "parser.cpp" /* yacc.c:1646  */
+#line 2412 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 37:
-#line 233 "parser.y" /* yacc.c:1646  */
+#line 234 "parser.y" /* yacc.c:1646  */
     {
             imports << Import(*(yyvsp[-3].str) + ".*", false);
             COPY_POSITIONS(imports.last().location, (yylsp[-4]), (yylsp[0]))
             delete (yyvsp[-3].str);
             (yyvsp[-3].str) = nullptr;
         }
-#line 2422 "parser.cpp" /* yacc.c:1646  */
+#line 2423 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 38:
-#line 240 "parser.y" /* yacc.c:1646  */
+#line 241 "parser.y" /* yacc.c:1646  */
     {
             imports << Import(*(yyvsp[-1].str), true);
             COPY_POSITIONS(imports.last().location, (yylsp[-3]), (yylsp[0]))
@@ -2431,11 +2432,11 @@ yyreduce:
             (yyvsp[-2].str) = nullptr;
             (yyvsp[-1].str) = nullptr;
         }
-#line 2435 "parser.cpp" /* yacc.c:1646  */
+#line 2436 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 39:
-#line 249 "parser.y" /* yacc.c:1646  */
+#line 250 "parser.y" /* yacc.c:1646  */
     {
             imports << Import(*(yyvsp[-3].str) + ".*", true);
             COPY_POSITIONS(imports.last().location, (yylsp[-5]), (yylsp[0]))
@@ -2444,63 +2445,63 @@ yyreduce:
             (yyvsp[-4].str) = nullptr;
             (yyvsp[-3].str) = nullptr;
         }
-#line 2448 "parser.cpp" /* yacc.c:1646  */
+#line 2449 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 41:
-#line 261 "parser.y" /* yacc.c:1646  */
+#line 262 "parser.y" /* yacc.c:1646  */
     {(yyval.str) = (yyvsp[0].str);}
-#line 2454 "parser.cpp" /* yacc.c:1646  */
+#line 2455 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 42:
-#line 263 "parser.y" /* yacc.c:1646  */
+#line 264 "parser.y" /* yacc.c:1646  */
     {
             *(yyval.str) += "." + *(yyvsp[0].str);
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2464 "parser.cpp" /* yacc.c:1646  */
+#line 2465 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 43:
-#line 272 "parser.y" /* yacc.c:1646  */
+#line 273 "parser.y" /* yacc.c:1646  */
     {addEndPositionsToClassComponent((yylsp[0]));}
-#line 2470 "parser.cpp" /* yacc.c:1646  */
+#line 2471 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 44:
-#line 274 "parser.y" /* yacc.c:1646  */
+#line 275 "parser.y" /* yacc.c:1646  */
     {addEndPositionsToClassComponent((yylsp[0]));}
-#line 2476 "parser.cpp" /* yacc.c:1646  */
+#line 2477 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 45:
-#line 276 "parser.y" /* yacc.c:1646  */
+#line 277 "parser.y" /* yacc.c:1646  */
     {addEndPositionsToInterfaceComponent((yylsp[0]));}
-#line 2482 "parser.cpp" /* yacc.c:1646  */
+#line 2483 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 46:
-#line 278 "parser.y" /* yacc.c:1646  */
+#line 279 "parser.y" /* yacc.c:1646  */
     {addEndPositionsToInterfaceComponent((yylsp[0]));}
-#line 2488 "parser.cpp" /* yacc.c:1646  */
+#line 2489 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 47:
-#line 280 "parser.y" /* yacc.c:1646  */
+#line 281 "parser.y" /* yacc.c:1646  */
     {COPY_END_POSITIONS(enums.last().location, (yylsp[0]))}
-#line 2494 "parser.cpp" /* yacc.c:1646  */
+#line 2495 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 48:
-#line 282 "parser.y" /* yacc.c:1646  */
+#line 283 "parser.y" /* yacc.c:1646  */
     {COPY_END_POSITIONS(enums.last().location, (yylsp[0]))}
-#line 2500 "parser.cpp" /* yacc.c:1646  */
+#line 2501 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 49:
-#line 287 "parser.y" /* yacc.c:1646  */
+#line 288 "parser.y" /* yacc.c:1646  */
     {
             classes << Class(*(yyvsp[-4].strList), *(yyvsp[-2].str), *(yyvsp[-1].strList), *(yyvsp[0].strList));
             COPY_START_POSITIONS(classes.last().location, (yylsp[-4]))
@@ -2513,11 +2514,11 @@ yyreduce:
             (yyvsp[-1].strList) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2517 "parser.cpp" /* yacc.c:1646  */
+#line 2518 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 50:
-#line 300 "parser.y" /* yacc.c:1646  */
+#line 301 "parser.y" /* yacc.c:1646  */
     {
             classes << Class(*(yyvsp[-3].strList), *(yyvsp[-1].str), *(yyvsp[0].strList), QStringList());
             COPY_START_POSITIONS(classes.last().location, (yylsp[-3]))
@@ -2528,11 +2529,11 @@ yyreduce:
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2532 "parser.cpp" /* yacc.c:1646  */
+#line 2533 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 51:
-#line 311 "parser.y" /* yacc.c:1646  */
+#line 312 "parser.y" /* yacc.c:1646  */
     {
             classes << Class(*(yyvsp[-3].strList), *(yyvsp[-1].str), QStringList(), *(yyvsp[0].strList));
             COPY_START_POSITIONS(classes.last().location, (yylsp[-3]))
@@ -2543,11 +2544,11 @@ yyreduce:
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2547 "parser.cpp" /* yacc.c:1646  */
+#line 2548 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 52:
-#line 322 "parser.y" /* yacc.c:1646  */
+#line 323 "parser.y" /* yacc.c:1646  */
     {
             classes << Class(QStringList(), *(yyvsp[-2].str), *(yyvsp[-1].strList), *(yyvsp[0].strList));
             COPY_START_POSITIONS(classes.last().location, (yylsp[-3]))
@@ -2558,11 +2559,11 @@ yyreduce:
             (yyvsp[-1].strList) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2562 "parser.cpp" /* yacc.c:1646  */
+#line 2563 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 53:
-#line 333 "parser.y" /* yacc.c:1646  */
+#line 334 "parser.y" /* yacc.c:1646  */
     {
             classes << Class(*(yyvsp[-2].strList), *(yyvsp[0].str), QStringList(), QStringList());
             COPY_START_POSITIONS(classes.last().location, (yylsp[-2]))
@@ -2571,11 +2572,11 @@ yyreduce:
             (yyvsp[-2].strList) = nullptr;
             (yyvsp[0].str) = nullptr;
         }
-#line 2575 "parser.cpp" /* yacc.c:1646  */
+#line 2576 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 54:
-#line 342 "parser.y" /* yacc.c:1646  */
+#line 343 "parser.y" /* yacc.c:1646  */
     {
             classes << Class(QStringList(), *(yyvsp[-1].str), *(yyvsp[0].strList), QStringList());
             COPY_START_POSITIONS(classes.last().location, (yylsp[-2]))
@@ -2584,11 +2585,11 @@ yyreduce:
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2588 "parser.cpp" /* yacc.c:1646  */
+#line 2589 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 55:
-#line 351 "parser.y" /* yacc.c:1646  */
+#line 352 "parser.y" /* yacc.c:1646  */
     {
             classes << Class(QStringList(), *(yyvsp[-1].str), QStringList(), *(yyvsp[0].strList));
             COPY_START_POSITIONS(classes.last().location, (yylsp[-2]))
@@ -2597,22 +2598,22 @@ yyreduce:
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2601 "parser.cpp" /* yacc.c:1646  */
+#line 2602 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 56:
-#line 360 "parser.y" /* yacc.c:1646  */
+#line 361 "parser.y" /* yacc.c:1646  */
     {
             classes << Class(QStringList(), *(yyvsp[0].str), QStringList(), QStringList());
             COPY_START_POSITIONS(classes.last().location, (yylsp[-1]))
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2612 "parser.cpp" /* yacc.c:1646  */
+#line 2613 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 57:
-#line 370 "parser.y" /* yacc.c:1646  */
+#line 371 "parser.y" /* yacc.c:1646  */
     {
             if (!(yyvsp[0].strList)->isEmpty())
             {
@@ -2630,11 +2631,11 @@ yyreduce:
             (yyvsp[-1].strList) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2634 "parser.cpp" /* yacc.c:1646  */
+#line 2635 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 58:
-#line 388 "parser.y" /* yacc.c:1646  */
+#line 389 "parser.y" /* yacc.c:1646  */
     {
             interfaces << Interface(*(yyvsp[-3].strList), *(yyvsp[-1].str), *(yyvsp[0].strList));
             COPY_START_POSITIONS(interfaces.last().location, (yylsp[-3]))
@@ -2645,11 +2646,11 @@ yyreduce:
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2649 "parser.cpp" /* yacc.c:1646  */
+#line 2650 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 59:
-#line 399 "parser.y" /* yacc.c:1646  */
+#line 400 "parser.y" /* yacc.c:1646  */
     {
             if (!(yyvsp[0].strList)->isEmpty())
             {
@@ -2665,11 +2666,11 @@ yyreduce:
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2669 "parser.cpp" /* yacc.c:1646  */
+#line 2670 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 60:
-#line 415 "parser.y" /* yacc.c:1646  */
+#line 416 "parser.y" /* yacc.c:1646  */
     {
             if (!(yyvsp[0].strList)->isEmpty())
             {
@@ -2685,11 +2686,11 @@ yyreduce:
             (yyvsp[-1].strList) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2689 "parser.cpp" /* yacc.c:1646  */
+#line 2690 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 61:
-#line 431 "parser.y" /* yacc.c:1646  */
+#line 432 "parser.y" /* yacc.c:1646  */
     {
             interfaces << Interface(*(yyvsp[-2].strList), *(yyvsp[0].str), QStringList());
             COPY_START_POSITIONS(interfaces.last().location, (yylsp[-2]))
@@ -2698,11 +2699,11 @@ yyreduce:
             (yyvsp[-2].strList) = nullptr;
             (yyvsp[0].str) = nullptr;
         }
-#line 2702 "parser.cpp" /* yacc.c:1646  */
+#line 2703 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 62:
-#line 440 "parser.y" /* yacc.c:1646  */
+#line 441 "parser.y" /* yacc.c:1646  */
     {
             interfaces << Interface(QStringList(), *(yyvsp[-1].str), *(yyvsp[0].strList));
             COPY_START_POSITIONS(interfaces.last().location, (yylsp[-2]))
@@ -2711,11 +2712,11 @@ yyreduce:
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2715 "parser.cpp" /* yacc.c:1646  */
+#line 2716 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 63:
-#line 449 "parser.y" /* yacc.c:1646  */
+#line 450 "parser.y" /* yacc.c:1646  */
     {
             if (!(yyvsp[0].strList)->isEmpty())
             {
@@ -2729,22 +2730,22 @@ yyreduce:
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].strList) = nullptr;
         }
-#line 2733 "parser.cpp" /* yacc.c:1646  */
+#line 2734 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 64:
-#line 463 "parser.y" /* yacc.c:1646  */
+#line 464 "parser.y" /* yacc.c:1646  */
     {
             interfaces << Interface(QStringList(), *(yyvsp[0].str), QStringList());
             COPY_START_POSITIONS(interfaces.last().location, (yylsp[-1]))
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2744 "parser.cpp" /* yacc.c:1646  */
+#line 2745 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 65:
-#line 473 "parser.y" /* yacc.c:1646  */
+#line 474 "parser.y" /* yacc.c:1646  */
     {
             enums << Enum(*(yyvsp[-2].strList), *(yyvsp[0].str));
             COPY_START_POSITIONS(enums.last().location, (yylsp[-2]))
@@ -2753,94 +2754,94 @@ yyreduce:
             (yyvsp[-2].strList) = nullptr;
             (yyvsp[0].str) = nullptr;
         }
-#line 2757 "parser.cpp" /* yacc.c:1646  */
+#line 2758 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 66:
-#line 482 "parser.y" /* yacc.c:1646  */
+#line 483 "parser.y" /* yacc.c:1646  */
     {
             enums << Enum(QStringList(), *(yyvsp[0].str));
             COPY_START_POSITIONS(enums.last().location, (yylsp[-1]))
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2768 "parser.cpp" /* yacc.c:1646  */
+#line 2769 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 67:
-#line 492 "parser.y" /* yacc.c:1646  */
+#line 493 "parser.y" /* yacc.c:1646  */
     {
             enums.last().enumList << *(yyvsp[0].str);
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2778 "parser.cpp" /* yacc.c:1646  */
+#line 2779 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 68:
-#line 498 "parser.y" /* yacc.c:1646  */
+#line 499 "parser.y" /* yacc.c:1646  */
     {
             enums.last().enumList << *(yyvsp[0].str);
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2788 "parser.cpp" /* yacc.c:1646  */
+#line 2789 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 69:
-#line 507 "parser.y" /* yacc.c:1646  */
+#line 508 "parser.y" /* yacc.c:1646  */
     {
             (yyval.strList) = new QStringList(*(yyvsp[0].str));
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2798 "parser.cpp" /* yacc.c:1646  */
+#line 2799 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 70:
-#line 513 "parser.y" /* yacc.c:1646  */
+#line 514 "parser.y" /* yacc.c:1646  */
     {
             *(yyval.strList) << *(yyvsp[0].str);
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2808 "parser.cpp" /* yacc.c:1646  */
+#line 2809 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 81:
-#line 534 "parser.y" /* yacc.c:1646  */
+#line 535 "parser.y" /* yacc.c:1646  */
     {(yyval.strList) = (yyvsp[0].strList);}
-#line 2814 "parser.cpp" /* yacc.c:1646  */
+#line 2815 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 82:
-#line 539 "parser.y" /* yacc.c:1646  */
+#line 540 "parser.y" /* yacc.c:1646  */
     {
             (yyval.strList) = new QStringList(*(yyvsp[0].str));
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2824 "parser.cpp" /* yacc.c:1646  */
+#line 2825 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 83:
-#line 545 "parser.y" /* yacc.c:1646  */
+#line 546 "parser.y" /* yacc.c:1646  */
     {
             *(yyval.strList) << *(yyvsp[0].str);
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2834 "parser.cpp" /* yacc.c:1646  */
+#line 2835 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 88:
-#line 563 "parser.y" /* yacc.c:1646  */
+#line 564 "parser.y" /* yacc.c:1646  */
     {COPY_END_POSITIONS(fields.last().location, (yylsp[0]));}
-#line 2840 "parser.cpp" /* yacc.c:1646  */
+#line 2841 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 95:
-#line 574 "parser.y" /* yacc.c:1646  */
+#line 575 "parser.y" /* yacc.c:1646  */
     {
             fields << Field(*(yyvsp[-2].strList), *(yyvsp[-1].str), *(yyvsp[0].str));
             COPY_START_POSITIONS(fields.last().location, (yylsp[-2]));
@@ -2852,11 +2853,11 @@ yyreduce:
             (yyvsp[0].str) = nullptr;
 
         }
-#line 2856 "parser.cpp" /* yacc.c:1646  */
+#line 2857 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 96:
-#line 586 "parser.y" /* yacc.c:1646  */
+#line 587 "parser.y" /* yacc.c:1646  */
     {
             fields << Field(QStringList(), *(yyvsp[-1].str), *(yyvsp[0].str));
             COPY_START_POSITIONS(fields.last().location, (yylsp[-1]));
@@ -2865,35 +2866,35 @@ yyreduce:
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].str) = nullptr;
         }
-#line 2869 "parser.cpp" /* yacc.c:1646  */
+#line 2870 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 97:
-#line 597 "parser.y" /* yacc.c:1646  */
+#line 598 "parser.y" /* yacc.c:1646  */
     {(yyval.str) = (yyvsp[0].str);}
-#line 2875 "parser.cpp" /* yacc.c:1646  */
+#line 2876 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 98:
-#line 598 "parser.y" /* yacc.c:1646  */
+#line 599 "parser.y" /* yacc.c:1646  */
     {(yyval.str) = (yyvsp[0].str);}
-#line 2881 "parser.cpp" /* yacc.c:1646  */
+#line 2882 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 99:
-#line 602 "parser.y" /* yacc.c:1646  */
+#line 603 "parser.y" /* yacc.c:1646  */
     {(yyval.str) = (yyvsp[0].str);}
-#line 2887 "parser.cpp" /* yacc.c:1646  */
+#line 2888 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 100:
-#line 603 "parser.y" /* yacc.c:1646  */
+#line 604 "parser.y" /* yacc.c:1646  */
     {(yyval.str) = (yyvsp[-2].str);}
-#line 2893 "parser.cpp" /* yacc.c:1646  */
+#line 2894 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 107:
-#line 620 "parser.y" /* yacc.c:1646  */
+#line 621 "parser.y" /* yacc.c:1646  */
     {
             methods << Method(*(yyvsp[-4].strList), *(yyvsp[-3].str), (yyvsp[-2].methodNameAndParams)->name, (yyvsp[-2].methodNameAndParams)->params, *(yyvsp[-1].strList));
             COPY_POSITIONS(methods.last().location, (yylsp[-4]), (yylsp[0]))
@@ -2906,11 +2907,11 @@ yyreduce:
             (yyvsp[-2].methodNameAndParams) = nullptr;
             (yyvsp[-1].strList) = nullptr;
         }
-#line 2910 "parser.cpp" /* yacc.c:1646  */
+#line 2911 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 108:
-#line 633 "parser.y" /* yacc.c:1646  */
+#line 634 "parser.y" /* yacc.c:1646  */
     {
             methods << Method(*(yyvsp[-3].strList), *(yyvsp[-2].str), (yyvsp[-1].methodNameAndParams)->name, (yyvsp[-1].methodNameAndParams)->params, QStringList());
             COPY_POSITIONS(methods.last().location, (yylsp[-3]), (yylsp[0]))
@@ -2921,11 +2922,11 @@ yyreduce:
             (yyvsp[-2].str) = nullptr;
             (yyvsp[-1].methodNameAndParams) = nullptr;
         }
-#line 2925 "parser.cpp" /* yacc.c:1646  */
+#line 2926 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 109:
-#line 644 "parser.y" /* yacc.c:1646  */
+#line 645 "parser.y" /* yacc.c:1646  */
     {
             methods << Method(QStringList(), *(yyvsp[-3].str), (yyvsp[-2].methodNameAndParams)->name, (yyvsp[-2].methodNameAndParams)->params, *(yyvsp[-1].strList));
             COPY_POSITIONS(methods.last().location, (yylsp[-3]), (yylsp[0]))
@@ -2936,11 +2937,11 @@ yyreduce:
             (yyvsp[-2].methodNameAndParams) = nullptr;
             (yyvsp[-1].strList) = nullptr;
         }
-#line 2940 "parser.cpp" /* yacc.c:1646  */
+#line 2941 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 110:
-#line 655 "parser.y" /* yacc.c:1646  */
+#line 656 "parser.y" /* yacc.c:1646  */
     {
             methods << Method(QStringList(), *(yyvsp[-2].str), (yyvsp[-1].methodNameAndParams)->name, (yyvsp[-1].methodNameAndParams)->params, QStringList());
             COPY_POSITIONS(methods.last().location, (yylsp[-2]), (yylsp[0]))
@@ -2949,11 +2950,11 @@ yyreduce:
             (yyvsp[-2].str) = nullptr;
             (yyvsp[-1].methodNameAndParams) = nullptr;
         }
-#line 2953 "parser.cpp" /* yacc.c:1646  */
+#line 2954 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 111:
-#line 667 "parser.y" /* yacc.c:1646  */
+#line 668 "parser.y" /* yacc.c:1646  */
     {
             (yyval.methodNameAndParams) = new MethodNameAndParams();
             (yyval.methodNameAndParams)->name = *(yyvsp[-3].str);
@@ -2963,11 +2964,11 @@ yyreduce:
             (yyvsp[-3].str) = nullptr;
             (yyvsp[-1].params) = nullptr;
         }
-#line 2967 "parser.cpp" /* yacc.c:1646  */
+#line 2968 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 112:
-#line 677 "parser.y" /* yacc.c:1646  */
+#line 678 "parser.y" /* yacc.c:1646  */
     {
             (yyval.methodNameAndParams) = new MethodNameAndParams();
             (yyval.methodNameAndParams)->name = *(yyvsp[-2].str);
@@ -2975,41 +2976,41 @@ yyreduce:
             delete (yyvsp[-2].str);
             (yyvsp[-2].str) = nullptr;
         }
-#line 2979 "parser.cpp" /* yacc.c:1646  */
+#line 2980 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 113:
-#line 685 "parser.y" /* yacc.c:1646  */
+#line 686 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 2988 "parser.cpp" /* yacc.c:1646  */
+#line 2989 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 114:
-#line 693 "parser.y" /* yacc.c:1646  */
+#line 694 "parser.y" /* yacc.c:1646  */
     {
             (yyval.params) = new QList<Method::Param>;
             (yyval.params)->append(*(yyvsp[0].param));
             delete (yyvsp[0].param);
             (yyvsp[0].param) = nullptr;
         }
-#line 2999 "parser.cpp" /* yacc.c:1646  */
+#line 3000 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 115:
-#line 700 "parser.y" /* yacc.c:1646  */
+#line 701 "parser.y" /* yacc.c:1646  */
     {
             (yyval.params)->append(*(yyvsp[0].param));
             delete (yyvsp[0].param);
             (yyvsp[0].param) = nullptr;
         }
-#line 3009 "parser.cpp" /* yacc.c:1646  */
+#line 3010 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 116:
-#line 709 "parser.y" /* yacc.c:1646  */
+#line 710 "parser.y" /* yacc.c:1646  */
     {
             (yyval.param) = new Method::Param(false, *(yyvsp[-1].str), *(yyvsp[0].str));
             delete (yyvsp[-1].str);
@@ -3017,11 +3018,11 @@ yyreduce:
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].str) = nullptr;
         }
-#line 3021 "parser.cpp" /* yacc.c:1646  */
+#line 3022 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 117:
-#line 717 "parser.y" /* yacc.c:1646  */
+#line 718 "parser.y" /* yacc.c:1646  */
     {
             (yyval.param) = new Method::Param(true, *(yyvsp[-1].str), *(yyvsp[0].str));
             delete (yyvsp[-1].str);
@@ -3029,33 +3030,33 @@ yyreduce:
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].str) = nullptr;
         }
-#line 3033 "parser.cpp" /* yacc.c:1646  */
+#line 3034 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 118:
-#line 727 "parser.y" /* yacc.c:1646  */
+#line 728 "parser.y" /* yacc.c:1646  */
     {(yyval.str) = (yyvsp[0].str);}
-#line 3039 "parser.cpp" /* yacc.c:1646  */
+#line 3040 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 119:
-#line 729 "parser.y" /* yacc.c:1646  */
+#line 730 "parser.y" /* yacc.c:1646  */
     {
             *(yyval.str) += *(yyvsp[0].str);
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 3049 "parser.cpp" /* yacc.c:1646  */
+#line 3050 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 120:
-#line 737 "parser.y" /* yacc.c:1646  */
+#line 738 "parser.y" /* yacc.c:1646  */
     {(yyval.strList) = (yyvsp[0].strList);}
-#line 3055 "parser.cpp" /* yacc.c:1646  */
+#line 3056 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 123:
-#line 747 "parser.y" /* yacc.c:1646  */
+#line 748 "parser.y" /* yacc.c:1646  */
     {
             methods << Method(*(yyvsp[-3].strList), QString(), (yyvsp[-2].methodNameAndParams)->name, (yyvsp[-2].methodNameAndParams)->params, *(yyvsp[-1].strList));
             COPY_POSITIONS(methods.last().location, (yylsp[-3]), (yylsp[0]))
@@ -3066,11 +3067,11 @@ yyreduce:
             (yyvsp[-2].methodNameAndParams) = nullptr;
             (yyvsp[-1].strList) = nullptr;
         }
-#line 3070 "parser.cpp" /* yacc.c:1646  */
+#line 3071 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 124:
-#line 758 "parser.y" /* yacc.c:1646  */
+#line 759 "parser.y" /* yacc.c:1646  */
     {
             methods << Method(*(yyvsp[-2].strList), QString(), (yyvsp[-1].methodNameAndParams)->name, (yyvsp[-1].methodNameAndParams)->params, QStringList());
             COPY_POSITIONS(methods.last().location, (yylsp[-2]), (yylsp[0]))
@@ -3079,11 +3080,11 @@ yyreduce:
             (yyvsp[-2].strList) = nullptr;
             (yyvsp[-1].methodNameAndParams) = nullptr;
         }
-#line 3083 "parser.cpp" /* yacc.c:1646  */
+#line 3084 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 125:
-#line 767 "parser.y" /* yacc.c:1646  */
+#line 768 "parser.y" /* yacc.c:1646  */
     {
             methods << Method(QStringList(), QString(), (yyvsp[-2].methodNameAndParams)->name, (yyvsp[-2].methodNameAndParams)->params, *(yyvsp[-1].strList));
             COPY_POSITIONS(methods.last().location, (yylsp[-2]), (yylsp[0]))
@@ -3092,22 +3093,22 @@ yyreduce:
             (yyvsp[-2].methodNameAndParams) = nullptr;
             (yyvsp[-1].strList) = nullptr;
         }
-#line 3096 "parser.cpp" /* yacc.c:1646  */
+#line 3097 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 126:
-#line 776 "parser.y" /* yacc.c:1646  */
+#line 777 "parser.y" /* yacc.c:1646  */
     {
             methods << Method(QStringList(), QString(), (yyvsp[-1].methodNameAndParams)->name, (yyvsp[-1].methodNameAndParams)->params, QStringList());
             COPY_POSITIONS(methods.last().location, (yylsp[-1]), (yylsp[0]))
             delete (yyvsp[-1].methodNameAndParams);
             (yyvsp[-1].methodNameAndParams) = nullptr;
         }
-#line 3107 "parser.cpp" /* yacc.c:1646  */
+#line 3108 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 127:
-#line 786 "parser.y" /* yacc.c:1646  */
+#line 787 "parser.y" /* yacc.c:1646  */
     {
             (yyval.methodNameAndParams) = new MethodNameAndParams();
             (yyval.methodNameAndParams)->name = *(yyvsp[-3].str);
@@ -3117,11 +3118,11 @@ yyreduce:
             (yyvsp[-3].str) = nullptr;
             (yyvsp[-1].params) = nullptr;
         }
-#line 3121 "parser.cpp" /* yacc.c:1646  */
+#line 3122 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 128:
-#line 796 "parser.y" /* yacc.c:1646  */
+#line 797 "parser.y" /* yacc.c:1646  */
     {
             (yyval.methodNameAndParams) = new MethodNameAndParams();
             (yyval.methodNameAndParams)->name = *(yyvsp[-2].str);
@@ -3129,262 +3130,262 @@ yyreduce:
             delete (yyvsp[-2].str);
             (yyvsp[-2].str) = nullptr;
         }
-#line 3133 "parser.cpp" /* yacc.c:1646  */
+#line 3134 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 137:
-#line 830 "parser.y" /* yacc.c:1646  */
+#line 831 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-2].str);
             (yyvsp[-2].str) = nullptr;
         }
-#line 3142 "parser.cpp" /* yacc.c:1646  */
+#line 3143 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 138:
-#line 835 "parser.y" /* yacc.c:1646  */
+#line 836 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-2].str);
             (yyvsp[-2].str) = nullptr;
         }
-#line 3151 "parser.cpp" /* yacc.c:1646  */
+#line 3152 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 148:
-#line 858 "parser.y" /* yacc.c:1646  */
+#line 859 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-1].str);
             (yyvsp[-1].str) = nullptr;
         }
-#line 3160 "parser.cpp" /* yacc.c:1646  */
+#line 3161 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 167:
-#line 905 "parser.y" /* yacc.c:1646  */
+#line 906 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-1].str);
             (yyvsp[-1].str) = nullptr;
         }
-#line 3169 "parser.cpp" /* yacc.c:1646  */
+#line 3170 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 169:
-#line 911 "parser.y" /* yacc.c:1646  */
+#line 912 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-1].str);
             (yyvsp[-1].str) = nullptr;
         }
-#line 3178 "parser.cpp" /* yacc.c:1646  */
+#line 3179 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 181:
-#line 939 "parser.y" /* yacc.c:1646  */
+#line 940 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-2].str);
             delete (yyvsp[-1].str);
             (yyvsp[-2].str) = nullptr;
             (yyvsp[-1].str) = nullptr;
         }
-#line 3189 "parser.cpp" /* yacc.c:1646  */
+#line 3190 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 182:
-#line 946 "parser.y" /* yacc.c:1646  */
+#line 947 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-1].str);
             (yyvsp[-1].str) = nullptr;
         }
-#line 3198 "parser.cpp" /* yacc.c:1646  */
+#line 3199 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 184:
-#line 958 "parser.y" /* yacc.c:1646  */
+#line 959 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 3207 "parser.cpp" /* yacc.c:1646  */
+#line 3208 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 196:
-#line 986 "parser.y" /* yacc.c:1646  */
+#line 987 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-3].str);
             (yyvsp[-3].str) = nullptr;
         }
-#line 3216 "parser.cpp" /* yacc.c:1646  */
+#line 3217 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 198:
-#line 995 "parser.y" /* yacc.c:1646  */
+#line 996 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 3225 "parser.cpp" /* yacc.c:1646  */
+#line 3226 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 199:
-#line 1000 "parser.y" /* yacc.c:1646  */
+#line 1001 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 3234 "parser.cpp" /* yacc.c:1646  */
+#line 3235 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 200:
-#line 1005 "parser.y" /* yacc.c:1646  */
+#line 1006 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-2].str);
             (yyvsp[-2].str) = nullptr;
         }
-#line 3243 "parser.cpp" /* yacc.c:1646  */
+#line 3244 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 201:
-#line 1010 "parser.y" /* yacc.c:1646  */
+#line 1011 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-2].str);
             (yyvsp[-2].str) = nullptr;
         }
-#line 3252 "parser.cpp" /* yacc.c:1646  */
+#line 3253 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 202:
-#line 1015 "parser.y" /* yacc.c:1646  */
+#line 1016 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-2].str);
             (yyvsp[-2].str) = nullptr;
         }
-#line 3261 "parser.cpp" /* yacc.c:1646  */
+#line 3262 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 207:
-#line 1030 "parser.y" /* yacc.c:1646  */
+#line 1031 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 3270 "parser.cpp" /* yacc.c:1646  */
+#line 3271 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 214:
-#line 1050 "parser.y" /* yacc.c:1646  */
+#line 1051 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-2].str);
             (yyvsp[-2].str) = nullptr;
         }
-#line 3279 "parser.cpp" /* yacc.c:1646  */
+#line 3280 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 221:
-#line 1067 "parser.y" /* yacc.c:1646  */
+#line 1068 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-3].str);
             (yyvsp[-3].str) = nullptr;
         }
-#line 3288 "parser.cpp" /* yacc.c:1646  */
+#line 3289 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 222:
-#line 1072 "parser.y" /* yacc.c:1646  */
+#line 1073 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-2].str);
             (yyvsp[-2].str) = nullptr;
         }
-#line 3297 "parser.cpp" /* yacc.c:1646  */
+#line 3298 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 223:
-#line 1080 "parser.y" /* yacc.c:1646  */
+#line 1081 "parser.y" /* yacc.c:1646  */
     {   
             delete (yyvsp[-2].str);
             delete (yyvsp[0].str);
             (yyvsp[-2].str) = nullptr;
             (yyvsp[0].str) = nullptr;
         }
-#line 3308 "parser.cpp" /* yacc.c:1646  */
+#line 3309 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 224:
-#line 1087 "parser.y" /* yacc.c:1646  */
+#line 1088 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-1].str);
             (yyvsp[-1].str) = nullptr;
         }
-#line 3317 "parser.cpp" /* yacc.c:1646  */
+#line 3318 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 225:
-#line 1092 "parser.y" /* yacc.c:1646  */
+#line 1093 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-1].str);
             delete (yyvsp[0].str);
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].str) = nullptr;
         }
-#line 3328 "parser.cpp" /* yacc.c:1646  */
+#line 3329 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 229:
-#line 1110 "parser.y" /* yacc.c:1646  */
+#line 1111 "parser.y" /* yacc.c:1646  */
     {(yyval.str) = (yyvsp[0].str);}
-#line 3334 "parser.cpp" /* yacc.c:1646  */
+#line 3335 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 230:
-#line 1112 "parser.y" /* yacc.c:1646  */
+#line 1113 "parser.y" /* yacc.c:1646  */
     {
             *(yyval.str) += *(yyvsp[0].str);
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 3344 "parser.cpp" /* yacc.c:1646  */
+#line 3345 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 249:
-#line 1160 "parser.y" /* yacc.c:1646  */
+#line 1161 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 3353 "parser.cpp" /* yacc.c:1646  */
+#line 3354 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 250:
-#line 1165 "parser.y" /* yacc.c:1646  */
+#line 1166 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-1].str);
             delete (yyvsp[0].str);
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].str) = nullptr;
         }
-#line 3364 "parser.cpp" /* yacc.c:1646  */
+#line 3365 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 251:
-#line 1175 "parser.y" /* yacc.c:1646  */
+#line 1176 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[-1].str);
             delete (yyvsp[0].str);
             (yyvsp[-1].str) = nullptr;
             (yyvsp[0].str) = nullptr;
         }
-#line 3375 "parser.cpp" /* yacc.c:1646  */
+#line 3376 "parser.cpp" /* yacc.c:1646  */
     break;
 
   case 268:
-#line 1210 "parser.y" /* yacc.c:1646  */
+#line 1211 "parser.y" /* yacc.c:1646  */
     {
             delete (yyvsp[0].str);
             (yyvsp[0].str) = nullptr;
         }
-#line 3384 "parser.cpp" /* yacc.c:1646  */
+#line 3385 "parser.cpp" /* yacc.c:1646  */
     break;
 
 
-#line 3388 "parser.cpp" /* yacc.c:1646  */
+#line 3389 "parser.cpp" /* yacc.c:1646  */
       default: break;
     }
   /* User semantic actions sometimes alter yychar, and that requires
@@ -3619,7 +3620,7 @@ yyreturn:
 #endif
   return yyresult;
 }
-#line 1279 "parser.y" /* yacc.c:1906  */
+#line 1280 "parser.y" /* yacc.c:1906  */
 
 
 // Функция для правильного добавления положения класса

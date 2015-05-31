@@ -141,7 +141,7 @@ void writeInterfaces(QDir &outputDir, const QList<Interface> &interfaces, const 
     outputDir.cd("Interfaces");
 
     for (auto interface : interfaces)
-    {
+    { // Для каждого интерфейса создать папку и в ней вывести интерфейс
         if (!outputDir.mkdir(interface.name))
         {
             throw QString("Cannot create folder for interface with name: " + interface.name);
@@ -224,7 +224,7 @@ void writeClasses(QDir outputDir, const QList<Class> &classes, const QString &fo
     outputDir.cd("Classes");
 
     for (auto classToWrite : classes)
-    {
+    { // Для каждого класса создать папку и в ней вывести класс
         if (!outputDir.mkdir(classToWrite.name))
         {
             throw QString("Cannot create folder for class with name: " + classToWrite.name);

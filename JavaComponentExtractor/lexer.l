@@ -11,6 +11,7 @@
     int yycolumn = 1;
     char *filename;
 
+    // Для дополнительного вывода в ошибках номера колонки и файла
     #define YY_USER_ACTION \
         yylloc.filename = filename; \
         yylloc.first_line = yylloc.last_line = yylineno; \

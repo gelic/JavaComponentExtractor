@@ -37,11 +37,11 @@ int main(int argc, char *argv[])
         QTextStream in(&file);
         const QString fileContent = in.readAll();
 
-        filename = argv[1];
-        yy_scan_string(fileContent.toStdString().c_str());
+        filename = argv[1]; // Для вывода синтаксических ошибок
+        yy_scan_string(fileContent.toStdString().c_str()); // Чтобы флекс брал символы из строки
 
         int parseResult = yyparse();
-        yylex_destroy();
+        yylex_destroy(); // Освобождение памяти
 
         switch (parseResult)
         {
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
         }
 
         if (yynerrs)
-        {
+        { // Есть ошибки, после которых удалось восстановиться и продолжить разбор
             throw QString("Couldn`t parse file");
         }
 

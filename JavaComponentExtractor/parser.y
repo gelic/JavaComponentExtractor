@@ -40,6 +40,7 @@
 
     #define YYLTYPE_IS_DECLARED 1
 
+    // Ётот макрос будет выполн€тьс€ при разборе каждого нетокена
     #define YYLLOC_DEFAULT(Current, Rhs, N) \
         do \
             if (N) \
@@ -60,8 +61,8 @@
             }                                                            \
         while (0)
 
-    void addEndPositionsToClassComponent(const YYLTYPE &yylocation);
-    void addEndPositionsToInterfaceComponent(const YYLTYPE &yylocation);
+    void addEndPositionsToClassComponent(const YYLTYPE &yylocation); // ƒл€ добавлени€ конечных позиций класса
+    void addEndPositionsToInterfaceComponent(const YYLTYPE &yylocation); // ƒл€ добавлени€ конечных позиций интерфейса
 
     struct MethodNameAndParams
     {
