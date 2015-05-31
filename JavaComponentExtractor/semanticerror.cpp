@@ -1,9 +1,9 @@
 #include "semanticerror.h"
 
-SemanticError::SemanticError(const QString &message, const TextLocation &anotherLocaiton)
+SemanticError::SemanticError(const QString &message, const TextLocation &location)
 {
     this->message = message;
-    this->location = TextLocation(anotherLocaiton.firstLine, anotherLocaiton.lastLine, anotherLocaiton.firstColumn, anotherLocaiton.lastColumn);
+    this->location = location;
 }
 
 QString SemanticError::toString() const

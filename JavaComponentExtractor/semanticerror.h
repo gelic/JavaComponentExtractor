@@ -25,7 +25,7 @@ class SemanticError
 {
 public:
     /*! Создает объект семантической ошибки на основании переданных сообщения и положения. */
-    SemanticError(const QString &message, const TextLocation &anotherLocaiton);
+    SemanticError(const QString &message, const TextLocation &location);
 
     /*! Возвращает строковое представление семантической ошибки в формате: "строка.колонка: сообщение об ошибке". */
     QString toString() const;
