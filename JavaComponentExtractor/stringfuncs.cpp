@@ -7,8 +7,7 @@ QString contentBetweenPositions(const QString &buffer, const TextLocation &locat
         return QString();
     }
 
-    QRegularExpression rx = QRegularExpression("\\r|\\n");
-    int linesCount = buffer.count(rx);
+    static int linesCount = buffer.count(QRegularExpression("\\n|\\r"));
 
     if (location.firstLine > linesCount + 1 || location.lastLine > linesCount + 1)
     {
