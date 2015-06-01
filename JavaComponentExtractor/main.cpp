@@ -66,7 +66,9 @@ int main(int argc, char *argv[])
 
         if (!semanticErrors.length())
         {
-            writeTreeToFiles(QString(argv[1]).split('.')[0], program);
+            QString contentBetweenTwoLastPoints = QString(argv[1]).split('.')[QString(argv[1]).count('.') - 1];
+            QString fileName = contentBetweenTwoLastPoints.section(QRegularExpression("[\\\\/]"), -1);
+            writeTreeToFiles(fileName, program);
         }
         else
         {
