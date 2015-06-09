@@ -37,11 +37,11 @@ int main(int argc, char *argv[])
         QTextStream in(&file);
         const QString fileContent = in.readAll();
 
-        filename = argv[1]; // Для вывода синтаксических ошибок
-        yy_scan_string(fileContent.toStdString().c_str()); // Чтобы флекс брал символы из строки
+        filename = argv[1]; // Р”Р»СЏ РІС‹РІРѕРґР° СЃРёРЅС‚Р°РєСЃРёС‡РµСЃРєРёС… РѕС€РёР±РѕРє
+        yy_scan_string(fileContent.toStdString().c_str()); // Р§С‚РѕР±С‹ С„Р»РµРєСЃ Р±СЂР°Р» СЃРёРјРІРѕР»С‹ РёР· СЃС‚СЂРѕРєРё
 
         int parseResult = yyparse();
-        yylex_destroy(); // Освобождение памяти
+        yylex_destroy(); // РћСЃРІРѕР±РѕР¶РґРµРЅРёРµ РїР°РјСЏС‚Рё
 
         switch (parseResult)
         {
@@ -51,7 +51,7 @@ int main(int argc, char *argv[])
         }
 
         if (yynerrs)
-        { // Есть ошибки, после которых удалось восстановиться и продолжить разбор
+        { // Р•СЃС‚СЊ РѕС€РёР±РєРё, РїРѕСЃР»Рµ РєРѕС‚РѕСЂС‹С… СѓРґР°Р»РѕСЃСЊ РІРѕСЃСЃС‚Р°РЅРѕРІРёС‚СЊСЃСЏ Рё РїСЂРѕРґРѕР»Р¶РёС‚СЊ СЂР°Р·Р±РѕСЂ
             throw QString("Couldn`t parse file");
         }
 
