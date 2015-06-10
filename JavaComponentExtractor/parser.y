@@ -1069,10 +1069,20 @@ ClassAllocationExpression
             delete $2;
             $2 = nullptr;
         }
+    | THIS '.' NEW TypeName '(' ArgumentList ')'
+        {
+            delete $4;
+            $4 = nullptr; 
+        }
     | NEW TypeName '('              ')'
         {
             delete $2;
             $2 = nullptr;
+        }
+    | THIS '.' NEW TypeName '('              ')'
+        {
+            delete $4;
+            $4 = nullptr; 
         }
     ;
 
