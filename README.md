@@ -1,5 +1,4 @@
 # JavaComponentExtractor
-Разбивает программу на языке java на компоненты.
 Extract components from java file.
 
 #### Components are:
